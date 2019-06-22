@@ -1,6 +1,6 @@
 // TODO - Move DB save to separate function and check if image is new before saving
 
-const pool = require("../../../db");
+const pool = require("../../../config/db");
 const imageToString = require("../../../services/convertImageToString.js");
 
 module.exports = (req, res) => {

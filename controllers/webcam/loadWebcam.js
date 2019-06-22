@@ -1,4 +1,4 @@
-const pool = require("../../db");
+const pool = require("../../config/db");
 
 const loadWebcam = (req, res) => {
   const webcamName = req.params.name;
