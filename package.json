@@ -9,6 +9,7 @@
   "author": "Matt Chapman",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.19.0",
     "express": "^4.17.1",
     "nodemon": "^1.19.1",
     "pg": "^7.11.0"
