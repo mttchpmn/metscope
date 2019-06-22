@@ -1,5 +1,7 @@
-const scrapeWebcam = require("./controllers/webcam/scrapeWebcam.js");
-const loadWebcam = require("./controllers/webcam/loadWebcam.js");
+const scrapeWebcam = require("../controllers/webcam/scrapeWebcam.js");
+const loadWebcam = require("../controllers/webcam/loadWebcam.js");
+
+const scrapeMetvuw = require("../controllers/weather/scrapeMetvuw");
 
 module.exports = app => {
   app.get("/", (req, res) => {
@@ -9,7 +11,6 @@ module.exports = app => {
   app.get("/webcam/scrape/:name", scrapeWebcam);
   app.get("/webcam/load/:name", loadWebcam);
 
-  // TODO - Implement these endpoints
-  //   app.get("/weather/scrape/metvuw/:area", scrapeMetvuw);
+  app.get("/weather/scrape/metvuw/:area", scrapeMetvuw);
   //   app.get("/weather/scrape/metflight/", scrapeMetflight);
 };
