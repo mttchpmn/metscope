@@ -1,3 +1,5 @@
+// TODO - Move DB save to separate function and check if image is new before saving
+
 const pool = require("../../../db");
 const imageToString = require("../../../services/convertImageToString.js");
 
@@ -12,10 +14,9 @@ module.exports = (req, res) => {
         if (err) {
           throw err;
         }
-        res.status(201).send(`Image added with ID: ${results.insertId}`);
+        res.status(201).send(`Webcam image saved to DB successfully`);
       }
     );
   });
-
   //   return res.json({ status: 200 });
 };
