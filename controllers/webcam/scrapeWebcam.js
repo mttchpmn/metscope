@@ -7,7 +7,7 @@ const scraperLookup = {
 const scrapeWebcam = (req, res) => {
   const webcamName = req.params.name;
 
-  scraperLookup[webcamName]();
+  scraperLookup[webcamName](req, res);
 };
 
 module.exports = scrapeWebcam;

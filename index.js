@@ -3,6 +3,7 @@ const pg = require("pg");
 const bodyParser = require("body-parser");
 
 const scrapeWebcam = require("./controllers/webcam/scrapeWebcam.js");
+const loadWebcam = require("./controllers/webcam/loadWebcam.js");
 
 const app = express();
 const port = 3000;
@@ -15,5 +16,6 @@ app.get("/", (req, res) => {
 });
 
 app.get("/webcam/scrape/:name", scrapeWebcam);
+app.get("/webcam/load/:name", loadWebcam);
 
 app.listen(port);
