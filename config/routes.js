@@ -8,4 +8,8 @@ module.exports = app => {
 
   app.get("/webcam/scrape/:name", scrapeWebcam);
   app.get("/webcam/load/:name", loadWebcam);
+
+  // TODO - Implement these endpoints
+  //   app.get("/weather/scrape/metvuw/:area", scrapeMetvuw);
+  //   app.get("/weather/scrape/metflight/", scrapeMetflight);
 };
