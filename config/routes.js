@@ -2,6 +2,7 @@ const scrapeWebcam = require("../controllers/webcam/scrapeWebcam.js");
 const loadWebcam = require("../controllers/webcam/loadWebcam.js");
 
 const scrapeMetvuw = require("../controllers/weather/scrapeMetvuw");
+const scrapeQmug = require("../controllers/weather/scrapeQmug");
 
 module.exports = app => {
   app.get("/", (req, res) => {
