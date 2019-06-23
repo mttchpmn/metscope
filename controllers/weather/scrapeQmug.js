@@ -7,8 +7,8 @@ module.exports = (req, response) => {
   // Response skeleton
   let baseResponse = {
     sigmet: [],
-    taf: "",
-    aaw: "",
+    taf: [],
+    aaw: [],
     grafor: [],
     sigwx: []
   };
@@ -25,8 +25,19 @@ module.exports = (req, response) => {
     // Scrape AAW and TAFs
     $("pre").map((i, element) => {
       const content = $(element).text();
-      if (content.includes("AVIATION AREA")) baseResponse.aaw = content;
-      if (content.includes("TAF")) baseResponse.taf = content;
+      if (content.includes("AVIATION AREA")) {
+        baseResponse.aaw = content
+          .split("\n\n")
+          .map(item => item.trim())
+          .filter(item => item !== "");
+      }
+
+      if (content.includes("TAF")) {
+        baseResponse.taf = content
+          .split("\n\n")
+          .map(item => item.trim())
+          .filter(item => item !== "");
+      }
     });
 
     // Scrape images
@@ -57,10 +68,7 @@ module.exports = (req, response) => {
     // Pop off the last item to trim the extra information, and add it back to array
     let lastMetar = metars.pop().split("NZ Terminal Aerodrome Forecasts")[0];
     metars.push(lastMetar);
-
-    metars = metars.map(item => `METAR ${item.trim()}`);
-
-    baseResponse.metar = metars;
+    baseResponse.metar = metars.map(item => `METAR ${item.trim()}`);
 
     return response.json({ status: 200, data: baseResponse });
   });
