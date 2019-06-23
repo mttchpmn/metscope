@@ -12,5 +12,6 @@ module.exports = app => {
   app.get("/webcam/load/:name", loadWebcam);
 
   app.get("/weather/scrape/metvuw/:area", scrapeMetvuw);
+  app.get("/weather/scrape/qmug/", scrapeQmug);
   //   app.get("/weather/scrape/metflight/", scrapeMetflight);
 };
