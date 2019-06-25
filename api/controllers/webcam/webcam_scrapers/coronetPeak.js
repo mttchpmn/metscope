@@ -7,7 +7,6 @@ const imageToString = require("../../../services/convertImageToString");
 const saveWebcam = require("../../../services/saveWebcamToDatabase");
 
 module.exports = (req, response) => {
-  winston.info("Scraping Coronet webcam...");
   const baseUrl = "https://www.coronetpeak.co.nz/weather-report/";
 
   getPage(baseUrl, 10)
