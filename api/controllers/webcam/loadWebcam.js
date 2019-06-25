@@ -6,7 +6,7 @@ const loadWebcam = (req, res) => {
   winston.info(`Loading webcams for ${webcamName}`);
 
   pool.query(
-    "SELECT id, name, url, string from webcams where name = $1",
+    "SELECT id, name, date, url, string from webcams where name = $1",
     [webcamName],
     (err, results) => {
       if (err) winston.err(err);
