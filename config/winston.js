@@ -1,5 +1,11 @@
 const { createLogger, format, transports } = require("winston");
+const { combine, timestamp, printf } = format;
 const appRoot = require("app-root-path");
+
+const consoleFormat = printf(
+  ({ level, message, label, timestamp }) =>
+    `${timestamp} [${level.toUpperCase()}]: ${message}`
+);
 
 const options = {
   file: {
@@ -20,13 +26,11 @@ const options = {
   },
   console: {
     level: "debug",
-    format: format.combine(
+    format: combine(
       format.timestamp({
         format: "YYYY-MM-DD HH:mm:ss"
       }),
-      format.errors({ stack: true }),
-      format.splat(),
-      format.json()
+      consoleFormat
     ),
     handleExceptions: true,
     json: false,
