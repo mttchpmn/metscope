@@ -4,6 +4,7 @@ const morgan = require("morgan");
 const bodyParser = require("body-parser");
 
 // Internal imports
+require("dotenv").config();
 const config = require("./api/config/config");
 const winston = require("./api/config/winston");
 

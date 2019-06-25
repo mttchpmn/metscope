@@ -1,12 +1,12 @@
 module.exports = {
   app: {
-    port: process.env.port || 3000
+    port: process.env.PORT || 3000
   },
   db: {
-    user: process.env.user || "metscope",
-    host: process.env.host || "localhost",
-    database: process.env.db || "metscope",
-    password: process.env.pass || "password",
-    port: process.env.dbport || 5432
+    user: process.env.DB_USER || "metscope",
+    host: process.env.DB_HOST || "localhost",
+    database: process.env.DB_DATABASE || "metscope",
+    password: process.env.DB_PASSWORD || "password",
+    port: process.env.DB_PORT || 5432
   }
 };
