@@ -4,12 +4,13 @@ const morgan = require("morgan");
 const bodyParser = require("body-parser");
 
 // Internal imports
+const config = require("./api/config/config");
 const winston = require("./api/config/winston");
 
 // Instantiate app
 winston.info(`API starting...`);
 const app = express();
-const port = 3000;
+const port = config.app.port;
 
 // Setup Middlewares
 app.use(morgan("combined", { stream: winston.stream }));
