@@ -1,5 +1,7 @@
 const cheerio = require("cheerio");
 
+const winston = require("../../config/winston");
+
 getPage = require("../../services/retrieveWebPageContent");
 
 urlLookup = {
@@ -11,6 +13,7 @@ urlLookup = {
 };
 
 module.exports = (req, response) => {
+  winston.info(`Scraping MetVUW charts for ${req.params.area}`);
   const url = urlLookup[req.params.area];
 
   getPage(url).then(res => {
@@ -18,7 +21,6 @@ module.exports = (req, response) => {
     let links = [];
 
     $("img").each((i, elem) => {
-      console.log(elem.attribs.src);
       if (elem.attribs.src.includes("rain"))
         links.push(`http://metvuw.com/forecast/${elem.attribs.src.slice(2)}`);
     });
