@@ -1,9 +1,11 @@
 // Import specific scrapers
-const getGlenorchy = require("./webcam_scrapers/glenorchy");
+const scrapeGlenorchy = require("./webcam_scrapers/glenorchy");
+const scrapeCoronetPeak = require("./webcam_scrapers/coronetPeak");
 
 // Translate webcam name to scraper method
 const scraperLookup = {
-  glenorchy: getGlenorchy
+  glenorchy: scrapeGlenorchy,
+  coronet: scrapeCoronetPeak
 };
 
 module.exports = (req, res) => {
