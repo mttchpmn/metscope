@@ -1,12 +1,12 @@
-// TODO - Move these details to config file and control for DEV / PROD
+const config = require("./config");
 
 const Pool = require("pg").Pool;
 const pool = new Pool({
-  user: "metscope",
-  host: "localhost",
-  database: "metscope",
-  password: "password",
-  port: 5432
+  user: config.db.user,
+  host: config.db.host,
+  database: config.db.database,
+  password: config.db.password,
+  port: config.db.port
 });
 
 module.exports = pool;
