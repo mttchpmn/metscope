@@ -5,8 +5,6 @@ const scrapeCoronetPeak = require("./webcam_scrapers/coronetPeak");
 const scrapeGlenorchy = require("./webcam_scrapers/glenorchy");
 const scrapeStAnne = require("./webcam_scrapers/stAnne");
 
-const scrapeStatic = require("./webcam_scrapers/static");
-
 // Translate webcam name to scraper method
 const scraperLookup = {
   glenorchy: scrapeGlenorchy,
