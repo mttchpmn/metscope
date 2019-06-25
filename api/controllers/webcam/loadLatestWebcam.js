@@ -3,7 +3,7 @@ const pool = require("../../config/db");
 const loadLatestWebcam = (req, res) => {
   const webcamName = req.params.name;
   pool.query(
-    "SELECT id, name, url, string from webcams where name = $1 LIMIT 1",
+    "SELECT id, name, url, string from webcams where name = $1 ORDER BY id DESC LIMIT 1",
     [webcamName],
     (err, results) => {
       if (err) throw err;
