@@ -33,7 +33,7 @@ Create table for webcams:
 
 ```
 CREATE TABLE webcams (
-    ID SERIAL PRIMARY KEY,
+    id SERIAL PRIMARY KEY,
     name VARCHAR(30),
     date TIMESTAMPTZ,
     url TEXT,
@@ -44,7 +44,13 @@ CREATE TABLE webcams (
 ## PM2
 
 Install PM2 globally:
-`npm install --global pm2`
+`npm install --global pm2@latest`
+
+Generate startup script:
+`pm2 startup systemd`
+
+Copy and paste command from last line of output (replace username with user):
+`sudo env PATH=$PATH:/usr/bin /usr/lib/node_modules/pm2/bin/pm2 startup systemd -u mttchpmn --hp /home/mttchpmn`
 
 Start app:
 `pm2 start app.js --name metscope`
@@ -100,3 +106,55 @@ pm2 start app.js --no-daemon
 pm2 start app.js --no-vizion
 pm2 start app.js --no-autorestart
 ```
+
+## NGINX
+
+Install NGINX:
+`sudo apt install nginx`
+
+Check apps allowed through firewall:
+`sudo ufw app list`
+
+Allow Nginx through the firewall:
+`sudo ufw allow 'Nginx HTTP`
+
+Verify change:
+`sudo ufw status`
+
+Check status of Nginx:
+`systemctl status nginx`
+
+Stop /start Nginx
+`sudo systemctl [start/stop/restart/reload/disable/enable] nginx`
+
+Obtain public IP address:
+`curl -4 icanhazip.com`
+
+Create site config file named api.metscope.com in /etc/nginx/sites-available:
+
+```
+server {
+    listen 80;
+
+    server_name api.metscope.com;
+
+    location / {
+        proxy_pass http://localhost3000;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection 'upgrade';
+        proxy_set_header Host $host;
+        proxy_cache_bypass $http_upgrade;
+    }
+}
+```
+
+Create linked copy in /etc/nginx/sites-enabled:
+`cd /etc/nginx/sites-enabled`
+`ln -s /etc/nginx/sites-available/api.metscope.com`
+
+Test setup:
+`sudo nginx -t`
+
+Reload nginx:
+`sudo systemctl reload nginx`
