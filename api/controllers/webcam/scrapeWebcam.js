@@ -39,7 +39,9 @@ module.exports = (req, res) => {
   if (!scraperLookup[webcamName])
     return res.json({
       status: 404,
-      message: "Webcam scraper not found.  Check your spelling"
+      message: `Webcam scraper not found.  Available webcams are: ${Object.keys(
+        scraperLookup
+      )}`
     });
 
   typeof scraperLookup[webcamName] === "string"
