@@ -1,12 +1,18 @@
 const moment = require("moment");
+const fs = require("fs");
+const appPath = require("app-root-path");
 
+const config = require("../config/config");
 const winston = require("../config/winston");
 const pool = require("../config/db");
+const saveImage = require("../services/saveImageToFile");
 
-module.exports = (name, url, string, response) => {
+module.exports = (name, downloadUrl, string, response) => {
   winston.info(`Attempting to save ${name} webcam to database`);
 
   const savedDate = moment.utc().format();
+  const fileName = `${moment.utc().format("YYYYMMDDHHmm")}Z.jpg`;
+  const hostedUrl = `${config.domain.baseUrl}/images/${name}/${fileName}`;
 
   // Load last image from DB to check to see if latest image is the same
   pool
@@ -29,9 +35,10 @@ module.exports = (name, url, string, response) => {
       pool
         .query(
           "INSERT INTO webcams (name, url, string, date) VALUES ($1, $2, $3, $4)",
-          [name, url, string, savedDate]
+          [name, hostedUrl, string, savedDate]
         )
         .then(res => {
+          saveImage(name, downloadUrl, fileName);
           winston.info(`Image added to database with date: ${savedDate}`);
           return response.json({
             status: 201,
@@ -39,6 +46,7 @@ module.exports = (name, url, string, response) => {
           });
         })
         .catch(err => {
+          console.log("ERROR:\n", err);
           // winston.error(err);
           return response.json({ status: 500, message: "Internal error" });
         });
