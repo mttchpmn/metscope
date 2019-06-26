@@ -36,13 +36,15 @@ module.exports = (req, res) => {
   winston.info(`Scraping webcam for ${webcamName}`);
 
   // Call scraper method
-  if (!scraperLookup[webcamName])
+  if (!scraperLookup[webcamName]) {
+    winston.warn(`Scraper for webcam: ${webcamName} not found`);
     return res.json({
       status: 404,
       message: `Webcam scraper not found.  Available webcams are: ${Object.keys(
         scraperLookup
       )}`
     });
+  }
 
   typeof scraperLookup[webcamName] === "string"
     ? scrapeStatic(webcamName, scraperLookup[webcamName], req, res)
