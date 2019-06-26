@@ -38,7 +38,8 @@ module.exports = (name, downloadUrl, string, response) => {
           [name, hostedUrl, string, savedDate]
         )
         .then(res => {
-          saveImage(name, downloadUrl, fileName);
+          saveImage(name, downloadUrl, fileName); // TODO - Introduce a .then(from the underlying function to log success)
+
           winston.info(`Image added to database with date: ${savedDate}`);
           return response.json({
             status: 201,
