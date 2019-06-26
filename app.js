@@ -17,6 +17,7 @@ const port = config.app.port;
 app.use(morgan("combined", { stream: winston.stream }));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use("/images", express.static("images"));
 
 // Instantiate API endpoints
 require("./api/config/routes")(app);
