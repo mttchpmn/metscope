@@ -1,5 +1,6 @@
 // External imports
 const express = require("express");
+const serveIndex = require("serve-index");
 const morgan = require("morgan");
 const bodyParser = require("body-parser");
 
@@ -17,7 +18,11 @@ const port = config.app.port;
 app.use(morgan("combined", { stream: winston.stream }));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use("/images", express.static("images"));
+app.use(
+  "/images",
+  express.static("images"),
+  serveIndex("images", { icons: true })
+);
 
 // Instantiate API endpoints
 require("./api/config/routes")(app);
