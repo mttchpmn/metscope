@@ -1,6 +1,9 @@
 const winston = require("../../config/winston");
 // Import specific scrapers
 const scrapeCoronetPeak = require("./webcam_scrapers/coronetPeak");
+const scrapeWhareKeaSW = require("./webcam_scrapers/whareKeaSW");
+const scrapeWhareKeaW = require("./webcam_scrapers/whareKeaW");
+const scrapeWhareKeaNE = require("./webcam_scrapers/whareKeaNE");
 const scrapeStatic = require("./webcam_scrapers/static");
 
 // TODO - Better webcam naming conventions
@@ -8,6 +11,9 @@ const scrapeStatic = require("./webcam_scrapers/static");
 // Translate webcam name to scraper method
 const scraperLookup = {
   coronet: scrapeCoronetPeak,
+  whareKeaSW: scrapeWhareKeaSW,
+  whareKeaW: scrapeWhareKeaW,
+  whareKeaNE: scrapeWhareKeaNE,
   fernhill: "https://www.queenstown.com/cams/aspen.jpg",
   cecilPeakW:
     "http://www.jablotool.com/Components/EYE02/StoredImage.ashx?id=QXG2A2FXGT&index=1",
