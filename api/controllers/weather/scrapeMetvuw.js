@@ -1,8 +1,7 @@
 const cheerio = require("cheerio");
 
 const winston = require("../../config/winston");
-
-getPage = require("../../services/retrieveWebPageContent");
+const getPage = require("../../services/retrieveWebPageContent");
 
 urlLookup = {
   nz: "http://metvuw.com/forecast/forecast.php?type=rain&region=nz&noofdays=10",
