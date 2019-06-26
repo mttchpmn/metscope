@@ -11,7 +11,7 @@ module.exports = (name, downloadUrl, string, response) => {
   winston.info(`Attempting to save ${name} webcam to database`);
 
   const savedDate = moment.utc().format();
-  const fileName = `${moment.utc().format("YYYYMMDDHHmm")}Z.jpg`;
+  const fileName = `${moment.utc().format("YYYYMMDDTHHmm")}Z.jpg`;
   const hostedUrl = `${config.domain.baseUrl}/images/${name}/${fileName}`;
 
   // Load last image from DB to check to see if latest image is the same
