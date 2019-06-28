@@ -33,10 +33,13 @@ const loadWebcam = (req, response) => {
         )
       ).then(res => {
         names.map((name, index) => {
-          resultObject[name] = {};
-          resultObject[name].title = webcamList[name].title;
-          resultObject[name].desc = webcamList[name].desc;
-          resultObject[name].images = res[index];
+          // Only return data for webcams we hvae defined
+          if (webcamList[name]) {
+            resultObject[name] = {};
+            resultObject[name].title = webcamList[name].title;
+            resultObject[name].images = res[index];
+            resultObject[name].desc = webcamList[name].desc;
+          }
         });
         return response.json(resultObject);
       });
