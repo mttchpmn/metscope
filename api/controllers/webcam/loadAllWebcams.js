@@ -2,6 +2,7 @@ const moment = require("moment");
 
 const pool = require("../../config/db");
 const winston = require("../../config/winston");
+const webcamList = require("../../config/webcamList");
 
 const loadWebcam = (req, response) => {
   winston.info(`Loading all webcams`);
@@ -32,7 +33,10 @@ const loadWebcam = (req, response) => {
         )
       ).then(res => {
         names.map((name, index) => {
-          resultObject[name] = res[index];
+          resultObject[name] = {};
+          resultObject[name].title = webcamList[name].title;
+          resultObject[name].desc = webcamList[name].desc;
+          resultObject[name].images = res[index];
         });
         return response.json(resultObject);
       });

@@ -1,4 +1,5 @@
 const winston = require("../../config/winston");
+const webcamList = require("../../config/webcamList");
 // Import specific scrapers
 const scrapeCoronetPeak = require("./webcam_scrapers/coronetPeak");
 const scrapeWhareKeaSW = require("./webcam_scrapers/whareKeaSW");
@@ -9,34 +10,19 @@ const scrapeStatic = require("./webcam_scrapers/static");
 // TODO - Better webcam naming conventions
 
 // Translate webcam name to scraper method
-const scraperLookup = {
+const dynamicScrapers = {
   coronet: scrapeCoronetPeak,
   whareKeaSW: scrapeWhareKeaSW,
   whareKeaW: scrapeWhareKeaW,
-  whareKeaNE: scrapeWhareKeaNE,
-  fernhill: "https://www.queenstown.com/cams/aspen.jpg",
-  cecilPeakW:
-    "http://www.jablotool.com/Components/EYE02/StoredImage.ashx?id=QXG2A2FXGT&index=1",
-  cecilPeakN:
-    "http://www.jablotool.com/Components/EYE02/StoredImage.ashx?id=H1H1ISJWPU&index=1",
-  mtNicholas: "http://58.84.48.53:1080/172.23.16.201/cover/1.jpg",
-  glenorchy: "https://www.snowgrass.co.nz/cust/glenorchy_air/images/webcam.jpg",
-  homer: "https://metdata.net.nz/SH94/camera/41/image.php",
-  mackinnon: "https://metdata.net.nz/doc/mackinnon/cam1/image.php",
-  stAnne: "https://metdata.net.nz/es/stanne/cam1/image.php",
-  milfordRJ: "http://snapithd.com/static/milford.jpg",
-  milfordSD:
-    "https://www.southerndiscoveries.co.nz/webcam-images/terminal/webcam1.jpg",
-  milfordSW:
-    "http://webcam.realjourneys.co.nz/watermark.php?source=mfdwebcam3.jpg"
+  whareKeaNE: scrapeWhareKeaNE
 };
 
 module.exports = (req, res) => {
   const webcamName = req.params.name;
   winston.info(`Scraping webcam for ${webcamName}`);
 
-  // Call scraper method
-  if (!scraperLookup[webcamName]) {
+  // Return 404 if we can't find the requested webcam
+  if (!webcamList[webcamName]) {
     winston.warn(`Scraper for webcam: ${webcamName} not found`);
     return res.json({
       status: 404,
@@ -46,7 +32,12 @@ module.exports = (req, res) => {
     });
   }
 
-  typeof scraperLookup[webcamName] === "string"
-    ? scrapeStatic(webcamName, scraperLookup[webcamName], req, res)
-    : scraperLookup[webcamName](req, res);
+  webcamList[webcamName].static
+    ? scrapeStatic(webcamName, webcamList[webcamName].originUrl, req, res)
+    : dynamicScrapers[webcamName](
+        webcamName,
+        webcamList[webcamName].originUrl,
+        req,
+        res
+      );
 };

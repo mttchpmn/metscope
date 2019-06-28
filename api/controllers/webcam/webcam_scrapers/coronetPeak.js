@@ -6,9 +6,7 @@ const getPage = require("../../../services/retrieveWebPageContent");
 const imageToString = require("../../../services/convertImageToString");
 const saveWebcam = require("../../../services/saveWebcamToDatabase");
 
-module.exports = (req, response) => {
-  const baseUrl = "https://www.coronetpeak.co.nz/weather-report/";
-
+module.exports = (name, baseUrl, req, response) => {
   getPage(baseUrl, 10)
     .then(res => {
       let urlRegex = new RegExp(
@@ -19,7 +17,7 @@ module.exports = (req, response) => {
       const imageUrl = `https://www.coronetpeak.co.nz${allImages.pop()}`;
 
       imageToString(imageUrl).then(str => {
-        saveWebcam("coronet", imageUrl, str, response);
+        saveWebcam(name, imageUrl, str, response);
       });
     })
 

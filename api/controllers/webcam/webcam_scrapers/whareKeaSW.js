@@ -6,10 +6,7 @@ const getPage = require("../../../services/retrieveWebPageContent");
 const imageToString = require("../../../services/convertImageToString");
 const saveWebcam = require("../../../services/saveWebcamToDatabase");
 
-module.exports = (req, response) => {
-  const baseUrl =
-    "https://www.wharekealodge.com/the-chalet/chalet-webcam-panorama/chalet-webcamsw/";
-
+module.exports = (name, baseUrl, req, response) => {
   getPage(baseUrl)
     .then(res => {
       const $ = cheerio.load(res.content);
@@ -22,7 +19,7 @@ module.exports = (req, response) => {
       });
       const imageUrl = allImages[0];
       imageToString(imageUrl).then(str => {
-        saveWebcam("whareKeaSW", imageUrl, str, response);
+        saveWebcam(name, imageUrl, str, response);
       });
     })
 

@@ -2,10 +2,17 @@ const moment = require("moment");
 
 const pool = require("../../config/db");
 const winston = require("../../config/winston");
+const webcamList = require("../../config/webcamList");
 
 const loadWebcam = (req, res) => {
   const webcamName = req.params.name;
   winston.info(`Loading webcams for ${webcamName}`);
+
+  let responseObj = {
+    name: webcamName,
+    title: webcamList[webcamName].title,
+    desc: webcamList[webcamName].desc
+  };
 
   let twentyFourHoursAgo = moment
     .utc()
@@ -14,12 +21,13 @@ const loadWebcam = (req, res) => {
 
   pool
     .query(
-      "SELECT id, name, date, url, string FROM webcams WHERE name = $1 and date > $2 ORDER BY id DESC",
+      "SELECT id, name, date, url FROM webcams WHERE name = $1 and date > $2 ORDER BY id DESC",
       [webcamName, twentyFourHoursAgo]
     )
     .then(results => {
       winston.info(`Found ${results.rowCount} rows`);
-      res.status(200).json(results.rows);
+      responseObj.images = results.rows;
+      res.status(200).json(responseObj);
     })
     .catch(err => winston.error(err));
 };
