@@ -7,7 +7,6 @@ const webcamList = require("../../config/webcamList");
 const loadWebcam = (req, response) => {
   winston.info(`Loading all webcams`);
 
-  //   console.log("req :", req);
   let names;
   let resultObject = {};
   let twentyFourHoursAgo = moment
