@@ -1,10 +1,38 @@
 const pool = require("../../../config/db");
-const imageToString = require("../../../services/convertImageToString.js");
-const saveWebcam = require("../../../services/saveWebcamToDatabase");
+const winston = require("../../../config/winston");
+const saveImageIfNew = require("../../../services/saveImageIfNew");
+const saveWebcamToDatabase = require("../../../services/saveWebcamToDatabase");
 
 module.exports = (webcamName, imageUrl, req, res) => {
-  // TODO - Handle the response seinding in this file, rather than in saveWebcam function
-  imageToString(imageUrl).then(string => {
-    saveWebcam(webcamName, imageUrl, string, res);
-  });
+  saveImageIfNew(webcamName, imageUrl)
+    .then(fileName => {
+      // A new image was saved
+      if (fileName) {
+        return saveWebcamToDatabase(webcamName, fileName);
+      }
+      // No new image was saved
+      winston.info("Image already exists in database");
+      return;
+    })
+    .then(resObj => {
+      if (resObj) {
+        winston.info(
+          `Image added to database with attributes: ${JSON.stringify(resObj)}`
+        );
+        return res.json({
+          status: 201,
+          message: `Image added to database with attributes: ${JSON.stringify(
+            resObj
+          )}`
+        });
+      }
+      return res.json({
+        status: 200,
+        message: "Image already exists in database"
+      });
+    })
+    .catch(err => {
+      winston.error(err);
+      return res.json({ status: 500, message: err });
+    });
 };

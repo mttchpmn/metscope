@@ -38,12 +38,12 @@ const _saveFile = (webcamName, url, fileName) =>
         );
       })
       .then(dbResults => {
-        console.log("dbResults.rows :", dbResults.rows);
+        // console.log("dbResults.rows :", dbResults.rows);
         return readFile(dbResults.rows[0].location);
       })
       .then(oldBuffer => {
-        console.log("oldBuffer :", oldBuffer);
-        console.log("newBuffer :", newBuffer);
+        // console.log("oldBuffer :", oldBuffer);
+        // console.log("newBuffer :", newBuffer);
         return oldBuffer.equals(newBuffer);
       })
       .then(imageExists => {
@@ -54,9 +54,9 @@ const _saveFile = (webcamName, url, fileName) =>
             newBuffer
           );
         }
-        reject("EEXISTS: Image already exists and was not saved");
+        resolve(false);
       })
-      .then(() => resolve())
+      .then(() => resolve(true))
       .catch(err => reject(err));
   });
 
@@ -75,9 +75,12 @@ module.exports = (webcamName, url) =>
         return;
       })
       .then(() => _saveFile(webcamName, url, fileName))
-      .then(() => {
-        winston.info("File saved successfully");
-        resolve(fileName);
+      .then(imageSaved => {
+        if (imageSaved) {
+          winston.info("File saved successfully");
+          resolve(fileName);
+        }
+        resolve();
       })
       .catch(err => reject(err));
   });
