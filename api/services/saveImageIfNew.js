@@ -15,6 +15,14 @@ const mkdir = util.promisify(fs.mkdir);
 const readFile = util.promisify(fs.readFile);
 const writeFile = util.promisify(fs.writeFile);
 
+// Wrapper function that returns True if directory exists
+const _dirExists = dirPath =>
+  new Promise((resolve, reject) => {
+    access(dirPath)
+      .then(() => resolve(true))
+      .catch(() => resolve(false));
+  });
+
 // Wrapper function for readability
 const _saveFile = (webcamName, url, fileName) =>
   new Promise((resolve, reject) => {
@@ -29,8 +37,15 @@ const _saveFile = (webcamName, url, fileName) =>
           [webcamName]
         );
       })
-      .then(dbResults => readFile(dbResults.rows[0].location))
-      .then(oldBuffer => oldBuffer.equals(newBuffer))
+      .then(dbResults => {
+        console.log("dbResults.rows :", dbResults.rows);
+        return readFile(dbResults.rows[0].location);
+      })
+      .then(oldBuffer => {
+        console.log("oldBuffer :", oldBuffer);
+        console.log("newBuffer :", newBuffer);
+        return oldBuffer.equals(newBuffer);
+      })
       .then(imageExists => {
         if (!imageExists) {
           winston.info("Image is new and will be saved");
@@ -50,33 +65,19 @@ module.exports = (webcamName, url) =>
     winston.info("Saving image to file...");
     const fileName = `${moment.utc().format("YYYYMMDDTHHmm")}Z.jpg`;
 
-    // Check if directory already exists
-    access(`${appPath}/images/${webcamName}/`)
-      // Dir exists
-      .then(() => {
+    _dirExists(`${appPath}/images/${webcamName}/`)
+      .then(exists => {
+        if (!exists) {
+          winston.warn(`${webcamName} directory did not exist.  Creating...`);
+          return mkdir(`${appPath}/images/${webcamName}`);
+        }
         winston.info(`${webcamName} directory exists. Will use.`);
-
-        _saveFile(webcamName, url, fileName)
-          .then(() => {
-            winston.info("File saved successfully");
-            resolve(fileName);
-          })
-          .catch(err => reject(err));
+        return;
       })
-      // Dir doesn't exist
-      .catch(err => {
-        winston.warn(`${webcamName} directory did not exist.  Creating...`);
-
-        // Create the directory
-        mkdir(`${appPath}/images/${webcamName}`)
-          .then(() => {
-            _saveFile(webcamName, url, fileName)
-              .then(() => {
-                winston.info("File saved successfully");
-                resolve(fileName);
-              })
-              .catch(() => winston.error("Error saving file"));
-          })
-          .catch(err => winston.error(`Error creating directory: ${err}`));
-      });
+      .then(() => _saveFile(webcamName, url, fileName))
+      .then(() => {
+        winston.info("File saved successfully");
+        resolve(fileName);
+      })
+      .catch(err => reject(err));
   });
