@@ -37,7 +37,7 @@ CREATE TABLE webcams (
     name VARCHAR(30),
     date TIMESTAMPTZ,
     url TEXT,
-    string TEXT
+    location TEXT
 );
 ```
 
