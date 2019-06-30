@@ -1,5 +1,6 @@
 const { createLogger, format, transports } = require("winston");
 const { combine, timestamp, printf } = format;
+const { Loggly } = require("winston-loggly-bulk");
 const appRoot = require("app-root-path");
 
 const consoleFormat = printf(
@@ -45,6 +46,17 @@ const logger = createLogger({
   ],
   exitOnError: false
 });
+
+if (process.env.NODE_ENV === "production") {
+  logger.add(
+    new Loggly({
+      token: process.env.LOGGLY_TOKEN,
+      subdomain: "metscope",
+      tags: ["METSCOPE"],
+      json: true
+    })
+  );
+}
 
 logger.stream = {
   write: function(message, encoding) {
