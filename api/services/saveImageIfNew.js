@@ -48,6 +48,9 @@ const _saveFile = (webcamName, url, fileName) =>
           );
           return;
         }
+        winston.info(
+          `Found latest image on disk: ${dbResults.rows[0].location}`
+        );
         return readFile(dbResults.rows[0].location);
       })
       .then(oldBuffer => {
@@ -62,6 +65,9 @@ const _saveFile = (webcamName, url, fileName) =>
             newBuffer
           );
         }
+        winston.info(
+          "Image is the same as latest on disk and will not be saved"
+        );
         resolve(false);
       })
       .then(() => resolve(true))
