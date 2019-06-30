@@ -9,8 +9,6 @@ const pool = require("../config/db");
 
 module.exports = (name, fileName) =>
   new Promise((resolve, reject) => {
-    console.log("name :", name);
-    console.log("fileName :", fileName);
     winston.info(`Attempting to save ${name} webcam to database`);
 
     const savedDate = moment.utc().format();
