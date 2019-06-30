@@ -6,25 +6,23 @@ const getPage = require("../../../services/retrieveWebPageContent");
 const imageToString = require("../../../services/convertImageToString");
 const saveWebcam = require("../../../services/saveWebcamToDatabase");
 
+const processWebcamSendResponse = require("../../../services/processWebcamSendResponse");
+
 module.exports = (name, baseUrl, req, response) => {
+  const allImages = [];
   getPage(baseUrl)
-    .then(res => {
-      const $ = cheerio.load(res.content);
-
-      const allImages = [];
-
+    .then(res => cheerio.load(res.content))
+    .then($ => {
       $("img").map((i, elem) => {
         if (elem.attribs.src.includes("webcamNE"))
           allImages.push(elem.attribs.src);
       });
       const imageUrl = allImages[0];
-      imageToString(imageUrl).then(str => {
-        saveWebcam(name, imageUrl, str, response);
-      });
+      return imageUrl;
     })
-
-    // TODO - Implement the err from the underlying function
+    .then(imageUrl => processWebcamSendResponse("whareKeaNE", imageUrl))
+    .then(resObj => response.json(resObj))
     .catch(err =>
-      winston.error("Failed to get webpage for Whare Kea North East")
+      response.json({ status: 500, message: `Internal error:\n${err}` })
     );
 };
