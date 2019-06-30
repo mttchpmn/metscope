@@ -38,12 +38,20 @@ const _saveFile = (webcamName, url, fileName) =>
         );
       })
       .then(dbResults => {
-        // console.log("dbResults.rows :", dbResults.rows);
+        if (!dbResults || !dbResults.rows.length) {
+          winston.warn("Found no rows in databse - will save image as new");
+          return;
+        }
+        if (!dbResults.rows[0].location) {
+          winston.warn(
+            "Could not find a matching file image from row - will save image as new"
+          );
+          return;
+        }
         return readFile(dbResults.rows[0].location);
       })
       .then(oldBuffer => {
-        // console.log("oldBuffer :", oldBuffer);
-        // console.log("newBuffer :", newBuffer);
+        if (!oldBuffer) return false;
         return oldBuffer.equals(newBuffer);
       })
       .then(imageExists => {
