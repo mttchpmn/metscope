@@ -27,7 +27,7 @@ const loadWebcam = (req, res) => {
 
   pool
     .query(
-      "SELECT id, name, date, url FROM webcams WHERE name = $1 and date > $2 ORDER BY id DESC",
+      "SELECT id, name, date, url FROM webcams WHERE name = $1 and date > $2 ORDER BY id ASC",
       [webcamName, twentyFourHoursAgo]
     )
     .then(results => {
