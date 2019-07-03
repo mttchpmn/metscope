@@ -1,5 +1,6 @@
 // External imports
 const express = require("express");
+const cors = require("cors");
 const serveIndex = require("serve-index");
 const morgan = require("morgan");
 const bodyParser = require("body-parser");
@@ -16,6 +17,7 @@ const port = config.app.port;
 
 // Setup Middlewares
 app.use(morgan("combined", { stream: winston.stream }));
+app.use(cors()); // This enables CORS for ALL routes
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(
