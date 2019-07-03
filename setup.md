@@ -136,7 +136,7 @@ Create site config file named api.metscope.com in /etc/nginx/sites-available:
 server {
     listen 80;
 
-    server_name metscope.com api.metscope.com;
+    server_name api.metscope.com;
 
     location / {
         proxy_pass http://localhost3000;
