@@ -10,6 +10,6 @@ module.exports = {
     port: process.env.DB_PORT || 5432
   },
   domain: {
-    baseUrl: "http://api.metscope.com"
+    baseUrl: "https://api.metscope.com"
   }
 };
