@@ -136,7 +136,7 @@ Create site config file named api.metscope.com in /etc/nginx/sites-available:
 server {
     listen 80;
 
-    server_name api.metscope.com;
+    server_name metscope.com api.metscope.com;
 
     location / {
         proxy_pass http://localhost3000;
@@ -158,3 +158,32 @@ Test setup:
 
 Reload nginx:
 `sudo systemctl reload nginx`
+
+## HTTPS
+
+Add Certbot PPA:
+
+```
+sudo apt-get update
+sudo apt-get install software-properties-common
+sudo add-apt-repository universe
+sudo add-apt-repository ppa:certbot/certbot
+sudo apt-get update
+```
+
+Install Certbot:
+`sudo apt-get install certbot python-certbot-nginx`
+
+Setup Certbot with Nginx:
+`sudo certbot --nginx`
+
+Test automatic renewal:
+`sudo certbot renew --dry-run`
+
+Allow Nginx https through firewall:
+`sudo ufw status`
+`sudo ufw allow 'Nginx Full'`
+`sudo ufw delete allow 'Nginx HTTP'`
+
+Restart Nginx:
+`sudo systemctl restart nginx'
