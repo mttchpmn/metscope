@@ -4,7 +4,7 @@
   "description": "Express API for Metscope Weather Services",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha"
   },
   "author": "Matt Chapman",
   "license": "ISC",
