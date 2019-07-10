@@ -12,12 +12,10 @@
     "app-root-path": "^2.2.1",
     "axios": "^0.19.0",
     "axios-retry": "^3.1.2",
-    "chai": "^4.2.0",
     "cheerio": "^1.0.0-rc.3",
     "cors": "^2.8.5",
     "dotenv": "^8.0.0",
     "express": "^4.17.1",
-    "mocha": "^6.1.4",
     "moment": "^2.24.0",
     "morgan": "^1.9.1",
     "nodemon": "^1.19.1",
@@ -27,6 +25,9 @@
     "winston-loggly-bulk": "^3.0.1"
   },
   "devDependencies": {
+    "mocha": "^6.1.4",
+    "chai": "^4.2.0",
+    "chai-as-promised": "^7.1.1",
     "supertest": "^4.0.2"
   }
 }
