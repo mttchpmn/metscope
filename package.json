@@ -27,6 +27,6 @@
     "winston-loggly-bulk": "^3.0.1"
   },
   "devDependencies": {
-    "chai-http": "^4.3.0"
+    "supertest": "^4.0.2"
   }
 }
