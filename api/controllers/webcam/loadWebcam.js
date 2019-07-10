@@ -9,9 +9,7 @@ const loadWebcam = (req, res) => {
   winston.info(`Loading webcams for ${webcamName}`);
 
   if (!webcamList[webcamName]) {
-    return res
-      .status(404)
-      .json({ status: 404, message: `Webcam: ${webcamName} not found` });
+    return res.status(404).json({ message: `Webcam: ${webcamName} not found` });
   }
 
   let responseObj = {
