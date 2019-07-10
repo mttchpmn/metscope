@@ -23,17 +23,16 @@ describe("API endpoints", () => {
     describe("/load/:name", () => {
       it("Should return 404 if name not provided", () => {});
       it("Should return 404 if name not found", () => {});
-      it("Should return results in correct format", done => {
-        request(app)
+      it("Should return results in correct format", () => {
+        return request(app)
           .get("/webcam/load/glenorchy")
-          .end((err, res) => {
+          .then(res => {
             expect(res.statusCode).to.equal(200);
             expect(res.body).to.be.an("object");
             expect(res.body).to.have.property("title");
             expect(res.body).to.have.property("name");
             expect(res.body).to.have.property("desc");
             expect(res.body).to.have.property("images");
-            done();
           });
       });
 
