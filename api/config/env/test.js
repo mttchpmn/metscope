@@ -10,6 +10,6 @@ module.exports = {
     port: process.env.DB_PORT || 5432
   },
   domain: {
-    baseUrl: `localhost:${app.port}`
+    baseUrl: `localhost:${process.env.PORT || 3000}`
   }
 };
