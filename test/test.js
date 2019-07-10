@@ -1,11 +1,8 @@
 const mocha = require("mocha");
 const chai = require("chai");
-const chaiHttp = require("chai-http");
+const request = require("supertest");
 const app = require("../app.js");
-
-chai.use(chaiHttp);
 const expect = chai.expect;
-const should = chai.should;
 
 console.log("Running Tests...");
 
@@ -26,13 +23,17 @@ describe("API endpoints", () => {
     describe("/load/:name", () => {
       it("Should return 404 if name not provided", () => {});
       it("Should return 404 if name not found", () => {});
-      it("Should return results in correct format", () => {
-        chai
-          .request(app)
+      it("Should return results in correct format", done => {
+        request(app)
           .get("/webcam/load/glenorchy")
           .end((err, res) => {
-            console.log("res :", res);
-            res.should.have.statusCode(200);
+            expect(res.statusCode).to.equal(200);
+            expect(res.body).to.be.an("object");
+            expect(res.body).to.have.property("title");
+            expect(res.body).to.have.property("name");
+            expect(res.body).to.have.property("desc");
+            expect(res.body).to.have.property("images");
+            done();
           });
       });
 
