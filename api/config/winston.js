@@ -10,6 +10,7 @@ const consoleFormat = printf(
 
 const options = {
   file: {
+    silent: process.env.NODE_ENV === "test" ? true : false,
     level: "info",
     format: format.combine(
       format.timestamp({
@@ -26,6 +27,7 @@ const options = {
     colorize: false
   },
   console: {
+    silent: process.env.NODE_ENV === "test" ? true : false,
     level: "debug",
     format: combine(
       format.timestamp({
