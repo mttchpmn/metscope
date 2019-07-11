@@ -4,6 +4,7 @@
   "description": "Express API for Metscope Weather Services",
   "main": "index.js",
   "scripts": {
+    "start": "nodemon app.js",
     "test": "NODE_ENV=test mocha --timeout 10000"
   },
   "author": "Matt Chapman",
