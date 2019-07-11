@@ -5,6 +5,7 @@ const scrapeCoronetPeak = require("./webcam_scrapers/coronetPeak");
 const scrapeWhareKeaSW = require("./webcam_scrapers/whareKeaSW");
 const scrapeWhareKeaW = require("./webcam_scrapers/whareKeaW");
 const scrapeWhareKeaNE = require("./webcam_scrapers/whareKeaNE");
+const scrapeQueenstownAirport = require("./webcam_scrapers/queenstownAirport");
 const scrapeStatic = require("./webcam_scrapers/static");
 
 // TODO - Better webcam naming conventions
@@ -14,7 +15,12 @@ const dynamicScrapers = {
   coronet: scrapeCoronetPeak,
   whareKeaSW: scrapeWhareKeaSW,
   whareKeaW: scrapeWhareKeaW,
-  whareKeaNE: scrapeWhareKeaNE
+  whareKeaNE: scrapeWhareKeaNE,
+  qnAirportW: scrapeQueenstownAirport,
+  qnAirportNW: scrapeQueenstownAirport,
+  qnAirportN: scrapeQueenstownAirport,
+  qnAirportNE: scrapeQueenstownAirport,
+  qnAirportE: scrapeQueenstownAirport
 };
 
 module.exports = (req, res) => {

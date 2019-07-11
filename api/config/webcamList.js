@@ -5,6 +5,41 @@ module.exports = {
     static: false,
     originUrl: "https://www.coronetpeak.co.nz/weather-report/"
   },
+  qnAirportNW: {
+    title: "Queenstown Airport NW",
+    desc: "Situated on Queenstown airport looking Northwest towards the tower",
+    static: false,
+    originUrl:
+      "https://www.queenstownairport.co.nz/travelling/flight-info/webcam"
+  },
+  qnAirportN: {
+    title: "Queenstown Airport N",
+    desc: "Situated on Queenstown airport looking North towards Coronet",
+    static: false,
+    originUrl:
+      "https://www.queenstownairport.co.nz/travelling/flight-info/webcam"
+  },
+  qnAirportNE: {
+    title: "Queenstown Airport NE",
+    desc: "Situated on Queenstown airport looking NE towards Crown Range",
+    static: false,
+    originUrl:
+      "https://www.queenstownairport.co.nz/travelling/flight-info/webcam"
+  },
+  qnAirportW: {
+    title: "Queenstown Airport W",
+    desc: "Situated on Queenstown airport looking W down Lake Wakatipu",
+    static: false,
+    originUrl:
+      "https://www.queenstownairport.co.nz/travelling/flight-info/webcam"
+  },
+  qnAirportE: {
+    title: "Queenstown Airport E",
+    desc: "Situated Queenstown airport looking E towards the Remarkables",
+    static: false,
+    originUrl:
+      "https://www.queenstownairport.co.nz/travelling/flight-info/webcam"
+  },
   whareKeaSW: {
     title: "Whare Kea South-West",
     desc: "Situated at Whare Kea Chalet looking South-West",
