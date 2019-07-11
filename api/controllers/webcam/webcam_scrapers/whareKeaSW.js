@@ -20,7 +20,7 @@ module.exports = (name, baseUrl, req, response) => {
       const imageUrl = allImages[0];
       return imageUrl;
     })
-    .then(imageUrl => processWebcamSendResponse("whareKeSWE", imageUrl))
+    .then(imageUrl => processWebcamSendResponse("whareKeSW", imageUrl))
     .then(resObj => response.json(resObj))
     .catch(err =>
       response.json({ status: 500, message: `Internal error:\n${err}` })
