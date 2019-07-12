@@ -3,13 +3,13 @@ const loadWebcam = require("../controllers/webcam/loadWebcam.js");
 const loadAllWebcams = require("../controllers/webcam/loadAllWebcams");
 const loadLatestWebcam = require("../controllers/webcam/loadLatestWebcam.js");
 const purgeWebcams = require("../controllers/webcam/purgeWebcams");
-
 const scrapeMetvuw = require("../controllers/weather/scrapeMetvuw");
 const scrapeQmug = require("../controllers/weather/scrapeQmug");
+const config = require("../config/config");
 
 module.exports = app => {
   app.get("/", (req, res) => {
-    res.json({ info: `Metscope API online at port ${port}` });
+    res.json({ info: `Metscope API online at port ${config.app.port}` });
   });
 
   app.get("/webcam/scrape/:name", scrapeWebcam);
