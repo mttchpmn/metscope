@@ -27,7 +27,7 @@ app.use(
 );
 
 // Instantiate API endpoints
-require("./api/config/routes")(app);
+require("./api/routes/routes")(app);
 
 // Launch app
 winston.info(`API online at port ${port}`);
