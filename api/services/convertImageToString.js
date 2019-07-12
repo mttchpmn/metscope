@@ -12,7 +12,7 @@ module.exports = url =>
       .get(url, { responseType: "arraybuffer" })
       .then(res => {
         winston.info("Image retrieved and converted to string");
-        let string = `data:image/png;base64,${Buffer.from(
+        const string = `data:image/png;base64,${Buffer.from(
           res.data,
           "binary"
         ).toString("base64")}`;
