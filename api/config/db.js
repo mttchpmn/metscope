@@ -6,7 +6,8 @@ const pool = new Pool({
   host: config.db.host,
   database: config.db.database,
   password: config.db.password,
-  port: config.db.port
+  port: config.db.port,
+  max: config.db.maxConnections || 10
 });
 
 module.exports = pool;
