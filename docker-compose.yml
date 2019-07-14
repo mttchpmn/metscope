@@ -14,6 +14,7 @@ services:
     restart: always
     volumes:
       - ./database/db_init:/docker-entrypoint-initdb.d
+      # NB: sudo rm -rf db_data folder to nuke DB
       - ./database/db_data:/var/lib/postgresql/data
     ports:
       - "5433:5432"
