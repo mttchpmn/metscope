@@ -2,7 +2,7 @@
   "name": "metscope-api",
   "version": "1.0.0",
   "description": "Express API for Metscope Weather Services",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "start": "nodemon app.js",
     "test": "NODE_ENV=test mocha --timeout 10000"
