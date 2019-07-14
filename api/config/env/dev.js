@@ -4,10 +4,11 @@ module.exports = {
   },
   db: {
     user: "metscope",
-    host: "localhost",
+    // 'db' refers to the database host on the Docker Containers internal network
+    host: "db",
     database: "metscope",
     password: "password",
-    port: process.env.DB_PORT || 5432
+    port: 5432
   },
   domain: {
     baseUrl: `localhost:${process.env.PORT || 3000}`
