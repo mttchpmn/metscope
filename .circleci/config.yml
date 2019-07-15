@@ -1,0 +1,57 @@
+version: 2
+jobs:
+  build+test:
+    docker:
+      - image: circleci/node:10.0
+    steps:
+      - checkout
+      - run:
+          name: Ident
+          command: |
+            echo 'Building and testing branch'
+            echo 'Repo:'
+            ls -alh
+
+  deploy-staging:
+    docker:
+      - image: circleci/node:10.0
+    steps:
+      - run:
+          name: Ident
+          command: |
+            echo 'Deploying 'staging'' branch to staging environment'
+
+  deploy-production:
+    docker:
+      - image: circleci/node:10.0
+    steps:
+      - run:
+          name: Ident
+          command: |
+            echo 'Deploying 'master' branch to production environment'
+
+workflows:
+  version: 2
+  build+deploy:
+    jobs:
+      - build+test:
+          filters:
+            branches:
+              only:
+                - develop
+                - staging
+                - master
+
+      - deploy-staging:
+          requires:
+            - build+test
+          filters:
+            branches:
+              only: staging
+
+      - deploy-production:
+          requires:
+            - build+test
+          filters:
+            branches:
+              only: master
