@@ -8,7 +8,7 @@ jobs:
       - run:
           name: Ident
           command: |
-            echo Building and testing branch; echo ${CIRCLE_BRANCH}
+            echo 'Building and testing branch'; echo ${CIRCLE_BRANCH}
             echo 'Repo:'
             ls -alh
 
