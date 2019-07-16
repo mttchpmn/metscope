@@ -18,7 +18,7 @@ jobs:
           name: Deploy staging branch to DigitalOcean Droplet
           command: |
             echo 'Deploying to staging environment'
-            ssh -o "StrictHostKeyChecking no" ${DROPLET_USER}@${DROPLET_ADDRESS} 'cd ${STAGING_PATH}; ls -alh'
+            ssh -o "StrictHostKeyChecking no" ${DROPLET_USER}@${DROPLET_ADDRESS} 'cd /home/metscope/staging/metscope; ls -alh'
 
   deploy-production:
     docker:
