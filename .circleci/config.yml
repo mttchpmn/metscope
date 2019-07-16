@@ -6,20 +6,19 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Ident
+          name: Identify branch
           command: |
-            echo 'Building and testing branch'; echo ${CIRCLE_BRANCH}
-            echo 'Repo:'
-            ls -alh
+            echo ${CIRCLE_BRANCH}
 
   deploy-staging:
     docker:
       - image: circleci/node:10.0
     steps:
       - run:
-          name: Ident
+          name: Deploy staging branch to DigitalOcean Droplet
           command: |
             echo 'Deploying 'staging'' branch to staging environment'
+            ssh -o "StrictHostKeyChecking no" ${DROPLET_USER}@${DROPLET_ADDRESS} 'cd ${STAGING_PATH}; ls -alh'
 
   deploy-production:
     docker:
