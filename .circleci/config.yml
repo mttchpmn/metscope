@@ -8,7 +8,7 @@ jobs:
       - run:
           name: Ident
           command: |
-            echo 'Building and testing branch'
+            echo 'Building and testing branch - ${CIRCLE_BRANCH}'
             echo 'Repo:'
             ls -alh
 
@@ -20,6 +20,8 @@ jobs:
           name: Ident
           command: |
             echo 'Deploying 'staging'' branch to staging environment'
+            echo 'user - ${DROPLET_USER}'
+            echo 'address - ${DROPLET_ADDRESS}'
 
   deploy-production:
     docker:
