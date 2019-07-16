@@ -28,13 +28,13 @@ jobs:
           name: Ident
           command: |
             echo 'Deploying 'master' branch to production environment'
-            ssh -o "StrictHostKeyChecking no" ${DROPLET_USER}@${DROPLET_ADDRESS} '\ 
-            cd /home/metscope/prod/metscope; \ 
-            git pull; \ 
-            docker stop METSCOPE-PROD; \ 
-            docker rm METSCOPE-PROD; \ 
-            docker build -t metscope-api .; \ 
-            docker run --name METSCOPE-PROD -- restart always -p 3000:3000 -d metscope-api; \ 
+            ssh -o "StrictHostKeyChecking no" ${DROPLET_USER}@${DROPLET_ADDRESS} '\
+            cd /home/metscope/prod/metscope; \
+            git pull; \
+            docker stop METSCOPE-PROD; \
+            docker rm METSCOPE-PROD; \
+            docker build -t metscope-api .; \
+            docker run --name METSCOPE-PROD --restart always -p 3000:3000 -d metscope-api; \
             echo "Deploy completed"'
 
 workflows:
