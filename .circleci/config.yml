@@ -17,7 +17,7 @@ jobs:
       - run:
           name: Deploy staging branch to DigitalOcean Droplet
           command: |
-            echo 'Deploying 'staging'' branch to staging environment'
+            echo 'Deploying to staging environment'
             ssh -o "StrictHostKeyChecking no" ${DROPLET_USER}@${DROPLET_ADDRESS} 'cd ${STAGING_PATH}; ls -alh'
 
   deploy-production:
