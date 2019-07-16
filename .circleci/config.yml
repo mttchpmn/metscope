@@ -1,6 +1,6 @@
 version: 2
 jobs:
-  build+test:
+  run-tests:
     docker:
       - image: circleci/node:10.0
     steps:
@@ -10,7 +10,7 @@ jobs:
           command: |
             echo ${CIRCLE_BRANCH}
 
-  deploy-staging:
+  deploy-to-staging-env:
     docker:
       - image: circleci/node:10.0
     steps:
@@ -20,7 +20,7 @@ jobs:
             echo 'Deploying to staging environment'
             ssh -o "StrictHostKeyChecking no" ${DROPLET_USER}@${DROPLET_ADDRESS} 'cd /home/metscope/staging/metscope; git pull; npm install;'
 
-  deploy-production:
+  deploy-to-production-env:
     docker:
       - image: circleci/node:10.0
     steps:
@@ -39,9 +39,9 @@ jobs:
 
 workflows:
   version: 2
-  build+deploy:
+  BUILD-AND-DEPLOY:
     jobs:
-      - build+test:
+      - run-tests:
           filters:
             branches:
               only:
@@ -49,16 +49,16 @@ workflows:
                 - staging
                 - master
 
-      - deploy-staging:
+      - deploy-to-staging-env:
           requires:
-            - build+test
+            - run-tests
           filters:
             branches:
               only: staging
 
-      - deploy-production:
+      - deploy-to-production-env:
           requires:
-            - build+test
+            - run-tests
           filters:
             branches:
               only: master
