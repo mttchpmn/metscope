@@ -25,8 +25,7 @@ module.exports = (webcamName, imageUrl, req, res) => {
           )}`
         });
       }
-      return res.json({
-        status: 200,
+      return res.status(200).json({
         message: "Image already exists in database"
       });
     })
