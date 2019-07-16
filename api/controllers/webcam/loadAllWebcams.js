@@ -21,27 +21,23 @@ const loadWebcam = (req, response) => {
       names = results.rows.map(row => row.name);
       winston.info(`Found all webcam names in database: ${names}`);
 
-      Promise.all(
-        names.map(name =>
-          pool
-            .query(
-              `SELECT  id, name, date, url FROM webcams WHERE name = $1 and date > $2 ORDER BY id ASC`,
-              [name, twentyFourHoursAgo]
-            )
-            .then(results => results.rows)
-        )
-      ).then(res => {
-        names.map((name, index) => {
-          // Only return data for webcams we hvae defined
-          if (webcamList[name]) {
-            resultObject[name] = {};
-            resultObject[name].title = webcamList[name].title;
-            resultObject[name].images = res[index];
-            resultObject[name].desc = webcamList[name].desc;
-          }
-        });
-        return response.json(resultObject);
+      return pool.query(
+        `SELECT  id, name, date, url FROM webcams WHERE date > $1 ORDER BY id ASC;`,
+        [twentyFourHoursAgo]
+      );
+    })
+    .then(results => results.rows)
+    .then(res => {
+      names.map((name, index) => {
+        // Only return data for webcams we hvae defined
+        if (webcamList[name]) {
+          resultObject[name] = {};
+          resultObject[name].title = webcamList[name].title;
+          resultObject[name].images = res.filter(i => i.name === name);
+          resultObject[name].desc = webcamList[name].desc;
+        }
       });
+      return response.json(resultObject);
     })
     .catch(err => winston.error(err));
 };
