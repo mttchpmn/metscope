@@ -19,15 +19,13 @@ module.exports = (webcamName, imageUrl, req, res) => {
         winston.info(
           `Image added to database with attributes: ${JSON.stringify(resObj)}`
         );
-        return res.json({
-          status: 201,
+        return res.status(201).json({
           message: `Image added to database with attributes: ${JSON.stringify(
             resObj
           )}`
         });
       }
-      return res.json({
-        status: 200,
+      return res.status(200).json({
         message: "Image already exists in database"
       });
     })
