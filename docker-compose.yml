@@ -1,5 +1,7 @@
 version: "3"
 services:
+  # To run API standalone:
+  # docker-compose run --name METSCOPE-PROD -d --service-ports web
   web:
     container_name: WEB_API
     build: .

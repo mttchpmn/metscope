@@ -4,3 +4,4 @@ config/credentials.js
 .env
 images/*
 !images/.gitkeep
+database/db_data
