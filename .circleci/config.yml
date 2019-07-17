@@ -33,8 +33,7 @@ jobs:
             git pull; \
             docker stop METSCOPE-PROD; \
             docker rm METSCOPE-PROD; \
-            docker build -t metscope-api .; \
-            docker run --name METSCOPE-PROD --restart always -p 3000:3000 -d metscope-api; \
+            docker-compose run --name METSCOPE-PROD --service-ports -d web; \
             echo "Deploy completed"'
 
 workflows:
