@@ -8,7 +8,6 @@ const loadWebcam = (req, response) => {
   winston.info(`Loading all webcams`);
 
   let names;
-  let resultObject = {};
   let twentyFourHoursAgo = moment
     .utc()
     .subtract(24, "hours")
@@ -18,7 +17,7 @@ const loadWebcam = (req, response) => {
   pool
     .query("SELECT DISTINCT name FROM webcams;")
     .then(results => {
-      names = results.rows.map(row => row.name);
+      names = results.rows.map(row => row.name).sort();
       winston.info(`Found all webcam names in database: ${names}`);
 
       return pool.query(
@@ -28,16 +27,17 @@ const loadWebcam = (req, response) => {
     })
     .then(results => results.rows)
     .then(res => {
-      names.map((name, index) => {
-        // Only return data for webcams we hvae defined
+      let resultArray = names.map(name => {
+        let nameObj = {};
         if (webcamList[name]) {
-          resultObject[name] = {};
-          resultObject[name].title = webcamList[name].title;
-          resultObject[name].images = res.filter(i => i.name === name);
-          resultObject[name].desc = webcamList[name].desc;
+          nameObj.name = name;
+          nameObj.title = webcamList[name].title;
+          nameObj.desc = webcamList[name].desc;
+          nameObj.images = res.filter(i => i.name === name); // TODO - Refactor to be more efficient
         }
+        return nameObj;
       });
-      return response.json(resultObject);
+      return response.json(resultArray);
     })
     .catch(err => winston.error(err));
 };
