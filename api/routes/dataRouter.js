@@ -1,8 +1,8 @@
 const express = require("express");
 const router = express.Router();
 
-const loadAllWebcams = require("../controllers/webcam/loadAllWebcams");
-const loadWebcam = require("../controllers/webcam/loadWebcam");
+const loadAllWebcams = require("../controllers/webcam/loadAll");
+const loadWebcam = require("../controllers/webcam/load");
 const scrapeMetvuw = require("../controllers/weather/scrapeMetvuw");
 const scrapeQmug = require("../controllers/weather/scrapeQmug");
 

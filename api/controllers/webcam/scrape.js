@@ -1,12 +1,12 @@
 const winston = require("../../config/winston");
 const webcamList = require("../../config/webcamList");
 // Import specific scrapers
-const scrapeCoronetPeak = require("./webcam_scrapers/coronetPeak");
-const scrapeWhareKeaSW = require("./webcam_scrapers/whareKeaSW");
-const scrapeWhareKeaW = require("./webcam_scrapers/whareKeaW");
-const scrapeWhareKeaNE = require("./webcam_scrapers/whareKeaNE");
-const scrapeQueenstownAirport = require("./webcam_scrapers/queenstownAirport");
-const scrapeStatic = require("./webcam_scrapers/static");
+const scrapeCoronetPeak = require("./scrapers/coronetPeak");
+const scrapeWhareKeaSW = require("./scrapers/whareKeaSW");
+const scrapeWhareKeaW = require("./scrapers/whareKeaW");
+const scrapeWhareKeaNE = require("./scrapers/whareKeaNE");
+const scrapeQueenstownAirport = require("./scrapers/queenstownAirport");
+const scrapeStatic = require("./scrapers/static");
 
 // TODO - Better webcam naming conventions
 
