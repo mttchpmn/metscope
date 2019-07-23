@@ -44,11 +44,6 @@ module.exports = (req, response) => {
       });
     })
     .then(idList => {
-      // return pool
-      //   .query(
-      //     "DELETE FROM webcams WHERE id IN (SELECT id FROM webcams WHERE date < $1)",
-      //     [twentyFourHoursAgo]
-      //   )
       winston.info(`Will delete ${idList.length} rows from the database`);
       return Webcam.destroy({ where: { id: idList } })
         .then(() => {
