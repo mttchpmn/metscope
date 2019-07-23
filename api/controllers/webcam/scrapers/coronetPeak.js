@@ -1,10 +1,4 @@
-const cheerio = require("cheerio");
-
-const pool = require("../../../config/db");
-const winston = require("../../../config/winston");
 const getPage = require("../../../services/retrieveWebPageContent");
-const saveImageIfNew = require("../../../services/saveImageIfNew");
-const saveWebcamToDatabase = require("../../../services/saveWebcamToDatabase");
 
 const processWebcamSendResponse = require("../../../services/processWebcamSendResponse");
 

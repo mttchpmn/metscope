@@ -7,7 +7,6 @@ const moment = require("moment");
 
 // Internal imports
 const winston = require("../config/winston");
-const pool = require("../config/db");
 const Webcam = require("../../database/models").Webcam;
 
 // Convert fs callback functions to Promises

@@ -1,11 +1,6 @@
 const cheerio = require("cheerio");
 
-const pool = require("../../../config/db");
-const winston = require("../../../config/winston");
 const getPage = require("../../../services/retrieveWebPageContent");
-const imageToString = require("../../../services/convertImageToString");
-const saveWebcam = require("../../../services/saveWebcamToDatabase");
-
 const processWebcamSendResponse = require("../../../services/processWebcamSendResponse");
 
 module.exports = (name, baseUrl, req, response) => {

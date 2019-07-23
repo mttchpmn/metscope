@@ -2,7 +2,6 @@ const moment = require("moment");
 const Sequelize = require("sequelize");
 const Op = Sequelize.Op;
 
-const pool = require("../../config/db");
 const winston = require("../../config/winston");
 const webcamList = require("../../config/webcamList");
 const Webcam = require("../../../database/models").Webcam;

@@ -1,4 +1,3 @@
-const pool = require("../../../config/db");
 const winston = require("../../../config/winston");
 const saveImageIfNew = require("../../../services/saveImageIfNew");
 const saveWebcamToDatabase = require("../../../services/saveWebcamToDatabase");
