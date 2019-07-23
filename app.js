@@ -10,6 +10,10 @@ require("dotenv").config();
 const config = require("./api/config/config");
 const winston = require("./api/config/winston");
 
+// Routers and Routes
+const dataRouter = require("./api/routes/dataRouter");
+const utilRouter = require("./api/routes/utilRouter");
+
 // Instantiate app
 winston.info(`API starting...`);
 const app = express();
@@ -20,14 +24,20 @@ app.use(morgan("combined", { stream: winston.stream }));
 app.use(cors()); // This enables CORS for ALL routes
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+
+// Configure Routers
+app.use("/data", dataRouter);
+app.use("/util", utilRouter);
 app.use(
   "/images",
   express.static("images"),
   serveIndex("images", { icons: true })
 );
 
-// Instantiate API endpoints
-require("./api/routes/routes")(app);
+// Test endpoint
+app.use("/", (req, res) =>
+  res.status(200).json({ message: `API online at port ${port}` })
+);
 
 // Launch app
 winston.info(`API online at port ${port}`);
