@@ -1,8 +1,10 @@
 const moment = require("moment");
 
-const pool = require("../../config/db");
 const winston = require("../../config/winston");
 const webcamList = require("../../config/webcamList");
+const Webcam = require("../../../database/models").Webcam;
+const Sequelize = require("sequelize");
+const Op = Sequelize.Op;
 
 const loadWebcam = (req, res) => {
   const webcamName = req.params.name;
@@ -23,17 +25,18 @@ const loadWebcam = (req, res) => {
     .subtract(24, "hours")
     .format();
 
-  pool
-    .query(
-      "SELECT id, name, date, url FROM webcams WHERE name = $1 and date > $2 ORDER BY id ASC",
-      [webcamName, twentyFourHoursAgo]
-    )
-    .then(results => {
-      winston.info(`Found ${results.rowCount} rows`);
-      responseObj.images = results.rows;
+  Webcam.findAll({
+    where: { name: webcamName, date: { [Op.gt]: twentyFourHoursAgo } }
+  })
+    .then(webcams => {
+      winston.info(`Found ${webcams.length} rows`);
+      responseObj.images = webcams;
       res.status(200).json(responseObj);
     })
-    .catch(err => winston.error(err));
+    .catch(err => {
+      winston.error(err);
+      res.status(500).json({ message: "Internal error" });
+    });
 };
 
 module.exports = loadWebcam;
