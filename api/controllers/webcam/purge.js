@@ -19,11 +19,6 @@ module.exports = (req, response) => {
     .subtract(24, "hours")
     .format();
 
-  // pool
-  //   .query("SELECT id, location FROM webcams WHERE date < $1", [
-  //     twentyFourHoursAgo
-  //   ])
-
   Webcam.findAll({ where: { date: { [Op.gt]: twentyFourHoursAgo } } })
     .then(webcams => {
       winston.info(
