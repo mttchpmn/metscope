@@ -8,6 +8,7 @@ const moment = require("moment");
 // Internal imports
 const winston = require("../config/winston");
 const pool = require("../config/db");
+const Webcam = require("../../database/models").Webcam;
 
 // Convert fs callback functions to Promises
 const access = util.promisify(fs.access);
@@ -32,26 +33,18 @@ const _saveFile = (webcamName, url, fileName) =>
       .then(response => Buffer.from(response.data))
       .then(buf => {
         newBuffer = buf;
-        return pool.query(
-          "SELECT id, location FROM webcams WHERE name = $1 ORDER BY id DESC LIMIT 1",
-          [webcamName]
-        );
+        return Webcam.findOne({
+          where: { name: webcamName }
+        });
       })
-      .then(dbResults => {
-        if (!dbResults || !dbResults.rows.length) {
+      .then(webcam => {
+        console.log("webcam :", webcam);
+        if (!webcam) {
           winston.warn("Found no rows in databse - will save image as new");
           return;
         }
-        if (!dbResults.rows[0].location) {
-          winston.warn(
-            "Could not find a matching file image from row - will save image as new"
-          );
-          return;
-        }
-        winston.info(
-          `Found latest image on disk: ${dbResults.rows[0].location}`
-        );
-        return readFile(dbResults.rows[0].location);
+        winston.info(`Found latest image on disk: ${webcam.location}`);
+        return readFile(webcam.location);
       })
       .then(oldBuffer => {
         if (!oldBuffer) return false;

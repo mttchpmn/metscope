@@ -5,7 +5,7 @@ const appPath = require("app-root-path");
 // Internal Imports
 const config = require("../config/config");
 const winston = require("../config/winston");
-const pool = require("../config/db");
+const Webcam = require("../../database/models").Webcam;
 
 module.exports = (name, fileName) =>
   new Promise((resolve, reject) => {
@@ -15,13 +15,13 @@ module.exports = (name, fileName) =>
     const hostedUrl = `${config.domain.baseUrl}/images/${name}/${fileName}`;
     const fileLocation = `${appPath}/images/${name}/${fileName}`;
 
-    // Add image data to DB
-    pool
-      .query(
-        "INSERT INTO webcams (name, url, location, date) VALUES ($1, $2, $3, $4)",
-        [name, hostedUrl, fileLocation, savedDate]
-      )
-      .then(results => {
+    Webcam.create({
+      name,
+      date: savedDate,
+      url: hostedUrl,
+      location: fileLocation
+    })
+      .then(() => {
         winston.info(`Image added to database with date: ${savedDate}`);
         const imgObj = {
           name,
