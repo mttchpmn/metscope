@@ -9,6 +9,7 @@ const bodyParser = require("body-parser");
 require("dotenv").config();
 const config = require("./api/config/config");
 const winston = require("./api/config/winston");
+const withAuth = require("./api/middleware/withAuth");
 
 // Routers and Routes
 const authRouter = require("./api/routes/authRouter");
@@ -28,7 +29,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 // Configure Routers
 app.use("/auth", authRouter);
-app.use("/data", dataRouter);
+app.use("/data", withAuth, dataRouter);
 app.use("/util", utilRouter);
 app.use(
   "/images",
