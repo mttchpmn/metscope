@@ -5,6 +5,7 @@ const jwt = require("jsonwebtoken");
 const config = require("../config/config");
 const winston = require("../config/winston");
 const User = require("../../database/models").User;
+const withAuth = require("../middleware/withAuth");
 
 router.post("/signup", (req, res, next) => {
   const firstName = req.body.firstName;
@@ -61,13 +62,7 @@ router.post("/login", (req, res, next) => {
       });
       let newTokenList = [...user.tokens, token];
 
-      console.log("TOKEN ISSUED");
-      console.log(token, "\n\n");
-
-      console.log("user.tokens.length :", user.tokens.length);
-      console.log("newTokenList.length :", newTokenList.length);
       let check = newTokenList.includes(token);
-      console.log("check :", check);
 
       return User.update(
         { tokens: newTokenList },
@@ -87,6 +82,24 @@ router.post("/login", (req, res, next) => {
     });
 });
 
-router.post("/logout", (req, res, next) => {});
+router.post("/logout", withAuth, (req, res, next) => {
+  // Should we delete all tokens? or Nah?
+  const { id, email, token } = res.locals.user;
+
+  winston.info(`Logging out user: ${email}`);
+  User.findOne({ where: { email } })
+    .then(user => {
+      newTokenList = user.tokens.filter(i => i !== token);
+      return User.update({ tokens: newTokenList }, { where: { email } });
+    })
+    .then(rowsUpdated => {
+      winston.info(`Token deleted from profile for email: ${email}`);
+      return res.status(200).json({ message: "Logged out successfully" });
+    })
+    .catch(err => {
+      winston.error(err.message);
+      return res.status(500).json({ message: "Internal error" });
+    });
+});
 
 module.exports = router;

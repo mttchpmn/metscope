@@ -35,6 +35,7 @@ const withAuth = (req, res, next) => {
     }
 
     winston.info("Token is current and valid and will log in");
+    res.locals.user = { id, email, token };
     return next();
   });
 };
