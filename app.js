@@ -11,6 +11,7 @@ const config = require("./api/config/config");
 const winston = require("./api/config/winston");
 
 // Routers and Routes
+const authRouter = require("./api/routes/authRouter");
 const dataRouter = require("./api/routes/dataRouter");
 const utilRouter = require("./api/routes/utilRouter");
 
@@ -26,6 +27,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // Configure Routers
+app.use("/auth", authRouter);
 app.use("/data", dataRouter);
 app.use("/util", utilRouter);
 app.use(
