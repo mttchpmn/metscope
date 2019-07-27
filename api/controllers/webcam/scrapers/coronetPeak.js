@@ -1,3 +1,5 @@
+"use strict";
+
 const getPage = require("../../../services/retrieveWebPageContent");
 
 const processWebcamSendResponse = require("../../../services/processWebcamSendResponse");

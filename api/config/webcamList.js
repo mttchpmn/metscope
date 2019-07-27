@@ -1,3 +1,5 @@
+"use strict";
+
 module.exports = {
   coronet: {
     title: "Coronet Top Station",

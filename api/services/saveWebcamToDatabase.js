@@ -1,3 +1,5 @@
+"use strict";
+
 // External Imports
 const moment = require("moment");
 const appPath = require("app-root-path");
