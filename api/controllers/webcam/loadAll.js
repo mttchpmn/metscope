@@ -1,3 +1,5 @@
+"use strict";
+
 const moment = require("moment");
 const Sequelize = require("sequelize");
 const Op = Sequelize.Op;

@@ -1,3 +1,5 @@
+"use strict";
+
 const winston = require("../../config/winston");
 const webcamList = require("../../config/webcamList");
 // Import specific scrapers

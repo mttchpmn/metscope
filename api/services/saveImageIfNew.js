@@ -1,3 +1,5 @@
+"use strict";
+
 // External imports
 const fs = require("fs");
 const util = require("util");

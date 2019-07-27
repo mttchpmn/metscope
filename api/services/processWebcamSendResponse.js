@@ -1,3 +1,5 @@
+"use strict";
+
 // NOTE - this is a wrapper function that wraps the file save, and db save
 // For ease of use and readability in the controllers
 const winston = require("../config/winston");

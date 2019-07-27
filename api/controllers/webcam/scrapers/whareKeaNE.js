@@ -1,3 +1,5 @@
+"use strict";
+
 const cheerio = require("cheerio");
 
 const getPage = require("../../../services/retrieveWebPageContent");
