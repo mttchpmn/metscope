@@ -52,7 +52,7 @@ module.exports = [
     code: "ww_franzJosefGlacier",
     desc: "Situated at Franz Josef Glacier, looking West towards the coast",
     originUrl: "http://www.snowgrass.co.nz/franz/cam6.jpg",
-    static: false,
+    static: true,
     area: "windward",
     areaCode: "ww",
     region: "westCoast",
@@ -75,7 +75,7 @@ module.exports = [
     desc: "Situated at Greymouth Airport looking Southeast",
     originUrl:
       "http://210.54.120.112:88/cgi-bin/CGIProxy.fcgi?cmd=snapPicture2&usr=visitor&pwd=abc123",
-    static: false,
+    static: true,
     area: "windward",
     areaCode: "ww",
     region: "westCoast",
