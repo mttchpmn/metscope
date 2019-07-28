@@ -5,12 +5,13 @@ const allSettled = require("promise.allsettled");
 const winston = require("../../config/winston");
 const scrapeStatic = require("./scrapers/_static");
 
-const webcamList = require("../../config/webcams").clyde;
+const allWebcams = require("../../config/webcams").all;
+console.log("allWebcams :", allWebcams);
 
 module.exports = (req, res) => {
   winston.info("Scraping all webcams");
 
-  const promises = webcamList
+  const promises = allWebcams
     // .filter(cam => cam.static)
     .map(cam => {
       if (cam.static) return scrapeStatic(cam.code, cam.originUrl);
