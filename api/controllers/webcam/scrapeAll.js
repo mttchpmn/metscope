@@ -4,21 +4,17 @@ const allSettled = require("promise.allsettled");
 
 const winston = require("../../config/winston");
 const scrapeStatic = require("./scrapers/_static");
-
 const allWebcams = require("../../config/webcams").all;
-console.log("allWebcams :", allWebcams);
 
 module.exports = (req, res) => {
   winston.info("Scraping all webcams");
 
-  const promises = allWebcams
-    // .filter(cam => cam.static)
-    .map(cam => {
-      if (cam.static) return scrapeStatic(cam.code, cam.originUrl);
-      let dynamicScraper = require(`./scrapers/${cam.code}`);
-      console.log("Here");
-      return dynamicScraper(cam.code, cam.originUrl);
-    });
+  const promises = allWebcams.map(cam => {
+    if (cam.static) return scrapeStatic(cam.code, cam.originUrl);
+    let dynamicScraper = require(`./scrapers/${cam.code}`);
+
+    return dynamicScraper(cam.code, cam.originUrl);
+  });
 
   allSettled(promises)
     .then(response => {
