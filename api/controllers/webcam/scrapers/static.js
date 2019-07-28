@@ -31,7 +31,7 @@ module.exports = (webcamName, imageUrl, req, res) => {
       });
     })
     .catch(err => {
-      winston.error(err);
+      winston.error(err.message);
       return res.json({ status: 500, message: err });
     });
 };
