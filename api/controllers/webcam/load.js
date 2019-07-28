@@ -3,7 +3,7 @@
 const moment = require("moment");
 
 const winston = require("../../config/winston");
-const webcamList = require("../../config/webcamList");
+const webcamList = require("../../config/webcams").all;
 const Webcam = require("../../../database/models").Webcam;
 const Sequelize = require("sequelize");
 const Op = Sequelize.Op;
@@ -12,14 +12,21 @@ const loadWebcam = (req, res) => {
   const webcamName = req.params.name;
   winston.info(`Loading webcams for ${webcamName}`);
 
-  if (!webcamList[webcamName]) {
+  const allNames = webcamList.map(cam => cam.code);
+  const requestedCam = webcamList.filter(cam => cam.code === webcamName)[0];
+
+  if (!allNames.includes(webcamName)) {
     return res.status(404).json({ message: `Webcam: ${webcamName} not found` });
   }
 
   let responseObj = {
     name: webcamName,
-    title: webcamList[webcamName].title,
-    desc: webcamList[webcamName].desc
+    title: requestedCam.title,
+    desc: requestedCam.desc,
+    area: requestedCam.area,
+    areaCode: requestedCam.areaCode,
+    region: requestedCam.region,
+    zone: requestedCam.zone
   };
 
   let twentyFourHoursAgo = moment
