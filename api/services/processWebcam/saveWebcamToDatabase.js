@@ -5,13 +5,13 @@ const moment = require("moment");
 const appPath = require("app-root-path");
 
 // Internal Imports
-const config = require("../config/config");
-const winston = require("../config/winston");
-const Webcam = require("../../database/models").Webcam;
+const config = require("../../config/config");
+const winston = require("../../config/winston");
+const Webcam = require("../../../database/models").Webcam;
 
 module.exports = (name, fileName) =>
   new Promise((resolve, reject) => {
-    winston.info(`Attempting to save ${name} webcam to database`);
+    winston.info(`[${name}]: Saving webcam to database`);
 
     const savedDate = moment.utc().format();
     const hostedUrl = `${config.domain.baseUrl}/images/${name}/${fileName}`;
@@ -24,7 +24,9 @@ module.exports = (name, fileName) =>
       location: fileLocation
     })
       .then(() => {
-        winston.info(`Image added to database with date: ${savedDate}`);
+        winston.info(
+          `[${name}]: Image added to database with date: ${savedDate}`
+        );
         resolve(true);
       })
       .catch(err => reject(err));
