@@ -3,7 +3,7 @@
 const cheerio = require("cheerio");
 
 const getPage = require("../../../services/retrieveWebPageContent");
-const processWebcamSendResponse = require("../../../services/processWebcamSendResponse");
+const processWebcamSendResponse = require("../../../services/processWebcam");
 
 module.exports = (name, baseUrl, req, response) => {
   const allImages = [];
@@ -11,13 +11,13 @@ module.exports = (name, baseUrl, req, response) => {
     .then(res => cheerio.load(res.content))
     .then($ => {
       $("img").map((i, elem) => {
-        if (elem.attribs.src.includes("webcamSW"))
+        if (elem.attribs.src.includes("webcamNE"))
           allImages.push(elem.attribs.src);
       });
       const imageUrl = allImages[0];
       return imageUrl;
     })
-    .then(imageUrl => processWebcamSendResponse("whareKeSW", imageUrl))
+    .then(imageUrl => processWebcamSendResponse("whareKeaNE", imageUrl))
     .then(resObj => response.json(resObj))
     .catch(err =>
       response.json({ status: 500, message: `Internal error:\n${err}` })

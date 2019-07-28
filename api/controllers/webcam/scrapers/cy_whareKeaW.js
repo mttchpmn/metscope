@@ -3,7 +3,7 @@
 const cheerio = require("cheerio");
 
 const getPage = require("../../../services/retrieveWebPageContent");
-const processWebcamSendResponse = require("../../../services/processWebcamSendResponse");
+const processWebcamSendResponse = require("../../../services/processWebcam");
 
 module.exports = (name, baseUrl, req, response) => {
   const allImages = [];

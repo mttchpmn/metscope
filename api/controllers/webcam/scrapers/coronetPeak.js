@@ -2,7 +2,7 @@
 
 const getPage = require("../../../services/retrieveWebPageContent");
 
-const processWebcamSendResponse = require("../../../services/processWebcamSendResponse");
+const processWebcamSendResponse = require("../../../services/processWebcam");
 
 module.exports = (name, baseUrl, req, response) => {
   getPage(baseUrl, 10).then(res => {
