@@ -34,7 +34,7 @@ module.exports = [
     desc: "Situated on Queenstown airport looking NE towards Crown Range",
     originUrl:
       "https://www.queenstownairport.co.nz/travelling/flight-info/webcam",
-    static: true,
+    static: false,
     area: "clyde",
     areaCode: "cy",
     region: "otago",
@@ -46,7 +46,7 @@ module.exports = [
     desc: "Situated on Queenstown airport looking W down Lake Wakatipu",
     originUrl:
       "https://www.queenstownairport.co.nz/travelling/flight-info/webcam",
-    static: true,
+    static: false,
     area: "clyde",
     areaCode: "cy",
     region: "otago",
@@ -58,7 +58,7 @@ module.exports = [
     desc: "Situated Queenstown airport looking E towards the Remarkables",
     originUrl:
       "https://www.queenstownairport.co.nz/travelling/flight-info/webcam",
-    static: true,
+    static: false,
     area: "clyde",
     areaCode: "cy",
     region: "otago",
@@ -68,7 +68,8 @@ module.exports = [
     title: "Whare Kea Chalet Southwest",
     code: "cy_whareKeaSW",
     desc: "Situated at Whare Kea Chalet looking South-West",
-    originUrl: "URL",
+    originUrl:
+      "https://www.wharekealodge.com/the-chalet/chalet-webcam-panorama/chalet-webcamsw/",
     static: false,
     area: "clyde",
     areaCode: "cy",
@@ -79,7 +80,8 @@ module.exports = [
     title: "Whare Kea Chalet West",
     code: "cy_whareKeaW",
     desc: "Situated at Whare Kea Chalet looking West",
-    originUrl: "URL",
+    originUrl:
+      "https://www.wharekealodge.com/the-chalet/chalet-webcam-panorama/chalet-webcamw/",
     static: false,
     area: "clyde",
     areaCode: "cy",
@@ -90,7 +92,8 @@ module.exports = [
     title: "Whare Kea Chalet Northeast",
     code: "cy_whareKeaNE",
     desc: "Situated at Whare Kea Chalet looking Northeast",
-    originUrl: "URL",
+    originUrl:
+      "https://www.wharekealodge.com/the-chalet/chalet-webcam-panorama/chalet-webcamne/",
     static: false,
     area: "clyde",
     areaCode: "cy",
@@ -102,7 +105,7 @@ module.exports = [
     code: "cy_fernhill",
     desc:
       "Situated at Aspen Grove in Fernhill looking Southeast towards the Remarkables",
-    originUrl: "URL",
+    originUrl: "https://www.queenstown.com/cams/aspen.jpg",
     static: true,
     area: "clyde",
     areaCode: "cy",
@@ -123,7 +126,7 @@ module.exports = [
   },
   {
     title: "Cecil Peak North",
-    code: "cy_cecilPeakW",
+    code: "cy_cecilPeakN",
     desc: "Situated on Cecil Peak looking North",
     originUrl:
       "http://www.jablotool.com/Components/EYE02/StoredImage.ashx?id=H1H1ISJWPU&index=1",
@@ -207,7 +210,8 @@ module.exports = [
     title: "Cromwell Vineyards",
     code: "cy_cromwellVineyards",
     desc: "Situated at Scott Base Vineyards, looking East",
-    originUrl: "URL",
+    originUrl:
+      "http://snowgrass.co.nz/cust/cromwell//images/webcam_sb_1080.jpg",
     static: true,
     area: "clyde",
     areaCode: "cy",
@@ -218,7 +222,7 @@ module.exports = [
     title: "Lake Dunstan",
     code: "cy_lakeDunstan",
     desc: "Situated at Clyde Dam looking Northwest over Lake Dunstan",
-    originUrl: "http://snowgrass.co.nz/cust/contact/clyde/index.html",
+    originUrl: "http://snowgrass.co.nz/cust/contact/clyde/images/webcam.jpg",
     static: true,
     area: "clyde",
     areaCode: "cy",
