@@ -18,10 +18,10 @@ module.exports = (code, imageUrl) =>
       .then(newImage => {
         if (newImage) {
           winston.info(`[${code}]: New image added to DB`);
-          resolve({ code, newImage: true });
+          return resolve({ code, newImage: true });
         }
         winston.info(`[${code}]: Image already exists in DB`);
-        resolve({ code, newImage: false });
+        return resolve({ code, newImage: false });
       })
       .catch(err => reject(err, code));
   });
