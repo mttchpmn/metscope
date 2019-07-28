@@ -64,42 +64,42 @@ module.exports = [
     region: "otago",
     zone: "queenstownLakes"
   },
-  {
-    title: "Whare Kea Chalet Southwest",
-    code: "cy_whareKeaSW",
-    desc: "Situated at Whare Kea Chalet looking South-West",
-    originUrl:
-      "https://www.wharekealodge.com/the-chalet/chalet-webcam-panorama/chalet-webcamsw/",
-    static: false,
-    area: "clyde",
-    areaCode: "cy",
-    region: "otago",
-    zone: "queenstownLakes"
-  },
-  {
-    title: "Whare Kea Chalet West",
-    code: "cy_whareKeaW",
-    desc: "Situated at Whare Kea Chalet looking West",
-    originUrl:
-      "https://www.wharekealodge.com/the-chalet/chalet-webcam-panorama/chalet-webcamw/",
-    static: false,
-    area: "clyde",
-    areaCode: "cy",
-    region: "otago",
-    zone: "queenstownLakes"
-  },
-  {
-    title: "Whare Kea Chalet Northeast",
-    code: "cy_whareKeaNE",
-    desc: "Situated at Whare Kea Chalet looking Northeast",
-    originUrl:
-      "https://www.wharekealodge.com/the-chalet/chalet-webcam-panorama/chalet-webcamne/",
-    static: false,
-    area: "clyde",
-    areaCode: "cy",
-    region: "otago",
-    zone: "queenstownLakes"
-  },
+  // {
+  //   title: "Whare Kea Chalet Southwest",
+  //   code: "cy_whareKeaSW",
+  //   desc: "Situated at Whare Kea Chalet looking South-West",
+  //   originUrl:
+  //     "https://www.wharekealodge.com/the-chalet/chalet-webcam-panorama/chalet-webcamsw/",
+  //   static: false,
+  //   area: "clyde",
+  //   areaCode: "cy",
+  //   region: "otago",
+  //   zone: "queenstownLakes"
+  // },
+  // {
+  //   title: "Whare Kea Chalet West",
+  //   code: "cy_whareKeaW",
+  //   desc: "Situated at Whare Kea Chalet looking West",
+  //   originUrl:
+  //     "https://www.wharekealodge.com/the-chalet/chalet-webcam-panorama/chalet-webcamw/",
+  //   static: false,
+  //   area: "clyde",
+  //   areaCode: "cy",
+  //   region: "otago",
+  //   zone: "queenstownLakes"
+  // },
+  // {
+  //   title: "Whare Kea Chalet Northeast",
+  //   code: "cy_whareKeaNE",
+  //   desc: "Situated at Whare Kea Chalet looking Northeast",
+  //   originUrl:
+  //     "https://www.wharekealodge.com/the-chalet/chalet-webcam-panorama/chalet-webcamne/",
+  //   static: false,
+  //   area: "clyde",
+  //   areaCode: "cy",
+  //   region: "otago",
+  //   zone: "queenstownLakes"
+  // },
   {
     title: "Fernhill",
     code: "cy_fernhill",
