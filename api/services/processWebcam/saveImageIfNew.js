@@ -35,7 +35,8 @@ const _saveFile = (webcamName, url, fileName) =>
       .then(buf => {
         newBuffer = buf;
         return Webcam.findOne({
-          where: { name: webcamName }
+          where: { name: webcamName },
+          order: [["id", "DESC"]]
         });
       })
       .then(webcam => {
