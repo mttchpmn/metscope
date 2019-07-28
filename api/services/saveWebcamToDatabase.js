@@ -25,13 +25,7 @@ module.exports = (name, fileName) =>
     })
       .then(() => {
         winston.info(`Image added to database with date: ${savedDate}`);
-        const imgObj = {
-          name,
-          hostedUrl,
-          fileLocation,
-          savedDate
-        };
-        resolve(imgObj);
+        resolve(true);
       })
       .catch(err => reject(err));
   });
