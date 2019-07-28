@@ -10,8 +10,6 @@ module.exports = (req, res) => {
 
   const allCamNames = webcamList.map(cam => cam.code);
   const requestedCam = webcamList.filter(cam => cam.code === webcamName)[0];
-  console.log("requestedCam :", requestedCam);
-  console.log("allCamNames :", allCamNames);
 
   // Return 404 if we can't find the requested webcam
   if (!allCamNames.includes(webcamName)) {
@@ -33,7 +31,6 @@ module.exports = (req, res) => {
         res.status(500).json({ message: "Internal error" });
       });
   }
-  console.log("requestedCam.originUrl :", requestedCam);
   scrapeStatic(webcamName, requestedCam.originUrl)
     .then(({ code, newImage }) =>
       res.status(200).json({ message: "Scrape successful", code, newImage })
