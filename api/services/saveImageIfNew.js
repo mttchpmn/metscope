@@ -39,7 +39,6 @@ const _saveFile = (webcamName, url, fileName) =>
         });
       })
       .then(webcam => {
-        console.log("webcam :", webcam);
         if (!webcam) {
           winston.warn("Found no rows in databse - will save image as new");
           return;
