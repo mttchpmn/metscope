@@ -5,5 +5,6 @@ const alps = require("./alps");
 module.exports = {
   clyde,
   fiords,
-  alps
+  alps,
+  all: clyde.concat(fiords).concat(alps)
 };
