@@ -1,10 +1,19 @@
+const alps = require("./alps");
 const clyde = require("./clyde");
 const fiords = require("./fiords");
-const alps = require("./alps");
+const gore = require("./gore");
+const windward = require("./windward");
 
 module.exports = {
+  alps,
   clyde,
   fiords,
-  alps,
-  all: clyde.concat(fiords).concat(alps)
+  gore,
+  windward,
+  all: []
+    .concat(alps)
+    .concat(clyde)
+    .concat(fiords)
+    .concat(gore)
+    .concat(windward)
 };
