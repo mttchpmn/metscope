@@ -1,7 +1,7 @@
 "use strict";
 
 const winston = require("../../config/winston");
-const webcamList = require("../../config/webcams").clyde;
+const webcamList = require("../../config/webcams").all;
 const scrapeStatic = require("./scrapers/_static");
 
 module.exports = (req, res) => {
@@ -14,8 +14,7 @@ module.exports = (req, res) => {
   // Return 404 if we can't find the requested webcam
   if (!allCamNames.includes(webcamName)) {
     winston.warn(`Scraper for webcam: ${webcamName} not found`);
-    return res.json({
-      status: 404,
+    return res.status(404).json({
       message: `Webcam scraper not found.  Available webcams are: ${allCamNames}`
     });
   }
@@ -24,19 +23,23 @@ module.exports = (req, res) => {
     const scrapeDynamic = require(`./scrapers/${webcamName}`);
     scrapeDynamic(webcamName, requestedCam.originUrl)
       .then(({ code, newImage }) =>
-        res.status(200).json({ message: "Scrape successful", code, newImage })
+        res
+          .status(200)
+          .json({ message: "Scrape successful", data: { code, newImage } })
       )
       .catch(err => {
         winston.error(err.message);
-        res.status(500).json({ message: "Internal error" });
+        res.status(500).json({ error: "Internal error" });
       });
   }
   scrapeStatic(webcamName, requestedCam.originUrl)
     .then(({ code, newImage }) =>
-      res.status(200).json({ message: "Scrape successful", code, newImage })
+      res
+        .status(200)
+        .json({ message: "Scrape successful", data: { code, newImage } })
     )
     .catch(err => {
       winston.error(err.message);
-      res.status(500).json({ message: "Internal error" });
+      res.status(500).json({ error: "Internal error" });
     });
 };

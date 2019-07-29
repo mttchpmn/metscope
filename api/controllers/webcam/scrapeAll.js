@@ -25,16 +25,18 @@ module.exports = (req, res) => {
         .map(i => i.value);
       const failures = response
         .filter(i => i.status === "rejected")
-        .map(i => i.value);
+        .map(i => i.reason);
 
-      return res
-        .status(200)
-        .json({ message: "Scraping successful", successes, failures });
+      return res.status(200).json({
+        message: "Scraping successful",
+        data: {
+          successes,
+          failures
+        }
+      });
     })
     .catch(error => {
       winston.error(error.message);
-      return res
-        .status(500)
-        .json({ message: "Internal Error", error: error.message });
+      return res.status(500).json({ error: "Internal Error" });
     });
 };
