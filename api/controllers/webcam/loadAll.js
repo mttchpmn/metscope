@@ -17,6 +17,10 @@ const loadAllWebcams = (req, res) => {
     .utc()
     .subtract(24, "hours")
     .format();
+  const threeHoursAgo = moment
+    .utc()
+    .subtract(3, "hours")
+    .format();
 
   const data = {
     webcams: {}
@@ -36,6 +40,9 @@ const loadAllWebcams = (req, res) => {
           delete cam.originUrl;
           delete cam.static;
           cam.images = webcams.filter(i => i.name === cam.code);
+          webcams.map(i => {
+            if (moment(i.date).isBefore(threeHoursAgo)) cam.stale = true;
+          });
         });
       });
 

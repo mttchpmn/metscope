@@ -31,9 +31,14 @@ const loadWebcam = (req, res) => {
     }
   };
 
-  let twentyFourHoursAgo = moment
+  const twentyFourHoursAgo = moment
     .utc()
     .subtract(24, "hours")
+    .format();
+
+  const threeHoursAgo = moment
+    .utc()
+    .subtract(3, "hours")
     .format();
 
   Webcam.findAll({
@@ -42,6 +47,9 @@ const loadWebcam = (req, res) => {
     .then(webcams => {
       winston.info(`Found ${webcams.length} rows`);
       data.webcam.images = webcams;
+      webcams.map(cam => {
+        if (moment(cam.date).isBefore(threeHoursAgo)) data.webcam.stale = true;
+      });
       res.status(200).json({ data });
     })
     .catch(err => {
