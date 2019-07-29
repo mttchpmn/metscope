@@ -158,6 +158,10 @@ router.get("/webcam/load/:name", loadWebcam);
  *        in: path
  *        required: true
  *        type: string
+ *        enum:
+ *          - nz
+ *          - nzsi
+ *          - nzni
  *    produces:
  *      - application/json
  *    responses:
