@@ -2,13 +2,18 @@
 
 module.exports = {
   app: {
-    port: process.env.PORT || 3000
+    port: process.env.PORT || 4000
+  },
+  token: {
+    secret: process.env.TOKEN_SECRET,
+    expiry: "7 days"
   },
   db: {
-    user: process.env.DB_USER || "metscope",
-    host: process.env.DB_HOST || "db",
-    database: process.env.DB_DATABASE || "metscope",
+    username: process.env.DB_USER || "metscope",
     password: process.env.DB_PASSWORD,
+    database: process.env.DB_DATABASE || "metscope",
+    dialect: "postgres",
+    host: process.env.DB_HOST || "db",
     port: process.env.DB_PORT || 5432,
     maxConnections: 5
   },
