@@ -15,6 +15,8 @@ const withAuth = require("../middleware/withAuth");
  * /auth/signup:
  *  post:
  *    description: Sign up to API
+ *    tags:
+ *      - authentication
  *    produces:
  *      - application/json
  *    parameters:
@@ -81,6 +83,8 @@ router.post("/signup", (req, res, next) => {
  * /auth/login:
  *  post:
  *    description: Login to API
+ *    tags:
+ *      - authentication
  *    produces:
  *      - application/json
  *    parameters:
@@ -150,14 +154,16 @@ router.post("/login", (req, res, next) => {
  * /auth/logout:
  *  post:
  *    description: Logout of API and delete token from profile
+ *    tags:
+ *      - authentication
  *    produces:
  *      - application/json
  *    parameters:
- *      - name: token
- *        description: JSON web token in authorisation header
- *        in: authorisation header
+ *      - name: X-Authorization
+ *        description: JWT bearer token
+ *        in: header
  *        required: true
- *        type: json
+ *        type: string
  *    responses:
  *      200:
  *        description: Logout successful
