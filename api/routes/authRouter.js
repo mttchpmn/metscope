@@ -9,6 +9,41 @@ const winston = require("../config/winston");
 const User = require("../../database/models").User;
 const withAuth = require("../middleware/withAuth");
 
+/**
+ * @swagger
+ *
+ * /auth/signup:
+ *  post:
+ *    description: Sign up to API
+ *    produces:
+ *      - application/json
+ *    parameters:
+ *      - name: firstName
+ *        description: First name
+ *        in: formData
+ *        required: true
+ *        type: string
+ *      - name: lastName
+ *        description: Last Name
+ *        in: formData
+ *        required: true
+ *        type: string
+ *      - name: email
+ *        description: Email address
+ *        in: formData
+ *        required: true
+ *        type: string
+ *      - name: password
+ *        description: Password
+ *        in: formData
+ *        required: true
+ *        type: string
+ *    responses:
+ *      200:
+ *        description: Signup successful
+ *      500:
+ *        description: Internal Error
+ */
 router.post("/signup", (req, res, next) => {
   const firstName = req.body.firstName;
   const lastName = req.body.lastName;
@@ -61,7 +96,9 @@ router.post("/signup", (req, res, next) => {
  *        type: string
  *    responses:
  *      200:
- *        description: login
+ *        description: Login successful
+ *      500:
+ *        description: Internal Error
  */
 router.post("/login", (req, res, next) => {
   const email = req.body.email;
@@ -107,6 +144,26 @@ router.post("/login", (req, res, next) => {
     });
 });
 
+/**
+ * @swagger
+ *
+ * /auth/logout:
+ *  post:
+ *    description: Logout of API and delete token from profile
+ *    produces:
+ *      - application/json
+ *    parameters:
+ *      - name: token
+ *        description: JSON web token in authorisation header
+ *        in: authorisation header
+ *        required: true
+ *        type: json
+ *    responses:
+ *      200:
+ *        description: Logout successful
+ *      500:
+ *        description: Internal Error
+ */
 router.post("/logout", withAuth, (req, res, next) => {
   // Should we delete all tokens? or Nah?
   const { id, email, token } = res.locals.user;
