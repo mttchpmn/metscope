@@ -40,16 +40,15 @@ module.exports = (req, response) => {
     })
     .then(idList => {
       winston.info(`Will delete ${idList.length} rows from the database`);
-      return Webcam.destroy({ where: { id: idList } })
-        .then(() => {
-          return response.json({
-            status: 200,
-            message: "Webcams purged successfully"
-          });
-        })
-        .catch(err => {
-          winston.error(err);
-          return response.json({ status: 500, message: "Internal error" });
-        });
+      return Webcam.destroy({ where: { id: idList } });
+    })
+    .then(() => {
+      return response.status(200).json({
+        message: "Webcams purged successfully"
+      });
+    })
+    .catch(err => {
+      winston.error(err.message);
+      return response.status(500).json({ error: "Internal error" });
     });
 };
