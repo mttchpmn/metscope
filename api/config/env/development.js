@@ -17,6 +17,6 @@ module.exports = {
     port: 5432
   },
   domain: {
-    baseUrl: `localhost:${process.env.PORT || 3000}`
+    baseUrl: `http://localhost:${process.env.PORT || 3000}`
   }
 };
