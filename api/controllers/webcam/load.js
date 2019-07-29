@@ -19,14 +19,16 @@ const loadWebcam = (req, res) => {
     return res.status(404).json({ message: `Webcam: ${webcamName} not found` });
   }
 
-  let responseObj = {
-    name: webcamName,
-    title: requestedCam.title,
-    desc: requestedCam.desc,
-    area: requestedCam.area,
-    areaCode: requestedCam.areaCode,
-    region: requestedCam.region,
-    zone: requestedCam.zone
+  let data = {
+    webcam: {
+      name: webcamName,
+      title: requestedCam.title,
+      desc: requestedCam.desc,
+      area: requestedCam.area,
+      areaCode: requestedCam.areaCode,
+      region: requestedCam.region,
+      zone: requestedCam.zone
+    }
   };
 
   let twentyFourHoursAgo = moment
@@ -39,12 +41,12 @@ const loadWebcam = (req, res) => {
   })
     .then(webcams => {
       winston.info(`Found ${webcams.length} rows`);
-      responseObj.images = webcams;
-      res.status(200).json(responseObj);
+      data.webcam.images = webcams;
+      res.status(200).json({ data });
     })
     .catch(err => {
-      winston.error(err);
-      res.status(500).json({ message: "Internal error" });
+      winston.error(err.message);
+      res.status(500).json({ error: "Internal error" });
     });
 };
 
