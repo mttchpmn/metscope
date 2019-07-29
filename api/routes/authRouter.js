@@ -40,6 +40,29 @@ router.post("/signup", (req, res, next) => {
     });
 });
 
+/**
+ * @swagger
+ *
+ * /auth/login:
+ *  post:
+ *    description: Login to API
+ *    produces:
+ *      - application/json
+ *    parameters:
+ *      - name: email
+ *        description: Email address used for signup
+ *        in: formData
+ *        required: true
+ *        type: string
+ *      - name: password
+ *        description: Password used for signup
+ *        in: formData
+ *        required: true
+ *        type: string
+ *    responses:
+ *      200:
+ *        description: login
+ */
 router.post("/login", (req, res, next) => {
   const email = req.body.email;
   const password = req.body.password;

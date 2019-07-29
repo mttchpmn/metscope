@@ -30,6 +30,8 @@
     "promise.allsettled": "^1.0.1",
     "sequelize": "^5.10.1",
     "serve-index": "^1.9.1",
+    "swagger-jsdoc": "^3.3.0",
+    "swagger-ui-express": "^4.0.7",
     "winston": "^3.2.1",
     "winston-loggly-bulk": "^3.0.1"
   },
