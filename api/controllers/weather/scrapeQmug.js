@@ -22,7 +22,7 @@ module.exports = (req, response) => {
     auth: { username: qmug.username, password: qmug.password }
   }).then(res => {
     // Load Html for parsing
-    $ = cheerio.load(res.data);
+    const $ = cheerio.load(res.data);
 
     // Scrape AAW and TAFs
     $("pre").map((i, element) => {
@@ -72,6 +72,6 @@ module.exports = (req, response) => {
     metars.push(lastMetar);
     baseResponse.metar = metars.map(item => `METAR ${item.trim()}`);
 
-    return response.json({ status: 200, data: baseResponse });
+    return response.status(200).json({ data: baseResponse });
   });
 };
