@@ -9,6 +9,14 @@ module.exports = {
     host: "db", // 'db' refers to the database host on the Docker Containers internal network
     port: 5432
   },
+  staging: {
+    username: process.env.DB_USER || "metscope",
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB_DATABASE || "metscope",
+    dialect: "postgres",
+    host: process.env.DB_HOST || "db",
+    port: process.env.DB_PORT || 5432
+  },
   test: {
     username: "root",
     password: null,
