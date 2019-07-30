@@ -5,10 +5,14 @@
   "main": "app.js",
   "scripts": {
     "test": "NODE_ENV=test ./node_modules/.bin/mocha --timeout 10000",
+    "test:setup": "docker stop TEST-DATABASE; docker rm TEST-DATABASE; docker-compose run -d --name TEST-DATABASE -p 5434:5432 db; NODE_ENV=test ./node_modules/.bin/sequelize db:migrate;",
+    "test:purge": "psql postgres://metscope:password@localhost:5434/metscope -c 'DELETE FROM \"Webcams\";'; psql postgres://metscope:password@localhost:5434/metscope -c 'DELETE FROM \"Users\";'",
+    "test:run": "NODE_ENV=test ./node_modules/.bin/mocha --timeout 10000",
     "dev": "docker stop WEB_API DB; docker rm WEB_API DB; docker-compose up --build",
     "prod": "docker stop METSCOPE-PROD; docker rm METSCOPE-PROD; docker build -t metscope-api .; docker-compose run --name METSCOPE-PROD --service-ports web",
     "shell": "docker exec -it WEB_API /bin/sh",
     "db": "psql postgres://metscope:password@localhost:5433/metscope",
+    "db:test": "psql postgres://metscope:password@localhost:5434/metscope",
     "migrate": "docker exec WEB_API ./node_modules/.bin/sequelize db:migrate"
   },
   "author": "Matt Chapman",
