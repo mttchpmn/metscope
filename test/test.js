@@ -48,7 +48,7 @@ describe("Authentication", () => {
         .send({
           firstName: "Johnny",
           lastName: "Test",
-          email: "jtest55@gmail.com",
+          email: "doubled-email@gmail.com",
           password: "Testman69xx"
         })
         .then(res =>
@@ -57,7 +57,7 @@ describe("Authentication", () => {
             .send({
               firstName: "Sammy",
               lastName: "Test",
-              email: "jtest55@gmail.com",
+              email: "doubled-email@gmail.com",
               password: "ImnotJohnny"
             })
         )
