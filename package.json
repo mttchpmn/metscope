@@ -4,7 +4,7 @@
   "description": "Express API for Metscope Weather Platform",
   "main": "app.js",
   "scripts": {
-    "test": "NODE_ENV=test mocha --timeout 10000",
+    "test": "NODE_ENV=test ./node_modules/.bin/mocha --timeout 10000",
     "dev": "docker stop WEB_API DB; docker rm WEB_API DB; docker-compose up --build",
     "prod": "docker stop METSCOPE-PROD; docker rm METSCOPE-PROD; docker build -t metscope-api .; docker-compose run --name METSCOPE-PROD --service-ports web",
     "shell": "docker exec -it WEB_API /bin/sh",
