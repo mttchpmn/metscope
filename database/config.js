@@ -23,7 +23,8 @@ module.exports = {
     database: "metscope",
     dialect: "postgres",
     host: "localhost", // 'db' refers to the database host on the Docker Containers internal network
-    port: 5434
+    port: 5434,
+    logging: false
   },
   production: {
     username: "root",
