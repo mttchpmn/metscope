@@ -2,7 +2,7 @@
 
 module.exports = {
   app: {
-    port: process.env.PORT || 3000
+    port: 4000
   },
   token: {
     secret: "ivegotalovelybunchofcoconuts",
@@ -17,6 +17,6 @@ module.exports = {
     port: 5432
   },
   domain: {
-    baseUrl: `http://localhost:${process.env.PORT || 3000}`
+    baseUrl: `http://localhost:${4000}`
   }
 };
