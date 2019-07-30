@@ -1,13 +1,11 @@
 "use strict";
 
-const mocha = require("mocha");
 const chai = require("chai");
-const chaiAsPromised = require("chai-as-promised");
 const request = require("supertest");
 const app = require("../app.js");
 const expect = chai.expect;
-
-chai.use(chaiAsPromised);
+// const chaiAsPromised = require("chai-as-promised");
+// chai.use(chaiAsPromised);
 
 console.log("Running Tests...");
 
@@ -28,14 +26,13 @@ describe("API endpoints", () => {
     describe("/load/all", () => {
       it("Should return results in correct format", () => {
         return request(app)
-          .get("/webcam/load/all")
+          .get("/data/webcam/load/all")
           .then(res => {
             expect(res.statusCode).to.equal(200);
             expect(res.body).to.be.an("object");
           });
       });
     });
-
     describe("/load/latest", () => {});
 
     describe("/load/:name", () => {
