@@ -13,6 +13,7 @@ module.exports = (req, res) => {
     if (cam.static) return scrapeStatic(cam.code, cam.originUrl);
     try {
       let dynamicScraper = require(`./scrapers/${cam.code}`);
+      return dynamicScraper(cam.code, cam.originUrl);
     } catch {
       winston.warn(
         `[${
@@ -20,8 +21,6 @@ module.exports = (req, res) => {
         }]: Cannot load scraper function from './scrapers' does the file exist?`
       );
     }
-
-    return dynamicScraper(cam.code, cam.originUrl);
   });
 
   allSettled(promises)
