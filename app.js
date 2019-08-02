@@ -34,7 +34,11 @@ app.use("/docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
 // Configure Routers
 app.use("/auth", authRouter);
-app.use("/data", withAuth, dataRouter);
+
+// CHANGE COMMENTS TO REENABLE AUTH
+// app.use("/data", withAuth, dataRouter);
+app.use("/data", dataRouter);
+
 app.use("/util", utilRouter);
 app.use(
   "/images",
