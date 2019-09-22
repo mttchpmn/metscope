@@ -1,3 +1,5 @@
+"use strict";
+
 const axios = require("axios");
 const axiosRetry = require("axios-retry");
 
@@ -14,16 +16,12 @@ module.exports = (url, retryCount) => {
     axios
       .get(url)
       .then(res => {
-        winston.info("Request successful");
         return {
           status: res.status, // Status code e.g. 200
           content: res.data // Html page content
         };
       })
       // TODO - Fix why this catch block never seems to get hit
-      .catch(err => {
-        winston.err("Request unsuccessful");
-        return "foo";
-      })
+      .catch(err => winston.err(err.message))
   );
 };

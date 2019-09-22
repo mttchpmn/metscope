@@ -1,11 +1,15 @@
 {
-  "name": "metscope-api",
+  "name": "metscope",
   "version": "1.0.0",
-  "description": "Express API for Metscope Weather Services",
+  "description": "Express API for Metscope Weather Platform",
   "main": "app.js",
   "scripts": {
-    "start": "nodemon app.js",
-    "test": "NODE_ENV=test mocha --timeout 10000"
+    "test": "NODE_ENV=test mocha --timeout 10000",
+    "dev": "docker stop WEB_API DB; docker rm WEB_API DB; docker-compose up --build",
+    "prod": "docker stop METSCOPE-PROD; docker rm METSCOPE-PROD; docker build -t metscope-api .; docker-compose run --name METSCOPE-PROD --service-ports web",
+    "shell": "docker exec -it WEB_API /bin/sh",
+    "db": "psql postgres://metscope:password@localhost:5433/metscope",
+    "migrate": "docker exec WEB_API ./node_modules/.bin/sequelize db:migrate"
   },
   "author": "Matt Chapman",
   "license": "ISC",
@@ -13,22 +17,29 @@
     "app-root-path": "^2.2.1",
     "axios": "^0.19.0",
     "axios-retry": "^3.1.2",
+    "bcryptjs": "^2.4.3",
     "cheerio": "^1.0.0-rc.3",
     "cors": "^2.8.5",
     "dotenv": "^8.0.0",
     "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
     "moment": "^2.24.0",
     "morgan": "^1.9.1",
     "nodemon": "^1.19.1",
     "pg": "^7.11.0",
+    "promise.allsettled": "^1.0.1",
+    "sequelize": "^5.10.1",
     "serve-index": "^1.9.1",
+    "swagger-jsdoc": "^3.3.0",
+    "swagger-ui-express": "^4.0.7",
     "winston": "^3.2.1",
     "winston-loggly-bulk": "^3.0.1"
   },
   "devDependencies": {
-    "mocha": "^6.1.4",
     "chai": "^4.2.0",
     "chai-as-promised": "^7.1.1",
+    "mocha": "^6.1.4",
+    "sequelize-cli": "^5.5.0",
     "supertest": "^4.0.2"
   }
 }
