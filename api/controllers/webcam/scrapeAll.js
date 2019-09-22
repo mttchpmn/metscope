@@ -11,9 +11,16 @@ module.exports = (req, res) => {
 
   const promises = allWebcams.map(cam => {
     if (cam.static) return scrapeStatic(cam.code, cam.originUrl);
-    let dynamicScraper = require(`./scrapers/${cam.code}`);
-
-    return dynamicScraper(cam.code, cam.originUrl);
+    try {
+      let dynamicScraper = require(`./scrapers/${cam.code}`);
+      return dynamicScraper(cam.code, cam.originUrl);
+    } catch {
+      winston.warn(
+        `[${
+          cam.code
+        }]: Cannot load scraper function from './scrapers' does the file exist?`
+      );
+    }
   });
 
   allSettled(promises)
