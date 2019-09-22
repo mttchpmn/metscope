@@ -3,7 +3,8 @@
 const allSettled = require("promise.allsettled");
 
 const winston = require("../../config/winston");
-const scrapeStatic = require("./scrapers/_static");
+// const scrapeStatic = require("./scrapers/_static");
+const scrapeStatic = require("../../services/processWebcam");
 const allWebcams = require("../../config/webcams").all;
 
 const dynamicScrapers = require("./dynamicScrapers");
