@@ -14,6 +14,7 @@ module.exports = (req, res) => {
     areaWebcams.map(cam => {
       // Dynamic cam
       if (!cam.static) {
+        winston.debug(`[${cam.code}]: Static: ${cam.static}`);
         winston.debug(`[${cam.code}]: Cam is dynamic.  Skipping...`);
         return "SKIPPED DYNAMIC SCRAPER";
       }
