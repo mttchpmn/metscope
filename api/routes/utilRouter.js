@@ -3,7 +3,8 @@
 const express = require("express");
 const router = express.Router();
 
-const scrapeWebcam = require("../controllers/webcam/scrape.js");
+// const scrapeWebcam = require("../controllers/webcam/scrape.js");
+const scrapeArea = require("../controllers/webcam/scrapeArea.js");
 const scrapeAllWebcams = require("../controllers/webcam/scrapeAll.js");
 const purgeWebcams = require("../controllers/webcam/purge");
 
@@ -47,7 +48,7 @@ router.get("/webcam/scrape/all", scrapeAllWebcams);
  *      500:
  *        description: Internal Error
  */
-router.get("/webcam/scrape/:name", scrapeWebcam);
+router.get("/webcam/scrape/:area", scrapeArea);
 
 /**
  * @swagger
