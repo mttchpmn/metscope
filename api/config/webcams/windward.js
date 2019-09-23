@@ -36,18 +36,6 @@ module.exports = [
     zone: "westland"
   },
   {
-    title: "High Peaks Hotel",
-    code: "ww_highPeaksHotel",
-    desc: "Situated at High Peaks Hotel, 2km West of Fox township",
-    originUrl:
-      "https://encounter.snapithd.com/static_new/t666d557294w45.jpg?hide=1",
-    static: true,
-    area: "windward",
-    areaCode: "ww",
-    region: "westCoast",
-    zone: "westland"
-  },
-  {
     title: "Franz Josef Glacier",
     code: "ww_franzJosefGlacier",
     desc: "Situated at Franz Josef Glacier, looking West towards the coast",

@@ -152,7 +152,7 @@ module.exports = [
     code: "cy_glenorchyTownship",
     desc: "Situated in Glenorchy township looking NW towards Mt Alfred",
     originUrl:
-      "https://www.snowgrass.co.nz/cust/glenorchy_air/images/webcam.jpg",
+      "http://www.snowgrass.co.nz/cust/glenorchy_air/images/webcam.jpg",
     static: true,
     area: "clyde",
     areaCode: "cy",
@@ -164,19 +164,6 @@ module.exports = [
     code: "cy_pisaRange",
     desc: "Situated at the Snow Farm looking South down the Pisa Range",
     originUrl: "http://snowgrass.co.nz/cust/snow_farm/images/webcam.jpg",
-    static: true,
-    area: "clyde",
-    areaCode: "cy",
-    region: "otago",
-    zone: "queenstownLakes"
-  },
-  {
-    title: "Queenstown Basin",
-    code: "cy_queenstownBasin",
-    desc:
-      "Situated on the Crown Terrace looking West across the Wakatipu basin",
-    originUrl:
-      "http://icons.wunderground.com/webcamramdisk/l/i/Live24NZ/4/current.jpg?1544682451",
     static: true,
     area: "clyde",
     areaCode: "cy",
