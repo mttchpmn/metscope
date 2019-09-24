@@ -10,17 +10,21 @@ module.exports = (req, res) => {
 
   const areaWebcams = allWebcams[area];
 
+  winston.debug(`\nAREA CAMS: ${JSON.stringify(areaWebcams)}\n\n`);
+
   Promise.all(
     areaWebcams.map(cam => {
       // Dynamic cam
       if (!cam.static) {
         winston.debug(`[${cam.code}]: Static: ${cam.static}`);
+        winston.debug(`Dynamic: ${JSON.stringify(cam)}`);
         winston.debug(`[${cam.code}]: Cam is dynamic.  Skipping...`);
         return "SKIPPED DYNAMIC SCRAPER";
       }
 
       // Static cam
       winston.debug(`[${cam.code}]: Static: ${cam.static}`);
+      winston.debug(`Static: ${JSON.stringify(cam)}`);
       return staticScraper(cam.code, cam.originUrl);
     })
   )
