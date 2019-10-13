@@ -40,6 +40,9 @@ const loadAllWebcams = (req, res) => {
           // delete cam.originUrl;
           // delete cam.static;  // THIS CAUSED THE NIGHTMARE BUG.  DO NOT MUTATE OBJECTS!!!!!
           cam.images = webcams.filter(i => i.name === cam.code);
+          
+          cam.images.sort((a,b) => (a.id > b.id) ? 1 : -1);
+          
           webcams.map(i => {
             if (moment(i.date).isBefore(threeHoursAgo)) cam.stale = true;
           });
