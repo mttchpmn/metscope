@@ -4,6 +4,7 @@
 const moment = require("moment");
 const Sequelize = require("sequelize");
 const Op = Sequelize.Op;
+const _ = require("lodash");
 
 // Internal Imports
 const winston = require("../../config/winston");
@@ -13,39 +14,37 @@ const Webcam = require("../../../database/models").Webcam;
 const loadAllWebcams = (req, res) => {
   winston.info(`Loading all webcams`);
 
-  const twentyFourHoursAgo = moment
-    .utc()
-    .subtract(24, "hours")
-    .format();
-  const threeHoursAgo = moment
-    .utc()
-    .subtract(3, "hours")
-    .format();
+  // Helper function for time comparison
+  const hoursAgo = num =>
+    moment
+      .utc()
+      .subtract(num, "hours")
+      .format();
 
+  const webcamSkeleton = _.cloneDeep(webcamIndex);
+  delete webcamSkeleton.all; // Comment out this line to add 'all' prop to response
+
+  // Response skeleton
   const data = {
-    webcams: {}
+    webcams: webcamSkeleton
   };
 
   // Find all webcams in database from the last 24 hrs
-  Webcam.findAll({ where: { date: { [Op.gt]: twentyFourHoursAgo } } })
+  Webcam.findAll({ where: { date: { [Op.gt]: hoursAgo(24) } } })
     .then(webcams => {
-      // Comment out this line to add 'all' as a prop to the repsonse, which contains all cams
-      // This DRAMATICALLY increases the number of lines in the response
-      delete webcamIndex.all;
+      // Iterate over areas
+      Object.keys(data.webcams).forEach(area => {
+        // Iterate over webcams in area
+        data.webcams[area].forEach(webcam => {
+          let images = webcams.filter(i => i.name === webcam.code);
+          images.sort((a, b) => (a.id > b.id ? 1 : -1));
 
-      Object.keys(webcamIndex).map(area => {
-        data.webcams[area] = webcamIndex[area];
+          const latestImage = images[images.length - 1];
+          if (latestImage && moment(latestImage.date).isBefore(hoursAgo(3))) {
+            webcam.stale = true;
+          }
 
-        data.webcams[area].map(cam => {
-          // delete cam.originUrl;
-          // delete cam.static;  // THIS CAUSED THE NIGHTMARE BUG.  DO NOT MUTATE OBJECTS!!!!!
-          cam.images = webcams.filter(i => i.name === cam.code);
-          
-          cam.images.sort((a,b) => (a.id > b.id) ? 1 : -1);
-          
-          webcams.map(i => {
-            if (moment(i.date).isBefore(threeHoursAgo)) cam.stale = true;
-          });
+          webcam.images = images;
         });
       });
 
