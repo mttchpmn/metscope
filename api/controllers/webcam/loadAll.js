@@ -29,8 +29,8 @@ const loadAllWebcams = (req, res) => {
     webcams: webcamSkeleton
   };
 
-  // Find all webcams in database from the last 24 hrs
-  Webcam.findAll({ where: { date: { [Op.gt]: hoursAgo(24) } } })
+  // Find all webcams in database from the last 12 hrs
+  Webcam.findAll({ where: { date: { [Op.gt]: hoursAgo(12) } } })
     .then(webcams => {
       // Iterate over areas
       Object.keys(data.webcams).forEach(area => {
@@ -40,7 +40,7 @@ const loadAllWebcams = (req, res) => {
           images.sort((a, b) => (a.id > b.id ? 1 : -1));
 
           const latestImage = images[images.length - 1];
-          if (latestImage && moment(latestImage.date).isBefore(hoursAgo(3))) {
+          if (latestImage && moment(latestImage.date).isBefore(hoursAgo(2))) {
             webcam.stale = true;
           }
 
