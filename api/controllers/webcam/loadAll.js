@@ -9,6 +9,7 @@ const _ = require("lodash");
 // Internal Imports
 const winston = require("../../config/winston");
 const webcamIndex = require("../../config/webcams");
+const config = require("../../config/config");
 const Webcam = require("../../../database/models").Webcam;
 
 const loadAllWebcams = (req, res) => {
@@ -29,8 +30,10 @@ const loadAllWebcams = (req, res) => {
     webcams: webcamSkeleton
   };
 
-  // Find all webcams in database from the last 12 hrs
-  Webcam.findAll({ where: { date: { [Op.gt]: hoursAgo(12) } } })
+  // Find all webcams in database from the time period specified in config
+  Webcam.findAll({
+    where: { date: { [Op.gt]: hoursAgo(config.app.timePeriod) } }
+  })
     .then(webcams => {
       // Iterate over areas
       Object.keys(data.webcams).forEach(area => {
@@ -40,7 +43,12 @@ const loadAllWebcams = (req, res) => {
           images.sort((a, b) => (a.id > b.id ? 1 : -1));
 
           const latestImage = images[images.length - 1];
-          if (latestImage && moment(latestImage.date).isBefore(hoursAgo(2))) {
+          if (
+            latestImage &&
+            moment(latestImage.date).isBefore(
+              hoursAgo(config.app.staleThreshold)
+            )
+          ) {
             webcam.stale = true;
           }
 
