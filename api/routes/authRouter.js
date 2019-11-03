@@ -108,6 +108,7 @@ router.post("/login", (req, res, next) => {
   const email = req.body.email;
   const password = req.body.password;
   let token;
+  let userObject;
 
   User.findOne({ where: { email } })
     .then(user => {
@@ -122,6 +123,7 @@ router.post("/login", (req, res, next) => {
         winston.warn(`Incorrect password for ${user.email}`);
         return res.status(401).json({ message: "Incorrect password" });
       }
+      userObject = user;
       const payload = { id: user.id, email: user.email };
       token = jwt.sign({ user: payload }, config.token.secret, {
         expiresIn: config.token.expiry
@@ -138,6 +140,7 @@ router.post("/login", (req, res, next) => {
     .then(rowsUpdated => {
       winston.info(`Log in successful`);
       return res.status(200).json({
+        user: userObject,
         token: token,
         message: "Logged in successfully"
       });
