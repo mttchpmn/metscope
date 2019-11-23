@@ -9,7 +9,8 @@
     "prod": "docker stop METSCOPE-PROD; docker rm METSCOPE-PROD; docker build -t metscope-api .; docker-compose run --name METSCOPE-PROD --service-ports web",
     "shell": "docker exec -it WEB_API /bin/sh",
     "db": "psql postgres://metscope:password@localhost:5433/metscope",
-    "migrate": "docker exec WEB_API ./node_modules/.bin/sequelize db:migrate"
+    "migrate": "docker exec WEB_API ./node_modules/.bin/sequelize db:migrate",
+    "purge-logs": "sudo sh -c 'truncate -s 0 /var/lib/docker/containers/*/*-json.log'"
   },
   "author": "Matt Chapman",
   "license": "ISC",
