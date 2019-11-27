@@ -90,16 +90,16 @@ module.exports = [
     areaCode: "fd",
     region: "southland",
     zone: "fiordland"
-  },
-  {
-    title: "Kepler Track",
-    code: "fd_keplerTrack",
-    desc: "Situated on the Kepler Track",
-    originUrl: "https://www.metdata.net.nz/doc/kepler/cam2/image.php",
-    static: true,
-    area: "fiords",
-    areaCode: "fd",
-    region: "southland",
-    zone: "fiordland"
   }
+  // {
+  //   title: "Kepler Track",
+  //   code: "fd_keplerTrack",
+  //   desc: "Situated on the Kepler Track",
+  //   originUrl: "https://www.metdata.net.nz/doc/kepler/cam2/image.php",
+  //   static: true,
+  //   area: "fiords",
+  //   areaCode: "fd",
+  //   region: "southland",
+  //   zone: "fiordland"
+  // }
 ];
