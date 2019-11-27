@@ -46,12 +46,11 @@ module.exports = [
     zone: "fiordland"
   },
   {
-    title: "Milford Sound (Southern Discoveries Dock)",
-    code: "fd_milfordSoundSD",
-    desc:
-      "Situated at the Southern Discoveries Dock looking towards Mitre Peak",
+    title: "Milford Sound Lodge",
+    code: "fd_milfordSoundLodge",
+    desc: "Situated at the Milford Lodge looking towards Mitre Peak",
     originUrl:
-      "https://www.southerndiscoveries.co.nz/webcam-images/terminal/webcam1.jpg",
+      "https://www.southerndiscoveries.co.nz/webcam-images/blueduck/webcam2.jpg",
     static: true,
     area: "fiords",
     areaCode: "fd",
