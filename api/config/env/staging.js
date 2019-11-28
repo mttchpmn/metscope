@@ -2,7 +2,9 @@
 
 module.exports = {
   app: {
-    port: process.env.PORT || 4000
+    port: process.env.PORT || 4000,
+    timePeriod: 6,
+    staleThreshold: 3
   },
   token: {
     secret: process.env.TOKEN_SECRET,

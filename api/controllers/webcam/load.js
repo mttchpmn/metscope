@@ -19,37 +19,32 @@ const loadWebcam = (req, res) => {
     return res.status(404).json({ message: `Webcam: ${webcamName} not found` });
   }
 
+  // Response skeleton
   let data = {
-    webcam: {
-      name: webcamName,
-      title: requestedCam.title,
-      desc: requestedCam.desc,
-      area: requestedCam.area,
-      areaCode: requestedCam.areaCode,
-      region: requestedCam.region,
-      zone: requestedCam.zone
-    }
+    webcam: requestedCam
   };
 
-  const twentyFourHoursAgo = moment
-    .utc()
-    .subtract(24, "hours")
-    .format();
-
-  const threeHoursAgo = moment
-    .utc()
-    .subtract(3, "hours")
-    .format();
+  // Helper function for time comparison
+  const hoursAgo = num =>
+    moment
+      .utc()
+      .subtract(num, "hours")
+      .format();
 
   Webcam.findAll({
-    where: { name: webcamName, date: { [Op.gt]: twentyFourHoursAgo } }
+    where: { name: webcamName, date: { [Op.gt]: hoursAgo(12) } }
   })
-    .then(webcams => {
-      winston.info(`Found ${webcams.length} rows`);
-      data.webcam.images = webcams;
-      webcams.map(cam => {
-        if (moment(cam.date).isBefore(threeHoursAgo)) data.webcam.stale = true;
-      });
+    .then(images => {
+      winston.info(`Found ${images.length} rows`);
+      images.sort((a, b) => (a.id > b.id ? 1 : -1));
+
+      const latestImage = images[images.length - 1];
+      if (latestImage && moment(latestImage.date).isBefore(hoursAgo(2))) {
+        webcam.stale = true;
+      }
+
+      data.webcam.images = images;
+
       res.status(200).json({ data });
     })
     .catch(err => {
