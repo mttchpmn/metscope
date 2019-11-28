@@ -3,7 +3,7 @@
 module.exports = {
   app: {
     port: process.env.PORT || 3000,
-    timePeriod: 6,
+    timePeriod: 3,
     staleThreshold: 2
   },
   db: {
