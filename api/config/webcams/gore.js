@@ -21,17 +21,17 @@ module.exports = [
   //     region: "otago",
   //     zone: "southEastCoast"
   //   },
-  {
-    title: "Dunedin City",
-    code: "ge_dunedinCity",
-    desc: "Situated in Dunedin City, looking Northeast towards Mt Cargill",
-    originUrl: "http://nzmoray.co.nz/webcam/cam-image00001.jpg",
-    static: true,
-    area: "gore",
-    areaCode: "ge",
-    region: "otago",
-    zone: "dunedin"
-  },
+//   {
+//     title: "Dunedin City",
+//     code: "ge_dunedinCity",
+//     desc: "Situated in Dunedin City, looking Northeast towards Mt Cargill",
+//     originUrl: "http://nzmoray.co.nz/webcam/cam-image00001.jpg",
+//     static: true,
+//     area: "gore",
+//     areaCode: "ge",
+//     region: "otago",
+//     zone: "dunedin"
+//   },
   {
     title: "North East Valley",
     code: "ge_northEastValley",
