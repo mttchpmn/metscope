@@ -10,6 +10,7 @@
     "shell": "docker exec -it WEB_API /bin/sh",
     "db": "psql postgres://metscope:password@localhost:5433/metscope",
     "migrate": "docker exec WEB_API ./node_modules/.bin/sequelize db:migrate",
+    "view-logs": "docker logs -f METSCOPE-PROD",
     "purge-logs": "sudo sh -c 'truncate -s 0 /var/lib/docker/containers/*/*-json.log'"
   },
   "author": "Matt Chapman",
@@ -23,6 +24,7 @@
     "cors": "^2.8.5",
     "dotenv": "^8.0.0",
     "express": "^4.17.1",
+    "htmltidy2": "^0.3.0",
     "jsonwebtoken": "^8.5.1",
     "lodash": "^4.17.15",
     "moment": "^2.24.0",
@@ -30,6 +32,7 @@
     "nodemon": "^1.19.1",
     "pg": "^7.11.0",
     "promise.allsettled": "^1.0.1",
+    "puppeteer": "^2.0.0",
     "sequelize": "^5.21.0",
     "serve-index": "^1.9.1",
     "swagger-jsdoc": "^3.3.0",
