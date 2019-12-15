@@ -7,6 +7,7 @@ const router = express.Router();
 const scrapeArea = require("../controllers/webcam/scrapeArea.js");
 const scrapeAllWebcams = require("../controllers/webcam/scrapeAll.js");
 const purgeWebcams = require("../controllers/webcam/purge");
+const scrapeIfis = require("../controllers/weather/scrapeIfis");
 
 /**
  * @swagger
@@ -67,5 +68,7 @@ router.get("/webcam/scrape/:area", scrapeArea);
  *        description: Internal Error
  */
 router.get("/webcam/purge", purgeWebcams);
+
+router.get("/weather/scrape/ifis", scrapeIfis);
 
 module.exports = router;
