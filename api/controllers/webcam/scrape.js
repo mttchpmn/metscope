@@ -32,6 +32,7 @@ module.exports = (req, res) => {
         res.status(500).json({ error: "Internal error" });
       });
   }
+
   scrapeStatic(webcamName, requestedCam.originUrl)
     .then(({ code, newImage }) =>
       res
