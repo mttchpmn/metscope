@@ -42,7 +42,12 @@ async function getBriefingData() {
   console.log("Logging in to IFIS...");
   const browser = await puppeteer.launch({
     headless: true,
-    args: ["--no-sandbox", "--disable-setuid-sandbox", "--single-process"] // Need these for Puppeteer to run correctly in Docker
+    args: [
+      "--no-sandbox",
+      "--disable-setuid-sandbox",
+      "--proxy-server=socks4://202.49.183.168:34897",
+      "--user-agent=Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.50 Safari/537.36"
+    ]
   });
   const page = await browser.newPage();
 
@@ -218,9 +223,9 @@ async function getAaw(html) {
 
   $(".metText.metPreformatted").each(function(i, elem) {
     const aaw = $(this).text();
-    const area = aaw.slice(13, 16);
+    const area = aaw.slice(14, 16);
 
-    aawList.push({ area, aaw });
+    if (area !== "--") aawList.push({ area, aaw });
   });
 
   return aawList;
