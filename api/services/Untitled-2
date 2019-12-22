@@ -1,0 +1,14 @@
+Metscope UI restructure
+
+# Home page
+// Landing page - do not show if user logged in (remember me)
+
+    # Start page / area select
+    // Automatically navigate to here if user already logged in.  User selects areas and then hits 'Go' / 'Submit'
+
+        # Briefing page
+        // Display briefing content - pseudo navigation for briefing content: sigmet, aerodromes, aaw, charts, webcams, metvuw.  Navigate using stateSwitcher or similar
+
+    # About page
+
+    # Contact page

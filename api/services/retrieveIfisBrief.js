@@ -303,5 +303,5 @@ module.exports = async () => {
   const sigmet = await getSigmet(html);
   const charts = await getCharts(html);
 
-  return { info, aerodromes, aaw, sigmet, charts };
+  return { brief: { info, aerodromes, aaw, sigmet, charts } };
 };
