@@ -115,7 +115,7 @@ async function getBriefInfo(html) {
 
   let briefInfo = {};
 
-  briefInfo.id = $(".headerTitle")
+  briefInfo.identifier = $(".headerTitle")
     .text()
     .trim()
     .split("ID: ")[1];
@@ -314,5 +314,5 @@ module.exports = async () => {
   const sigmet = await getSigmet(html);
   const charts = await getCharts(html);
 
-  return { brief: { info, aerodromes, aaw, sigmet, charts } };
+  return { info, aerodromes, aaw, sigmet, charts };
 };
