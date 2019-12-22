@@ -4,7 +4,7 @@ module.exports = (sequelize, DataTypes) => {
   const Brief = sequelize.define(
     "Brief",
     {
-      id: DataTypes.STRING,
+      identifier: DataTypes.STRING,
       date: DataTypes.DATE,
       from: DataTypes.DATE,
       to: DataTypes.DATE,
