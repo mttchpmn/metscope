@@ -4,7 +4,8 @@ module.exports = {
   app: {
     port: process.env.PORT || 3000,
     timePeriod: 6,
-    staleThreshold: 3
+    staleThreshold: 3,
+    purgeThreshold: 12
   },
   db: {
     user: "metscope",
