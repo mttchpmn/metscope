@@ -115,15 +115,26 @@ async function getBriefInfo(html) {
 
   let briefInfo = {};
 
-  briefInfo.id = $(".headerTitle")
+  briefInfo.identifier = $(".headerTitle")
     .text()
     .trim()
     .split("ID: ")[1];
 
   $(".headerValue").each(function(i, elem) {
-    if (i === 1) briefInfo.validFrom = $(this).text();
-    if (i === 2) briefInfo.validTo = $(this).text();
-    if (i === 6) briefInfo.issueDate = $(this).text();
+    if (i === 1)
+      briefInfo.validFrom = $(this)
+        .text()
+        .replace(/\n/, " ")
+        .concat(" UTC");
+    if (i === 2)
+      briefInfo.validTo = $(this)
+        .text()
+        .replace(/\n/, " ")
+        .concat(" UTC");
+    if (i === 6)
+      briefInfo.issueDate = $(this)
+        .text()
+        .replace(/\n/, " ");
   });
 
   return briefInfo;
