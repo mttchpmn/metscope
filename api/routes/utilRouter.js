@@ -7,7 +7,7 @@ const router = express.Router();
 const scrapeArea = require("../controllers/webcam/scrapeArea.js");
 const scrapeAllWebcams = require("../controllers/webcam/scrapeAll.js");
 const purgeWebcams = require("../controllers/webcam/purge");
-const scrapeIfis = require("../controllers/weather/scrapeIfis");
+const scrapeBrief = require("../controllers/weather/scrapeBrief");
 
 /**
  * @swagger
@@ -69,6 +69,6 @@ router.get("/webcam/scrape/:area", scrapeArea);
  */
 router.get("/webcam/purge", purgeWebcams);
 
-router.get("/weather/scrape/ifis", scrapeIfis);
+router.get("/weather/scrape/brief", scrapeBrief);
 
 module.exports = router;
