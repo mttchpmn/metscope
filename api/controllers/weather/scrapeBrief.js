@@ -26,5 +26,5 @@ module.exports = async (req, response) => {
     `IFIS brief added to database successfully with identifier: ${brief.identifier}`
   );
 
-  return response.status(200).json({ data: brief });
+  return response.status(200).json({ data: { brief } });
 };
