@@ -8,6 +8,8 @@ const fs = require("fs");
 const util = require("util");
 tidy = util.promisify(tidy);
 
+const aerodromeLookup = require("./aerodromeLookup");
+
 async function getBriefingData() {
   const pages = {
     login:
@@ -291,8 +293,18 @@ async function mapAerodromes(html) {
   const allMet = await getMet(html);
 
   let aerodromes = aerodromeList.map(aerodrome => {
+    let area = aerodromeLookup[aerodrome].area;
+    let name = aerodromeLookup[aerodrome].name;
     let notams = allNotams.filter(notam => notam.aerodrome === aerodrome);
-    let result = { aerodrome, notams, atis: null, metar: null, taf: null };
+    let result = {
+      aerodrome,
+      name,
+      area,
+      notams,
+      atis: null,
+      metar: null,
+      taf: null
+    };
 
     let met = allMet.filter(met => met.aerodrome === aerodrome);
     for (let obj of met) {

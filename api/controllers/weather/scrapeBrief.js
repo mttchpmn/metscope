@@ -3,11 +3,11 @@
 const moment = require("moment");
 
 const winston = require("../../config/winston");
-const retrieveIfisBrief = require("../../services/retrieveIfisBrief");
+const retrieveBrief = require("../../services/retrieveBrief");
 const Brief = require("../../../database/models").Brief;
 
 module.exports = async (req, response) => {
-  const brief = await retrieveIfisBrief();
+  const brief = await retrieveBrief();
 
   console.log("brief :", brief);
 
