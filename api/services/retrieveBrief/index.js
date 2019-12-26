@@ -4,6 +4,7 @@ const puppeteer = require("puppeteer");
 const cheerio = require("cheerio");
 let tidy = require("htmltidy2").tidy;
 
+const winston = require("../../config/winston");
 const fs = require("fs");
 const util = require("util");
 tidy = util.promisify(tidy);
@@ -41,7 +42,7 @@ async function getBriefingData() {
   };
 
   const startTime = new Date(); // Used for measuring execution time
-  console.log("Logging in to IFIS...");
+  winston.info("Logging in to IFIS...");
   const browser = await puppeteer.launch({
     headless: true,
     args: [
@@ -66,10 +67,10 @@ async function getBriefingData() {
   // Submit login and wait for redirect
   await page.click(selectors.submit);
   await page.waitForSelector(selectors.homepage);
-  console.log("Login successful.");
+  winston.info("Login successful.");
 
   // Navigate to briefing selection and wait for load
-  console.log("Requesting briefing...");
+  winston.info("Requesting briefing...");
   await page.goto(pages.areaBriefing);
   await page.waitForSelector(selectors.briefingAreas);
 
@@ -92,7 +93,7 @@ async function getBriefingData() {
   await page.goto(`${page.url()}#contentContainer`, {
     waitUntil: "networkidle0"
   });
-  console.log("Briefing request successful.");
+  winston.info("Briefing request successful.");
 
   // Get html content from page
   const data = await page.content();
@@ -100,7 +101,7 @@ async function getBriefingData() {
 
   // Track execution time
   const endTime = new Date();
-  console.log(`Completed in ${(endTime - startTime) / 1000} seconds.`);
+  winston.info(`Completed in ${(endTime - startTime) / 1000} seconds.`);
 
   return data;
 }
@@ -170,6 +171,8 @@ async function getAerodromeList(html) {
     const index = aerodromeList.indexOf("NZZC");
     aerodromeList.splice(index, 1);
   }
+
+  winston.debug(`Found aerodromes:\n${aerodromeList}`);
 
   return aerodromeList;
 }
