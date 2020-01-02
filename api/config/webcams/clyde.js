@@ -238,5 +238,31 @@ module.exports = [
     areaCode: "cy",
     region: "otago",
     zone: "queenstownLakes"
+  },
+  {
+    title: "Alexandra (Moutere Station)",
+    code: "cy_alexandraMoutere",
+    desc: "Situated at Moutere Station, Northwest of Alexandra",
+    direction: "S",
+    elevationFeet: "",
+    originUrl: "http://upload.aopa.nz/moutere.jpg",
+    static: true,
+    area: "clyde",
+    areaCode: "cy",
+    region: "otago",
+    zone: "queenstownLakes"
+  },
+  {
+    title: "Dansey's Pass",
+    code: "cy_danseysPass",
+    desc: "Situated at Dansey's Pass, looking over the Maniototo",
+    direction: "SW",
+    elevationFeet: "",
+    originUrl: "http://58.84.48.53:1080/172.21.11.220/cover/1.jpg",
+    static: true,
+    area: "clyde",
+    areaCode: "cy",
+    region: "otago",
+    zone: "queenstownLakes"
   }
 ];
