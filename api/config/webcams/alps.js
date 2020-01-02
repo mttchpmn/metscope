@@ -66,28 +66,44 @@ module.exports = [
     region: "canterbury",
     zone: "highCountry"
   },
-  //   {
-  //     title: "Omarama Township",
-  //     code: "al_omaramaTownship",
-  //     desc: "Situated at the Omarama petrol station looking Northeast towards Benmore Peak",
-  //     originUrl: "http://www.getwirelessnz.com/omarama-webcam.html",
-  //     static: false,
-  //     area: "alps",
-  //     areaCode: "al",
-  //     region: "canterbury",
-  //     zone: "highCountry"
-  //   },
-  //   {
-  //     title: "Lake Pukaki",
-  //     code: "al_lakePukaki",
-  //     desc: "Situated at Lakestone Lodge on Lake Pukaki, looking Northwest towards Aoraki Mt Cook",
-  //     originUrl: "http://www.lakestonelodge.co.nz/webcam",
-  //     static: false,
-  //     area: "alps",
-  //     areaCode: "al",
-  //     region: "canterbury",
-  //     zone: "highCountry"
-  //   },
+  {
+    title: "Omarama Township",
+    code: "al_omaramaTownship",
+    desc:
+      "Situated at the Omarama petrol station looking Northeast towards Benmore Peak",
+    originUrl: "http://www.getwirelessnz.com/omarama-webcam.html",
+    static: false,
+    area: "alps",
+    areaCode: "al",
+    region: "canterbury",
+    zone: "highCountry"
+  },
+  {
+    title: "Omarama Airport",
+    code: "al_omaramaAirport",
+    desc: "Situated at the Omarama Airport",
+    direction: "NW",
+    elevationFeet: "1380",
+    source: "http://glideomarama.com",
+    originUrl: "http://webcam.glideomarama.com/camera1.jpg",
+    static: true,
+    area: "alps",
+    areaCode: "al",
+    region: "canterbury",
+    zone: "highCountry"
+  },
+  {
+    title: "Lake Pukaki",
+    code: "al_lakePukaki",
+    desc:
+      "Situated at Lakestone Lodge on Lake Pukaki, looking Northwest towards Aoraki Mt Cook",
+    originUrl: "http://www.lakestonelodge.co.nz/webcam",
+    static: false,
+    area: "alps",
+    areaCode: "al",
+    region: "canterbury",
+    zone: "highCountry"
+  },
   {
     title: "Twizel",
     code: "al_twizelNW",
