@@ -2,6 +2,7 @@
 
 // External imports
 const express = require("express");
+const session = require("express-session");
 const cors = require("cors");
 const serveIndex = require("serve-index");
 const morgan = require("morgan");
@@ -19,6 +20,7 @@ const withAuth = require("./api/middleware/withAuth");
 const authRouter = require("./api/routes/authRouter");
 const dataRouter = require("./api/routes/dataRouter");
 const utilRouter = require("./api/routes/utilRouter");
+const userRouter = require("./api/routes/userRouter");
 
 // Instantiate app
 winston.info(`API starting...`);
@@ -34,6 +36,7 @@ app.use("/docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
 // Configure Routers
 app.use("/auth", authRouter);
+app.use("/user", userRouter);
 
 // CHANGE COMMENTS TO REENABLE AUTH
 // app.use("/data", withAuth, dataRouter);
