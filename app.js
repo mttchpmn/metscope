@@ -57,8 +57,7 @@ app.get("/docs.json", (req, res) => {
 });
 
 // Launch app
-winston.info(`API online at port ${port}`);
-app.listen(port);
+app.listen(port, () => winston.info(`API online at port ${port}`));
 
 // Export app for test suite
 module.exports = app;
