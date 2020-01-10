@@ -29,10 +29,6 @@ userRouter.post("/login", async (req, res) => {
     const { email, password } = req.body;
     const user = await User.findOne({ where: { email } });
 
-    console.log("user :", user);
-    console.log("password :", password);
-    // console.log("user.password :", user.password);
-
     if (user && bcrypt.compareSync(password, user.password)) {
       const sessionUser = sessionizeUser(user);
       req.session.user = sessionUser;
@@ -50,12 +46,9 @@ userRouter.delete("/logout", async ({ session }, res) => {
   try {
     const user = session.user;
     if (user) {
-      session.destroy(err => {
-        if (err) throw err;
-
-        res.clearCookie(config.session.name);
-        res.send(user);
-      });
+      session.destroy();
+      res.clearCookie(config.session.name);
+      res.send(user);
     } else {
       throw new Error("Something went wrong");
     }
