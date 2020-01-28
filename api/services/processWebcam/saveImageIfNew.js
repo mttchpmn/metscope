@@ -30,7 +30,12 @@ const _saveFile = (webcamName, url, fileName) =>
   new Promise((resolve, reject) => {
     let newBuffer;
 
-    axios({ method: "get", url: url, responseType: "arraybuffer" })
+    axios({
+      method: "get",
+      url: url,
+      responseType: "arraybuffer",
+      timeout: 4000
+    })
       .then(response => Buffer.from(response.data))
       .then(buf => {
         newBuffer = buf;
