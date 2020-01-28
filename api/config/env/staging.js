@@ -11,6 +11,11 @@ module.exports = {
     secret: process.env.TOKEN_SECRET,
     expiry: "7 days"
   },
+  session: {
+    name: "sid",
+    secret: process.env.SESSION_SECRET,
+    lifetime: 1000 * 60 * 60 * 7
+  },
   db: {
     username: process.env.DB_USER || "metscope",
     password: process.env.DB_PASSWORD,
