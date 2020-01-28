@@ -11,6 +11,11 @@ module.exports = {
     secret: "ivegotalovelybunchofcoconuts",
     expiry: "7 days"
   },
+  session: {
+    name: "sid",
+    secret: "sessionsarethebusinessyo",
+    lifetime: 1000 * 60 * 60 * 7
+  },
   db: {
     username: "metscope",
     password: "password",

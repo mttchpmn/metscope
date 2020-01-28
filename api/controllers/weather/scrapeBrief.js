@@ -9,8 +9,6 @@ const Brief = require("../../../database/models").Brief;
 module.exports = async (req, response) => {
   const brief = await retrieveBrief();
 
-  console.log("brief :", brief);
-
   await Brief.create({
     identifier: brief.info.identifier,
     date: brief.info.issueDate,
@@ -26,5 +24,7 @@ module.exports = async (req, response) => {
     `IFIS brief added to database successfully with identifier: ${brief.identifier}`
   );
 
-  return response.status(200).json({ data: { brief } });
+  return response
+    .status(200)
+    .json({ data: { message: "Brief saved successfully" } });
 };

@@ -1,0 +1,1019 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+  <title>Area Pre-Flight Briefing (NZ)</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/static/css/ifis.css" />
+  <link rel="stylesheet" href="/static/css/aqc.css" />
+
+  <script src="/static/js/navigation.js" type="text/javascript"></script>
+
+  <script src="/static/js/form.js?ver=a" type="text/javascript"></script>
+
+  <script src="/static/js/help.js" type="text/javascript"></script>
+
+  <script src="/static/js/datetimepicker.js" type="text/javascript"></script>
+<script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-51442224-1', 'airways.co.nz');
+  ga('send', 'pageview');
+</script>
+
+</head>
+
+<body>
+
+  <div id="nav">
+
+
+<!-- Begin Navigation -->
+<div id="menu">
+  <div id="navlogo">
+    <a href="http://www.airways.co.nz/" target="_new">
+      <img src="/images/common/airways_logo.png" alt="Airways" />
+    </a>
+  </div>
+
+  <ul id="sddm">
+    <li><a href="/">Home</a></li>
+    <li>
+      <a href="#" onclick="mopen('m2'); return false;" onmouseover="mopen('m2')" onmouseout="mclosetime()">Briefing</a>
+      <div id="m2" onmouseover="mcancelclosetime()" onmouseout="mclosetime()">
+        <a href="/script/briefing/aerodrome_briefing.asp">Aerodrome</a>
+        <a href="/script/other/simple_briefing.asp">Area (NZ)</a>
+        <a href="/script/briefing/fir_briefing.asp">Area (FIR only)</a>
+        <a href="/script/briefing/route_briefing.asp">Route</a>
+        <a href="/script/briefing/met_briefing.asp">MET</a>
+        <a href="/script/briefing/narrow_route_briefing.asp">Narrow Route</a>
+        <a href="/script/briefing/update_briefing.asp">Update an existing Briefing</a>
+        <a href="/script/other/gps_raim.asp">GPS RAIM</a>
+        <a href="http://www.aip.net.nz/" target="_new">AIP Online</a>
+        <a href="/script/planning/twilight.asp">Twilight Tables</a>
+      </div>
+    </li>
+    <li>
+      <a href="#" onclick="mopen('m3'); return false;" onmouseover="mopen('m3')" onmouseout="mclosetime()">Flight Plans</a>
+      <div id="m3" onmouseover="mcancelclosetime()" onmouseout="mclosetime()">
+        <a href="/script/flight_plans/ifr_domestic.asp">IFR Domestic</a>
+        <a href="/script/flight_plans/ifr_international.asp">International or Special Events</a>
+        <a href="/script/tms/ifr.asp">IFR TMS</a>
+        <a href="/script/flight_plans/vfr.asp">VFR Flight Plans</a>
+        <a href="/script/flight_plans/vfr_local_flight_index.asp">Local Flights</a>
+        <a href="/script/tms/vfr.asp">VFR TMS</a>
+        <a href="/script/flight_plans/general_info.asp">General Information</a>
+      </div>
+    </li>
+    <li>
+      <a href="#" onclick="mopen('m4'); return false;" onmouseover="mopen('m4')" onmouseout="mclosetime()">AIP</a>
+      <div id="m4" onmouseover="mcancelclosetime()" onmouseout="mclosetime()">
+        <a href="http://shop.aeropath.aero/" target="_new">AIP Shop</a>
+        <a href="http://www.aip.net.nz/" target="_new">AIP Online</a>
+        <a href="http://www.aip.net.nz/NavWalk.aspx?section=ANR" target="_new">Air Navigation Register</a>
+      </div>
+    </li>
+    <li>
+      <a href="#" onclick="mopen('m5'); return false;" onmouseover="mopen('m5')" onmouseout="mclosetime()">Originators</a>
+      <div id="m5" onmouseover="mcancelclosetime()" onmouseout="mclosetime()">
+<!--  Replace 2 separate items iwth a single link ISD FEB-19
+        <a href="https://originators.aeropath.co.nz/" target="_new">Originators Online</a>
+        <a href="https://originators.aeropath.co.nz/" target="_new">AIP Change</a>
+-->		
+        <a href="https://originators.aeropath.co.nz/" target="_new">Originators Online / AIP change</a>
+        <a href="/script/other/notam_issue.asp">Issue NOTAM</a>
+<!--    <a href="https://www.caa.govt.nz/assets/legacy/aip/AIPNZ_Cycles_19.pdf" target="_new">AIRAC Cycle Dates</a>  -->
+		<a href="https://www.caa.govt.nz/assets/airspace-and-aerodromes/aip-cycle-dates-2019.pdf" target="_new">AIRAC Cycle Dates - 2019</a>
+        <a href="https://www.caa.govt.nz/assets/airspace-and-aerodromes/aip-cycle-dates-2020.pdf" target="_new">AIRAC Cycle Dates - 2020</a>
+      </div>
+    </li>
+    <li>
+
+      <a href="/script/user_reg/logout.asp">Log Out</a>
+
+    </li>
+  </ul>
+
+  <div style="clear:both"></div>
+</div>
+<!-- End Navigation -->
+
+  </div>
+<div id="breadcrumbs"><a href="/">Home</a>
+<span class="separator">&gt;</span>Area Pre-Flight Briefing (NZ)
+</div><div id="contentContainer" class="">
+<p>Your Briefing Request is being processed - please wait.</p>
+<hr />
+      <div class="aqcResponse">
+         <table>
+            <tr>
+               <td colspan="2"><span class="headerTitle">New Zealand<br />
+                     Aeronautical Information Services<br />
+                     ID: NZCH191226011251<br /></span></td>
+            </tr>
+            <tr>
+               <td><span class="headerLabel">Pre-flight<br />
+                     Information Bulletin<br /></span><span class="headerValue">AREA</span></td>
+               <td style="text-align: left;vertical-align: text-top">								                                      <span class="headerLabel">Period (UTC)<br />
+                     FROM: </span><span class="headerValue">26 DEC 2019 20:41</span><br /><span class="headerLabel">TO:</span>									                                 <span class="headerValue">27 DEC 2019 20:41</span></td>
+            </tr>
+            <tr>
+               <td style="text-align: left"><span class="headerLabel">Flight Rules:    </span><span class="headerValue">IFR/VFR</span></td>
+               <td rowspan="2" style="vertical-align: text-top"><span class="headerLabel">Height Limits:<br />
+                     Lower: </span><span class="headerValue">000</span>									                                      <span class="headerLabel">Upper: </span><span class="headerValue">999</span></td>
+            </tr>
+            <tr>
+               <td style="text-align: left"><span class="headerLabel">Issued: </span><span class="headerValue">26 DEC 2019 20:41 UTC</span></td>
+            </tr>
+            <tr>
+               <td colspan="2" style="text-align: left"><span class="headerLabel">Contents: </span><span class="headerValue">NOTAM, ATIS, METAR, TAF, <span class="headerValue">SIGMET, VOLCANIC SIGMET, CYCLONE SIGMET</span></span><span class="headerValue">, </span><span class="headerValue">AAW</span></td>
+            </tr>
+            <tr>
+               <td colspan="2" style="text-align: left"><span class="headerLabel">Briefing Areas: </span><span class="headerValue">NZ01 NZ02 NZ03 NZ04 NZ05 NZ06 NZ07 NZ08 NZ09 NZ10                                     </span></td>
+            </tr>
+            <tr>
+               <td colspan="2" style="text-align: left"><span class="headerLabel">Aerodromes: </span><span class="headerValue">NZKT NZKK NZKO NZWR NZDA NZRW NZOX NZKD NZGB NZSL NZOF NZKF NZPI NZNE NZWP NZCX NZKE
+                     NZWT NZAW NZAA NZUN NZAR NZTH NZME NZPU NZWV NZTG NZMA NZTE NZRA NZHN NZWK NZOP NZRO
+                     NZRL NZES NZTO NZTT NZGA NZGS NZCG NZLT NZAP NZTM NZRK NZTN NZWO NZNP NZNF NZSD NZNR
+                     NZHA NZHS NZVR NZKY NZFL NZWU NZYP NZOH NZDV NZFI NZPO NZPM NZFP NZKP NZOT NZTK NZPP
+                     NZMS NZPW NZMK NZKM NZFT NZSO NZNS NZWN NZPN NZCL NZWB NZOM NZWS NZLE NZMR NZKI NZGM
+                     NZHP NZHK NZLA NZRT NZFE NZML NZFJ NZWY NZSF NZFF NZFO NZWL NZCH NZPH NZMC NZHT NZAS
+                     NZGT NZTL NZRI NZMW NZUK NZTU NZMJ NZOA NZMF NZWF NZWM NZGY NZOU NZCW NZQN NZCS NZLX
+                     NZRX NZMO NZTI NZDN NZVL NZCB NZGC NZBA NZNV NZRC                                         </span></td>
+            </tr>
+            <tr>
+               <td colspan="2" style="text-align: left"><span class="headerLabel">MET Locations: </span><span class="headerValue">NZKK NZWR NZWP NZAA NZTG NZHN NZWK NZRO NZGS NZAP NZNP NZNR NZWU NZOH NZPM NZPP NZMS
+                     NZNS NZWN NZWB NZWS NZHK NZCH NZTU NZMF NZWF NZOU NZQN NZMO NZDN NZNV NZZC </span></td>
+            </tr>
+         <tr><td colspan="2" style="text-align: left"><span class="headerLabel">AAW Locations: </span><span class="headerValue">FN TA TK ED CP MH SA DV ST TN WW KA AL PL CY GE FD</span></td></tr></table><br /><br /><br /><span class="notamSectionHeader">                                AERODROMES                            </span><br /><br /><span class="notamLocation">NZWR (WHANGAREI)                            </span><br /><br /><span class="notamSeries">A0172/17</span><span class="notamToFrom">											                                               FROM:  30 JAN 2017 20:49  TO:  PERM<br /></span><span class="notamText">REF AIP NZWR AD 2-52.1 WHANGAREI OPERATIONAL DATA (1)<br/>
+IFR TAKE-OFF MINIMA TABLE IS AMENDED TO READ AS FLW:<br/>
+RWY 06/24 NIGHT<br/>
+AVAILABLE TO OPERATORS AUTHORISED BY CAA NZ ONLY.<br/>
+THE FOLLOWING INSTRUMENT DEPARTURE PROCEDURES MAY BE FLOWN AT NIGHT<br/>
+BY CAA NZ APPROVED OPERATORS ONLY:<br/>
+WHANGAREI SID RWY 06 BREAM FOUR DEPARTURE (BREAM4)<br/>
+WHANGAREI SID RWY 06 WAIPU TWO DEPARTURE (WAIPU2)<br/>
+WHANGAREI SID RWY 24 HARBOUR FOUR DEPARTURE (HARBOUR4)<br/>
+WHANGAREI SID RWY 24 PORTLAND TWO DEPARTURE (PORTLAND2)<br/>
+AIP WILL BE AMENDED<br /><br /></span><span class="notamLocation">NZGB (GREAT BARRIER)                            </span><br /><br /><span class="notamSeries">A3993/19</span><span class="notamToFrom">											                                               FROM:  19 DEC 2019 18:01  TO:  15 JAN 2020 06:00                                                 <br /></span><span class="notamText">GRASS RWY 06/24 CLSD DUE WIP<br /><br /></span><span class="notamSeries">A3994/19</span><span class="notamToFrom">											                                               FROM:  19 DEC 2019 18:06  TO:  15 JAN 2020 06:00                                                 <br /></span><span class="notamText">SEALED TWY AND APRON CLSD DUE WIP<br /><br /></span><span class="notamLocation">NZKF (KAIPARA FLATS)                            </span><br /><br /><span class="notamSeries">A3751/19</span><span class="notamToFrom">											                                               FROM:  04 DEC 2019 23:21  TO:  03 MAR 2020 23:00                                                 EST<br /></span><span class="notamText">AD WIP. MEN AND EQPT OPR<br /><br /></span><span class="notamSeries">A3817/19</span><span class="notamToFrom">											                                               FROM:  10 DEC 2019 00:15  TO:  09 MAR 2020 00:00                                                 EST<br /></span><span class="notamText">DTHR GRASS RWY 07 FURTHER DISPLACED 213M DUE WIP<br /><br /></span><span class="notamSeries">A4005/19</span><span class="notamToFrom">											                                               FROM:  20 DEC 2019 22:08  TO:  31 JAN 2020 00:00                                                 EST<br /></span><span class="notamText">DTHR GRASS RWY 25 DISPLACED FURTHER 135M DUE TREES. DTHR MARKED <br/>
+BY WHITE TYRES<br /><br /></span><span class="notamLocation">NZNE (NORTH SHORE)                            </span><br /><br /><span class="notamSeries">A3686/19</span><span class="notamToFrom">											                                               FROM:  29 NOV 2019 20:25  TO:  28 FEB 2020 00:00                                                 EST<br /></span><span class="notamText">GRASS PORTION CONCRETE/GRASS RWY 03/21 RESTRICTED TO ACFT <br/>
+MAXIMUM ALL-UP WEIGHT 1500KG OR LESS<br /><br /></span><span class="notamSeries">A3687/19</span><span class="notamToFrom">											                                               FROM:  29 NOV 2019 20:28  TO:  28 FEB 2020 00:00                                                 EST<br /></span><span class="notamText">GRASS PORTION GRVL/GRASS RWY 09/27 CLSD DUE SFC COND<br /><br /></span><span class="notamLocation">NZWP (WHENUAPAI)                            </span><br /><br /><span class="notamSeries">B6693/19</span><span class="notamToFrom">											                                               FROM:  15 NOV 2019 04:20  TO:  14 FEB 2020 04:00                                                 EST<br /></span><span class="notamText">CRANE OPR IN VCY 36 41 09.9 S 174 44 25.4 E (LONG BAY, <br/>
+APRX 7.8NM NE NZWP AND 4.3NM SE NZNE). MAX HGT 292FT AGL<br /><br /></span><span class="notamSeries">B6201/19</span><span class="notamToFrom">											                                               FROM:  22 OCT 2019 20:15  TO:  22 JAN 2020 01:00                                                 EST<br /></span><span class="notamText">CRANE OPR AT 36 42 50.76 S 174 44 32.64 E (BROWNS BAY) APRX<br/>
+6.6NM NE OF THR RWY 21. MAX HGT 262FT AGL<br /><br /></span><span class="notamSeries">B5383/19</span><span class="notamToFrom">											                                               FROM:  11 SEP 2019 04:34  TO:  PERM<br /></span><span class="notamText">REF AIP<br/>
+NZWP AD 2-33.1 RNAV STAR RWY 03 (1) EFFECTIVE 23 MAY 19<br/>
+NZWP AD 2-33.2 RNAV STAR RWY 03 (2) EFFECTIVE 23 MAY 19<br/>
+NZWP AD 2-33.3 RNAV STAR RWY 21 (1) EFFECTIVE 23 MAY 19<br/>
+NZWP AD 2-33.4 RNAV STAR RWY 21 (2) EFFECTIVE 23 MAY 19<br/>
+<br/>
+ARRIVALS BOX TO BE ADDED TO THE ABOVE PAGES WITH THE FOLLOWING<br/>
+INFORMATION:<br/>
+<br/>
+ALL ARRIVALS WILL BE ISSUED INSTRUCTIONS TO JOIN THE STAR BY ATC<br /><br /></span><span class="notamSeries">B5384/19</span><span class="notamToFrom">											                                               FROM:  11 SEP 2019 04:48  TO:  PERM<br /></span><span class="notamText">REF AIP<br/>
+NZWP AD 2-62.3 RNAV SID RWY 03 EFFECTIVE 23 MAY 19<br/>
+NZWP AD 2-62.4 RNAV SID RWY 21 EFFECTIVE 23 MAY 19<br/>
+<br/>
+UNDER HEADING: ALL DEPARTURES<br/>
+ADD BULLET POINT 3:<br/>
+FOR AIRCRAFT ENTERING THE AUCKLAND OCEANIC FIR 11000FT OR ABOVE<br/>
+REFER OCEANIC TRANSITION ON DEPARTURE PAGE<br /><br /></span><span class="notamSeries">B5707/19</span><span class="notamToFrom">											                                               FROM:  29 SEP 2019 21:46  TO:  29 DEC 2019 21:40                                                 EST<br /></span><span class="notamText">CRANE OPR AT 36 45 52 S 174 37 08 E, APRX 1.6NM WNW THR RWY 21,<br/>
+MAX HGT 390FT AMSL. OBSTACLE LIMITATION SFC INFRINGED BY 138FT<br /><br /></span><span class="notamSeries">B5901/19</span><span class="notamToFrom">											                                               FROM:  07 OCT 2019 19:44  TO:  05 JAN 2020 23:00                                                 EST<br /></span><span class="notamText">CRANES OPR VCY 36 47 26 S 174 39 35 E, APRX 1800M E THR RWY 26.<br/>
+MAX HGT 110FT AGL<br /><br /></span><span class="notamSeries">B6136/19</span><span class="notamToFrom">											                                               FROM:  19 OCT 2019 04:51  TO:  17 JAN 2020 08:10                                                 EST<br /></span><span class="notamText">SR MINUS30-SS PLUS30<br />CRANE OPR AT 36 48 48 S 174 35 57 E APRX 1.4NM SW THR RWY 03.<br/>
+MAX HGT 90FT AGL<br /><br /></span><span class="notamSeries">B6202/19</span><span class="notamToFrom">											                                               FROM:  22 OCT 2019 20:21  TO:  22 JAN 2020 01:00                                                 EST<br /></span><span class="notamText">HEL FATO WITH TLOF PAD 4 CLSD DUE WIP<br /><br /></span><span class="notamSeries">B6421/19</span><span class="notamToFrom">											                                               FROM:  03 NOV 2019 20:19  TO:  PERM<br /></span><span class="notamText">REF AIP NZWP AD 2 - 41.1 ILS/DME OR LOC/DME RWY 03, NZWP AD 2 - <br/>
+41.3 ILS/DME OR LOC/DME RWY 21, NZWP AD 2 - 43.1 VOR/DME RWY 03, <br/>
+NZWP AD 2 - 43.3 VOR/DME RWY 21, NZWP AD 2 - 43.5 VOR/DME RWY 08, <br/>
+NZWP AD 2 - 43.7 VOR/DME RWY 26, NZWP AD - 2 45.1 RNAV (GNSS) RWY <br/>
+03, NZWP AD 2 - 45.2 RNAV (GNSS) RWY 21<br/>
+CAT D CIRCLING AIRSPACE CONTAINMENT NOT ASSURED<br /><br /></span><span class="notamSeries">B6694/19</span><span class="notamToFrom">											                                               FROM:  15 NOV 2019 04:21  TO:  14 FEB 2020 04:00                                                 EST<br /></span><span class="notamText">DAILY 1830-0600<br />CRANE OPR AT 36 49 16 S 174 36 23 E APRX 1.7NM S THR RWY 03.<br/>
+MAX HGT 132FT AGL<br /><br /></span><span class="notamSeries">B7029/19</span><span class="notamToFrom">											                                               FROM:  01 DEC 2019 03:44  TO:  01 MAR 2020 03:00                                                 EST<br /></span><span class="notamText">ACFT STAND 1 RESTRICTED TO CODE B ACFT AND SMALLER<br /><br /></span><span class="notamSeries">B7115/19</span><span class="notamToFrom">											                                               FROM:  04 DEC 2019 23:00  TO:  17 JAN 2020 05:00                                                 <br /></span><span class="notamText">ACFT STAND 5 CLSD<br /><br /></span><span class="notamSeries">B7490/19</span><span class="notamToFrom">											                                               FROM:  26 DEC 2019 19:00  TO:  27 DEC 2019 03:00                                                 <br /></span><span class="notamText">RWY 08/26 AND GRASS RWY 08/26 CLSD DUE REMOTELY PILOTED ACFT ACT<br /><br /></span><span class="notamSeries">B7491/19</span><span class="notamToFrom">											                                               FROM:  22 DEC 2019 22:11  TO:  31 DEC 2019 09:00                                                 <br /></span><span class="notamText">AMEND TWR/FIS HR SER:<br/>
+NIL MON-FRI<br/>
+AVBL ON REQUEST BY APPROVED OPERATORS ONLY.<br/>
+REF AIP SUP 2/19<br /><br /></span><span class="notamSeries">B6692/19</span><span class="notamToFrom">											                                               FROM:  15 NOV 2019 04:19  TO:  14 FEB 2020 04:00                                                 EST<br /></span><span class="notamText">SR MINUS30-SS PLUS30<br />CRANES OPR VCY 36 48 16 S 174 38 07 E APRX 1500M ESE THR RWY 03.<br/>
+MAX HGT 137FT AGL<br /><br /></span><span class="notamLocation">NZWT (WHITIANGA)                            </span><br /><br /><span class="notamSeries">A4040/19</span><span class="notamToFrom">											                                               FROM:  27 DEC 2019 19:00  TO:  28 DEC 2019 05:00                                                 <br /></span><span class="notamText">GRASS RWY 04 THRESHOLD FURTHER DISPLACED 100M<br /><br /></span><span class="notamSeries">A4041/19</span><span class="notamToFrom">											                                               FROM:  27 DEC 2019 19:00  TO:  28 DEC 2019 05:00                                                 <br /></span><span class="notamText">GRASS RWY 16/34 CLSD DUE ACFT PARKING<br /><br /></span><span class="notamSeries">A4039/19</span><span class="notamToFrom">											                                               FROM:  27 DEC 2019 19:00  TO:  28 DEC 2019 05:00                                                 <br /></span><span class="notamText">INCREASED ACFT ACTIVITY DUE AIR SHOW EVENT<br />                                                LOWER: SFC      UPPER: 1500FT AMSL<br /><br /></span><span class="notamLocation">NZAA (AUCKLAND)                            </span><br /><br /><span class="notamSeries">B6515/19</span><span class="notamToFrom">											                                               FROM:  06 NOV 2019 23:23  TO:  PERM<br /></span><span class="notamText">REF AIP NZAA AD 2-62.18<br/>
+NZAA RNAV SID RWY 23L (8)<br/>
+BATOS THREE PAPA DEPARTURE - RNAV (BATOS3P) NOT AVBL<br /><br /></span><span class="notamSeries">B6613/19</span><span class="notamToFrom">											                                               FROM:  12 NOV 2019 23:00  TO:  30 JAN 2020 10:59                                                 <br /></span><span class="notamText">HELIPORT FATO RE-LOCATED 55M EAST OF PRESENT POSITION. <br/>
+TLOF 2 RE-LOCATED TO MARKED AREA 30M SOUTH OF TLOF 1<br /><br /></span><span class="notamSeries">B6905/19</span><span class="notamToFrom">											                                               FROM:  25 NOV 2019 03:14  TO:  25 FEB 2020 00:00                                                 EST<br /></span><span class="notamText">TWY L TWO ADJ CL LIGHTS AT INTERSECTION OF TAXIWAYS L AND E U/S<br /><br /></span><span class="notamSeries">B6937/19</span><span class="notamToFrom">											                                               FROM:  26 NOV 2019 19:04  TO:  25 FEB 2020 19:00                                                 <br /></span><span class="notamText">LIT CRANE OPR INTERMITTENTLY APRX 1.35NM BRG 300 DEG MAG FROM <br/>
+CONTROL TWR. MAX HGT 262FT AMSL<br /><br /></span><span class="notamSeries">B7203/19</span><span class="notamToFrom">											                                               FROM:  09 DEC 2019 01:35  TO:  PERM<br /></span><span class="notamText">FLW AMENDED CIRCLING MINIMA FOR CAT B/C/D ACFT APPLY AT AUCKLAND:<br/>
+CAT B: 630 (607) - 2800<br/>
+CAT C: (ASTERISK) 790 (767) - 3700<br/>
+CAT D: (ASTERISK) 930 (907) - 4600<br/>
+FLW CHARTS AFFECTED:<br/>
+NZAA AD 2-41.1 ILS/DME OR LOC/DME RWY 05R<br/>
+NZAA AD 2-41.2 ILS/DME OR LOC/DME RWY 23L<br/>
+NZAA AD 2-43.1 VOR/DME RWY 05R<br/>
+NZAA AD 2-43.2 VOR/DME RWY 23L<br/>
+NZAA AD 2-45.1 RNAV (GNSS) Z RWY 05R<br/>
+NZAA AD 2-45.2 RNAV (GNSS) Z RWY 23L<br/>
+NZAA AD 2-70.1Y ILS/DME W OR LOC/DME W RWY 23L<br/>
+NZAA AD 2-70.2Y LOC/DME W RWY 05R<br/>
+NZAA AD 2-70.3Y VOR/DME W RWY 05R<br/>
+NZAA AD 2-70.4Y VOR/DME W RWY 23L<br/>
+NZAA AD 2-70.5Y VOR/DME W RWY 23L<br/>
+NZAA AD 2-70.21Y ILS/DME E OR LOC/DME E RWY 05R<br/>
+NZAA AD 2-70.23Y VOR/DME E RWY 05R<br/>
+NZAA AD 2-70.25Y RNAV (GNSS) E RWY 05R<br /><br /></span><span class="notamSeries">B7207/19</span><span class="notamToFrom">											                                               FROM:  09 DEC 2019 02:37  TO:  PERM<br /></span><span class="notamText">FLW AMENDED CIRCLING MINIMA FOR CAT B/C/D ACFT APPLY AT AUCKLAND:<br/>
+CAT A, B: 630 (607) - 3000<br/>
+CAT C: (ASTERISK) 790 (767) - 3700<br/>
+CAT D: (ASTERISK) 930 (907) - 4600<br/>
+FLW CHARTS AFFECTED:<br/>
+NZAA AD 2-70.22Y LOC/DME E RWY 23L<br/>
+NZAA AD 2-70.24Y VOR/DME E RWY 23L<br /><br /></span><span class="notamLocation">NZAR (ARDMORE)                            </span><br /><br /><span class="notamSeries">A3266/19</span><span class="notamToFrom">											                                               FROM:  30 OCT 2019 21:31  TO:  30 JAN 2020 22:00                                                 EST<br /></span><span class="notamText">RWY 03/21 AND GRASS RWY 03/21 SIMULTANEOUS PARALLEL OPS PROHIBITED<br /><br /></span><span class="notamSeries">A3808/19</span><span class="notamToFrom">											                                               FROM:  09 DEC 2019 05:16  TO:  09 MAR 2020 00:00                                                 EST<br /></span><span class="notamText">TWY J WEST OF RWY 03/21 SFC COND ROUGH. TWY SHOULDERS NOT AVBL <br/>
+FOR USE, REMAIN WI 5M OF TWY CL<br /><br /></span><span class="notamSeries">A3905/19</span><span class="notamToFrom">											                                               FROM:  18 DEC 2019 16:38  TO:  17 JAN 2020 08:11                                                 <br /></span><span class="notamText">SR MINUS30-SS PLUS30<br />CRANE OPR APRX 270M SW HELICOPTER TLOF PAD2. MAX HGT 50FT AGL<br /><br /></span><span class="notamLocation">NZTH (THAMES)                            </span><br /><br /><span class="notamSeries">A1956/19</span><span class="notamToFrom">											                                               FROM:  10 JUL 2019 00:00  TO:  PERM<br /></span><span class="notamText">PARL OPEN DRAINS INSTALLED ON NORTHERN SIDE OF GRASS RWY 05/23<br /><br /></span><span class="notamSeries">A2077/19</span><span class="notamToFrom">											                                               FROM:  22 JUL 2019 00:05  TO:  PERM<br /></span><span class="notamText">PARL OPEN DRAIN INSTALLED ON EASTERN SIDE OF GRASS RWY 14/32<br/>
+BTN THR GRASS RWY 14 AND INT OF GRASS RWY 14/32 AND GRASS RWY 05/23<br /><br /></span><span class="notamSeries">A3921/19</span><span class="notamToFrom">											                                               FROM:  26 DEC 2019 18:30  TO:  26 DEC 2019 23:30                                                 <br /></span><span class="notamText">AD CLSD DUE AD GRASS CUTTING INPR<br /><br /></span><span class="notamLocation">NZPU (PUKEKOHE)                            </span><br /><br /><span class="notamSeries">A3925/19</span><span class="notamToFrom">											                                               FROM:  16 DEC 2019 00:28  TO:  16 MAR 2020 00:25                                                 EST<br /></span><span class="notamText">AD CLSD DUE MULTIPLE CRANES OPR VCY TREATMENT PLANT, MAX HGT<br/>
+150FT AGL. AD AVBL WITH PRIOR PERMISSION FROM OPR TEL 027 274 2322<br /><br /></span><span class="notamLocation">NZTG (TAURANGA)                            </span><br /><br /><span class="notamSeries">B7075/19</span><span class="notamToFrom">											                                               FROM:  02 DEC 2019 22:34  TO:  28 FEB 2020 00:00                                                 EST<br /></span><span class="notamText">CRANE OPR 37 41 15 S 176 10 06 E, APRX 2NM WSW RWY 25 THR.<br/>
+LIT BY WHITE FLASHING LIGHT. MAX HGT 230FT AMSL<br /><br /></span><span class="notamSeries">B7224/19</span><span class="notamToFrom">											                                               FROM:  09 DEC 2019 21:19  TO:  09 FEB 2020 21:15                                                 <br /></span><span class="notamText">SR-SS<br />CRANE OPR APRX 1.63NM E THR RWY 07.<br/>
+CRANE LOCATED BTN 37 40 34 S 176 13 22 E AND 37 40 38 S 176 13 22 E.<br/>
+MAX HGT 113FT AMSL.<br/>
+HIGH POINT LIT BY MEDIUM INTENSITY WHITE FLASHING LIGHT. CRANE<br/>
+LOWERED BELOW PUBLISHED 1:50 TAKE OFF GRADIENT DAILY BETWEEN SUNSET<br/>
+AND SUNRISE. RWY 07 1:50 TODA 1435M DURING CRANE OPERATIONS<br /><br /></span><span class="notamSeries">B7444/19</span><span class="notamToFrom">											                                               FROM:  20 DEC 2019 00:52  TO:  20 FEB 2020 01:00                                                 EST<br /></span><span class="notamText">THR GRASS RWY 34 DISPLACED 105M. EFFECTIVE OPR LENGTH 575M<br /><br /></span><span class="notamSeries">B7457/19</span><span class="notamToFrom">											                                               FROM:  23 DEC 2019 16:50  TO:  27 DEC 2019 17:35                                                 <br /></span><span class="notamText">AMEND TWR/FIS HR SER:<br/>
+0550-1900 TUE<br/>
+0800-2030 WED<br/>
+0635-1935 THU<br/>
+0635-2030 FRI<br/>
+0635-1900 SAT<br/>
+HR IN NEW ZEALAND DAYLIGHT TIME (NZDT)<br/>
+NZDT IS 13 HR AHEAD OF UTC <br/>
+REF AIP SUP 2/19<br /><br /></span><span class="notamLocation">NZHN (HAMILTON)                            </span><br /><br /><span class="notamSeries">B6120/19</span><span class="notamToFrom">											                                               FROM:  18 OCT 2019 04:01  TO:  17 JAN 2020 00:00                                                 EST<br /></span><span class="notamText">TAXIWAYS B AND C BTN RWY HLDG POSITIONS C4 AND B1, WEST OF RWY<br/>
+HLDG POSITIONS D1 AND E1, ARE NOT SUBJECT TO SFC MOVEMENT <br/>
+CONTROL BY ATC. ACFT, VEHICLES OR PERSONNEL <br/>
+ENTERING THIS AREA MUST REMAIN VIGILANT FOR THE MOVEMENT OF <br/>
+OTHER ACFT, VEHICLES OR PERSONNEL AND GIVE WAY AS NECESSARY<br /><br /></span><span class="notamSeries">B7149/19</span><span class="notamToFrom">											                                               FROM:  24 DEC 2019 17:00  TO:  01 JAN 2020 07:25                                                 <br /></span><span class="notamText">AMEND TWR/FIS HR SER:<br/>
+0730-1800 WED<br/>
+0730-2025 THU<br/>
+0600-2025 FRI<br/>
+0720-1910 SAT<br/>
+0805-1910 SUN <br/>
+0730-2025 MON<br/>
+0730-2025 TUE<br/>
+HR IN NEW ZEALAND DAYLIGHT TIME (NZDT) <br/>
+NZDT IS 13 HR AHEAD OF UTC<br/>
+REF AIP SUP 2/19<br /><br /></span><span class="notamSeries">B7234/19</span><span class="notamToFrom">											                                               FROM:  10 DEC 2019 00:09  TO:  09 MAR 2020 00:00                                                 EST<br /></span><span class="notamText">FENCE ERECTED 10M WEST OF TWY B CL SOUTH OF WESTERN APN, RUNNING<br/>
+PARALLEL TO TWY B. HEIGHT 8FT AGL, APRX LENGTH 120M<br /><br /></span><span class="notamLocation">NZWK (WHAKATANE)                            </span><br /><br /><span class="notamSeries">A3589/19</span><span class="notamToFrom">											                                               FROM:  25 NOV 2019 00:52  TO:  29 JAN 2020 01:00                                                 EST<br /></span><span class="notamText">PAL WARNING LIGHTS (WHITE) ON THE TOWER (ON TOP OF THE TERMINAL) <br/>
+U/S<br /><br /></span><span class="notamLocation">NZRO (ROTORUA)                            </span><br /><br /><span class="notamSeries">B6424/19</span><span class="notamToFrom">											                                               FROM:  03 NOV 2019 21:44  TO:  PERM<br /></span><span class="notamText">REF AIP NZRO AD 2-45.4 RNAV (RNP) Y RWY 36 EFFECTIVE 24 MAY 18<br/>
+APCH MINIMA RNP 0.16 NOT AVBL<br /><br /></span><span class="notamSeries">B6425/19</span><span class="notamToFrom">											                                               FROM:  03 NOV 2019 21:51  TO:  PERM<br /></span><span class="notamText">REF AIP NZRO AD 2-45.3 RNAV (RNP) Y RWY 18 EFFECTIVE 24 MAY 18<br/>
+RNP 0.10 CAT C MINIMA AMENDED TO 1340(405)-1800<br /><br /></span><span class="notamSeries">B7437/19</span><span class="notamToFrom">											                                               FROM:  23 DEC 2019 17:30  TO:  30 DEC 2019 05:45                                                 <br /></span><span class="notamText">AMEND TWR/FIS HR SER:<br/>
+0630-1925 TUE<br/>
+0900-1740 WED<br/>
+0750-1950 THU<br/>
+0705-1950 FRI<br/>
+0705-1740 SAT<br/>
+0800-2100 SUN<br/>
+0630-1845 MON<br/>
+HR IN NEW ZEALAND DAYLIGHT TIME (NZDT)<br/>
+NZDT IS 13 HR AHEAD OF UTC<br/>
+REF AIP SUP 2/19<br /><br /></span><span class="notamLocation">NZTT (TE KUITI)                            </span><br /><br /><span class="notamSeries">A3292/19</span><span class="notamToFrom">											                                               FROM:  31 OCT 2019 22:19  TO:  PERM<br /></span><span class="notamText">REF AIP NZTT AD 2-51.1 AND NZTT 2-52.1<br/>
+NZTT AD 2 51.1 AD. AMD LENGTH RWY 16/34 BITUMEN PORTION TO READ<br/>
+550M X 5M.<br/>
+NZTT AD 2 51.2 OPERATIONAL DATA. AMD RWY 16/34 SFC TO READ B/GRVL/GR <br/>
+AND ASTERISK FOOTNOTE TO READ BITUMEN 550M X 5M/GRVL RWY 160M X 5M<br /><br /></span><span class="notamLocation">NZAP (TAUPO)                            </span><br /><br /><span class="notamSeries">A3943/19</span><span class="notamToFrom">											                                               FROM:  16 DEC 2019 23:07  TO:  14 JAN 2020 23:00                                                 <br /></span><span class="notamText">WORKS AREA FENCED ON SOUTHERN SIDE OF AVGAS FUEL PUMPS<br /><br /></span><span class="notamLocation">NZNR (NAPIER)                            </span><br /><br /><span class="notamSeries">B6365/19</span><span class="notamToFrom">											                                               FROM:  31 OCT 2019 02:11  TO:  30 JAN 2020 04:00                                                 EST<br /></span><span class="notamText">CRANE OPR APRX 1.5NM SE THR RWY 34. MAX HGT 188FT AGL<br /><br /></span><span class="notamSeries">B6696/19</span><span class="notamToFrom">											                                               FROM:  15 NOV 2019 04:58  TO:  14 FEB 2020 04:00                                                 EST<br /></span><span class="notamText">ACFT PARKING NOT AVBL ON GRASS MOV AREA BTN FLIGHT CARE AND TWR,<br/>
+OR ON APRON WI 10M OF THIS AREA<br /><br /></span><span class="notamSeries">B7092/19</span><span class="notamToFrom">											                                               FROM:  27 DEC 2019 17:10  TO:  27 DEC 2019 17:50                                                 <br /></span><span class="notamText">AMEND APP/TWR/FIS HR SER:<br/>
+0650-1800 SAT <br/>
+HR IN NEW ZEALAND DAYLIGHT TIME (NZDT)<br/>
+NZDT IS 13 HR AHEAD OF UTC<br/>
+REF AIP SUP 2/19<br /><br /></span><span class="notamSeries">B7310/19</span><span class="notamToFrom">											                                               FROM:  15 DEC 2019 22:31  TO:  15 MAR 2020 22:30                                                 EST<br /></span><span class="notamText">AD WIP 200M SE THR RWY 25. MEN AND EQPT OPR<br /><br /></span><span class="notamSeries">B7465/19</span><span class="notamToFrom">											                                               FROM:  20 DEC 2019 19:42  TO:  13 FEB 2020 00:00                                                 EST<br /></span><span class="notamText">WDI GRASS RWY 34 U/S<br /><br /></span><span class="notamLocation">NZWU (WHANGANUI)                            </span><br /><br /><span class="notamSeries">A3920/19</span><span class="notamToFrom">											                                               FROM:  15 DEC 2019 19:46  TO:  13 MAR 2020 20:00                                                 <br /></span><span class="notamText">GRASS RWY 11L/29R CLOSED DUE SFC COND<br /><br /></span><span class="notamLocation">NZOH (OHAKEA)                            </span><br /><br /><span class="notamSeries">B7348/19</span><span class="notamToFrom">											                                               FROM:  17 DEC 2019 19:20  TO:  17 FEB 2020 19:00                                                 EST<br /></span><span class="notamText">BIRD HAZARD (BLACK BACKED GULLS) EXISTS IN VCY RANGITIKEI RIVER<br/>
+APRX 3NM N THR RWY 27. MAX HEIGHT 2000FT AGL<br /><br /></span><span class="notamSeries">B7349/19</span><span class="notamToFrom">											                                               FROM:  17 DEC 2019 19:23  TO:  17 FEB 2020 19:00                                                 EST<br /></span><span class="notamText">RWY 15/33 ALS NOT AVBL DUE WIP<br /><br /></span><span class="notamSeries">B7350/19</span><span class="notamToFrom">											                                               FROM:  17 DEC 2019 19:28  TO:  17 FEB 2020 19:00                                                 EST<br /></span><span class="notamText">UNPUBLISHED TAXILANE SOUTHERN EDGE NORTHERN APRON BTN TWY C AND<br/>
+TWY D RESTRICTED TO CODE B AIRCRAFT OR SMALLER<br /><br /></span><span class="notamSeries">B7351/19</span><span class="notamToFrom">											                                               FROM:  17 DEC 2019 19:31  TO:  17 FEB 2020 19:00                                                 EST<br /></span><span class="notamText">TWY A EAST OF TWY B RESTRICTED TO ACFT WITH MAX WINGSPAN NOT<br/>
+EXCEEDING 42M<br /><br /></span><span class="notamSeries">B7488/19</span><span class="notamToFrom">											                                               FROM:  22 DEC 2019 21:03  TO:  01 JAN 2020 09:30                                                 <br /></span><span class="notamText">AMEND TWR/FIS HR SER:<br/>
+NIL MON-FRI<br/>
+AVBL ON REQUEST BY APPROVED OPERATORS ONLY.<br/>
+REF AIP SUP 2/19<br /><br /></span><span class="notamLocation">NZFI (FEILDING)                            </span><br /><br /><span class="notamSeries">A3838/19</span><span class="notamToFrom">											                                               FROM:  10 DEC 2019 21:03  TO:  PERM<br /></span><span class="notamText">AVGAS 100 (CARNET CARD SWIPECARD) COMPLETELY WITHDRAWN<br /><br /></span><span class="notamLocation">NZPO (PORANGAHAU)                            </span><br /><br /><span class="notamSeries">A2802/19</span><span class="notamToFrom">											                                               FROM:  24 SEP 2019 04:47  TO:  PERM<br /></span><span class="notamText">DOWNWIND LEG TO BE FLOWN NO CLOSER TO AD THAN W BANK OF <br/>
+PORANGAHAU RIVER<br /><br /></span><span class="notamLocation">NZPM (PALMERSTON NORTH)                            </span><br /><br /><span class="notamSeries">B5890/19</span><span class="notamToFrom">											                                               FROM:  07 OCT 2019 05:46  TO:  PERM<br /></span><span class="notamText">REF AIP NZPM AD 2-45.1<br/>
+RNAV (GNSS) RWY 07 EFFECTIVE 10 NOV 16<br/>
+LNAV/VNAV MINIMA AMENDED AS FOLLOWS:<br/>
+CAT A/B 530 (409) - 1600<br/>
+CAT C 550 (429) - 2400<br/>
+CAT D 580 (459) - 2400<br /><br /></span><span class="notamSeries">B6723/19</span><span class="notamToFrom">											                                               FROM:  17 NOV 2019 21:41  TO:  30 JAN 2020 21:00                                                 <br /></span><span class="notamText">TAXIWAYS D AND H CLSD TO JET ACFT OPS<br /><br /></span><span class="notamSeries">B7493/19</span><span class="notamToFrom">											                                               FROM:  23 DEC 2019 17:00  TO:  29 DEC 2019 08:50                                                 <br /></span><span class="notamText">AMEND TWR/FIS HR SER:<br/>
+0600-1830 TUE<br/>
+0830-1830 WED<br/>
+0600-2030 THU-FRI<br/>
+0600-1800 SAT<br/>
+0900-2150 SUN<br/>
+HR IN NEW ZEALAND DAYLIGHT TIME (NZDT)<br/>
+NZDT IS 13 HR AHEAD OF UTC<br/>
+REF AIP SUP 2/19<br /><br /></span><span class="notamLocation">NZPP (PARAPARAUMU)                            </span><br /><br /><span class="notamSeries">A3850/19</span><span class="notamToFrom">											                                               FROM:  11 DEC 2019 02:41  TO:  11 MAR 2020 23:00                                                 EST<br /></span><span class="notamText">RWY 34 1:40 APPROACH SURFACE PENETRATED BY TREES 531M AND<br/>
+779M S THR RWY 34, MAX HEIGHT 68FT AMSL<br /><br /></span><span class="notamSeries">A3852/19</span><span class="notamToFrom">											                                               FROM:  11 DEC 2019 02:56  TO:  01 JAN 2020 11:00                                                 <br /></span><span class="notamText">REF AIP SUP 7/19 CRITICAL OBSTACLES AND SURVEY DATA<br/>
+ADDITIONAL RWY 16 CRITICAL OBST (TREE TOPS) AS FOLLOWS: <br/>
+DIST FROM SOT    HEIGHT <br/>
+1888M            68FT AMSL<br/>
+1919M            84FT AMSL<br/>
+2045M            76FT AMSL<br/>
+2384M            100FT AMSL<br/>
+2973M            123FT AMSL<br/>
+<br/>
+AMEND RWY 16 TAKE-OFF DISTANCES:<br/>
+1:40 1240M<br/>
+1:50 1069M<br /><br /></span><span class="notamSeries">A3980/19</span><span class="notamToFrom">											                                               FROM:  18 DEC 2019 21:06  TO:  18 FEB 2020 21:00                                                 EST<br /></span><span class="notamText">ABN U/S<br /><br /></span><span class="notamSeries">A4009/19</span><span class="notamToFrom">											                                               FROM:  24 DEC 2019 17:15  TO:  01 JAN 2020 06:40                                                 <br /></span><span class="notamText">AMEND AFIS HR SER:<br/>
+0730-1915 MON<br/>
+0830-1830 TUE<br/>
+0830-1830 WED<br/>
+0730-1830 THU<br/>
+0730-1915 FRI<br/>
+0830-1830 SAT<br/>
+0900-1930 SUN<br/>
+HR IN NEW ZEALAND DAYLIGHT TIME (NZDT)<br/>
+NZDT IS 13 HR AHEAD OF UTC<br/>
+REF AIP SUP 2/19<br /><br /></span><span class="notamLocation">NZMS (MASTERTON)                            </span><br /><br /><span class="notamSeries">A3421/19</span><span class="notamToFrom">											                                               FROM:  12 NOV 2019 19:16  TO:  12 FEB 2020 23:59                                                 EST<br /></span><span class="notamText">GRASS RWY 06L/24R CLSD<br /><br /></span><span class="notamLocation">NZSO (MARLBOROUGH SOUNDS)                            </span><br /><br /><span class="notamSeries">A3768/19</span><span class="notamToFrom">											                                               FROM:  05 DEC 2019 21:27  TO:  PERM<br /></span><span class="notamText">REF AIP NZSO AD 2-52.1 OPR DATA<br/>
+AMD OPR TEL FM (03) 520 3200 TO (03) 520 7400. DELETE FAX NUMBER<br /><br /></span><span class="notamLocation">NZNS (NELSON)                            </span><br /><br /><span class="notamSeries">B6322/18</span><span class="notamToFrom">											                                               FROM:  07 NOV 2018 21:28  TO:  PERM<br /></span><span class="notamText">REF AIP NZNS AD 2-52.1 NELSON OPERATIONAL DATA (1).<br/>
+THE FOLLOWING INSTRUMENT DEPARTURE PROCEDURES MAY BE FLOWN AT NIGHT<br/>
+BY CIVIL AVIATION AUTHORITY NEW ZEALAND APPROVED OPERATORS ONLY:<br/>
+NELSON RWY 02 ZULU ONE DEPARTURE (ZULU1)<br/>
+NELSON RWY 02 XRAY ONE DEPARTURE (XRAY1)<br/>
+AIP WILL BE AMENDED.<br /><br /></span><span class="notamSeries">B6816/19</span><span class="notamToFrom">											                                               FROM:  04 DEC 2019 11:00  TO:  01 JAN 2020 11:00                                                 <br /></span><span class="notamText">AMEND APP/TWR/FIS HR SER:<br/>
+0545-2205 MON-FRI<br/>
+0545-1910 SAT<br/>
+0710-2205 SUN<br/>
+HR IN NEW ZEALAND DAYLIGHT TIME (NZDT)<br/>
+NZDT IS 13 HR AHEAD OF UTC<br/>
+REF AIP SUP 2/19<br /><br /></span><span class="notamLocation">NZWN (WELLINGTON)                            </span><br /><br /><span class="notamSeries">B1954/18</span><span class="notamToFrom">											                                               FROM:  10 APR 2018 02:00  TO:  PERM<br /></span><span class="notamText">TWR/FIS 125.25 MHZ 'WELLINGTON TWR' A/G FAC OPR - NEW FAC.<br/>
+REPLACES TWR/FIS A/G FAC 120.0 MHZ<br /><br /></span><span class="notamSeries">B5925/19</span><span class="notamToFrom">											                                               FROM:  06 NOV 2019 11:00  TO:  29 JAN 2020 11:00                                                 <br /></span><span class="notamText">REF AIP NZWN AD 2-62.12 NZWN RNAV (RNP) SID RWY 34 (2)<br/>
+EFFECTIVE 7 NOV 19.<br/>
+AMD HEADER FROM CAT A,B,C,D TO CAT C.<br/>
+ADD LABEL 'FOR OPERATORS WITH CAANZ RNP-AR SPECIAL DESIGN CRITERIA<br/>
+APPROVAL ONLY'<br /><br /></span><span class="notamSeries">B6485/19</span><span class="notamToFrom">											                                               FROM:  06 NOV 2019 11:00  TO:  PERM<br /></span><span class="notamText">REF AIP NZWN AD 2-62.12 RNAV (RNP) SID RWY 34 (2) DATED 7 NOV 19. <br/>
+POLAX4R DEP - FIRST TWO BULLET POINTS AMEND WPT LAXEV TO READ<br/>
+LAXIV.<br /><br /></span><span class="notamSeries">B6490/19</span><span class="notamToFrom">											                                               FROM:  06 NOV 2019 11:00  TO:  06 FEB 2020 20:00                                                 EST<br /></span><span class="notamText">ACFT REQUESTING A VISUAL APCH CAN EXPECT CLR ROUTING FOR A<br/>
+VISUAL APCH VIA: RIDGE FOR RWY 16 OR 6NM FINAL FOR RWY 34<br /><br /></span><span class="notamSeries">B7523/19</span><span class="notamToFrom">											                                               FROM:  26 DEC 2019 19:00  TO:  26 DEC 2019 21:00                                                 <br /></span><span class="notamText">RWY 16 110.3 MHZ 'IEB' ILS WITHDRAWN MAINT<br/>
+DO NOT USE, FALSE INDICATIONS POSSIBLE<br /><br /></span><span class="notamLocation">NZWS (WESTPORT)                            </span><br /><br /><span class="notamSeries">A2791/19</span><span class="notamToFrom">											                                               FROM:  23 SEP 2019 02:15  TO:  PERM<br /></span><span class="notamText">REF AIP NZWS AD 2-52.1 NZWS OPERATIONAL DATA EFFECTIVE 13 SEP 18.<br/>
+UNDER LIGHTING AMEND RWY 04/22 APAPI FM 3.05 TO 3.0 DEGREES<br /><br /></span><span class="notamSeries">A3578/19</span><span class="notamToFrom">											                                               FROM:  29 NOV 2019 06:00  TO:  31 JAN 2020 18:00                                                 <br /></span><span class="notamText">DAILY 0600-1800<br />LASER DISPLAY WILL TAKE PLACE AT 41 45 13.5 S 171 35 55.2 E <br/>
+(WESTPORT CLOCK TOWER) APRX 1.2NM SE NZWS<br />                                                LOWER: SFC      UPPER: 500FT AGL<br /><br /></span><span class="notamSeries">A3647/19</span><span class="notamToFrom">											                                               FROM:  27 NOV 2019 17:00  TO:  31 JAN 2020 09:00                                                 <br /></span><span class="notamText">DAILY 1700-0900<br />WIP ON BREAKWATER VICINITY AD BOUNDARY. MEN AND EQPT OPR<br /><br /></span><span class="notamLocation">NZKI (KAIKOURA)                            </span><br /><br /><span class="notamSeries">A4001/19</span><span class="notamToFrom">											                                               FROM:  20 DEC 2019 02:09  TO:  03 JAN 2020 02:00                                                 EST<br /></span><span class="notamText">GRASS AREA ADJ HANGAR SOUTHWEST OF AIR BP FUEL PUMP CLSD, MARKED <br/>
+BY CONES<br /><br /></span><span class="notamLocation">NZGM (GREYMOUTH)                            </span><br /><br /><span class="notamSeries">A3215/19</span><span class="notamToFrom">											                                               FROM:  25 OCT 2019 02:42  TO:  PERM<br /></span><span class="notamText">REF AIP NZGM AD 2-52.1 OPERATIONAL DATA. (LIGHTING)<br/>
+AMEND PAL FREQ 119.1 TO READ 119.8<br /><br /></span><span class="notamLocation">NZWL (WEST MELTON)                            </span><br /><br /><span class="notamSeries">A3917/19</span><span class="notamToFrom">											                                               FROM:  14 DEC 2019 23:04  TO:  13 MAR 2020 23:00                                                 EST<br /></span><span class="notamText">GRASS RWY 04/22 CLOSED<br /><br /></span><span class="notamLocation">NZCH (CHRISTCHURCH)                            </span><br /><br /><span class="notamSeries">B6912/19</span><span class="notamToFrom">											                                               FROM:  29 NOV 2019 07:30  TO:  30 DEC 2019 11:00                                                 <br /></span><span class="notamText">DAILY 0730-1100<br />SEARCHLIGHT DISPLAY WILL TAKE PLACE AT 43 34 32 S 172 29 31 E<br/>
+(PREBBLETON) APRX 5.6NM S NZCH<br />                                                LOWER: SFC      UPPER: UNL<br /><br /></span><span class="notamSeries">B7055/19</span><span class="notamToFrom">											                                               FROM:  02 DEC 2019 04:43  TO:  PERM<br /></span><span class="notamText">REF AIP NZCH AD 2-41.1 ILS/DME OR LOC/DME RWY 02<br/>
+NZCH AD 2-41.2 ILS/DME OR LOC/DME RWY 20<br/>
+NZCH AD 2-43.1 VOR/DME RWY 02<br/>
+NZCH AD 2-43.2 VOR/DME RWY 20<br/>
+NZCH AD 2-45.1 RNAV (GNSS) Z RWY 02<br/>
+NZCH AD 2-45.2 RNAV (GNSS) Z RWY 20<br/>
+NZCH AD 2-45.10 RNAV (GNSS) RWY 11<br/>
+NZCH AD 2-70.1Y ILS/DME N OR LOC/DME N RWY 02<br/>
+NZCH AD 2-70.2Y VOR/DME N RWY 02<br/>
+NZCH AD 2-70.3Y RNAV (GNSS) N RWY 02<br/>
+NZCH AD 2-70.21Y LOC/DME S RWY 02<br/>
+NZCH AD 2-70.22Y ILS/DME S OR LOC/DME S RWY 20<br/>
+NZCH AD 2-70.23Y VOR/DME S RWY 02<br/>
+NZCH AD 2-70.24Y VOR/DME S RWY 20<br/>
+NZCH AD 2-70.25Y RNAV (GNSS) S RWY 20<br/>
+CIRCLING MINIMA RAISED AS FLW:<br/>
+CAT D 820 (697) 4600<br /><br /></span><span class="notamSeries">B7453/19</span><span class="notamToFrom">											                                               FROM:  26 DEC 2019 23:00  TO:  27 DEC 2019 03:00                                                 <br /></span><span class="notamText">WESTERN APRON BP AVGAS 100 FUEL NOT AVBL<br /><br /></span><span class="notamSeries">B7495/19</span><span class="notamToFrom">											                                               FROM:  23 DEC 2019 05:00  TO:  29 JAN 2020 11:00                                                 <br /></span><span class="notamText">REF AIP NZCH AD 2-45.5<br/>
+NZCH RNAV (RNP) X RWY 02 EFFECTIVE 24 MAY 18. <br/>
+RNAV (RNP) X RWY 02 APPROACH PROCEDURE NOT AVBL<br /><br /></span><span class="notamLocation">NZHT (HAAST)                            </span><br /><br /><span class="notamSeries">A2809/19</span><span class="notamToFrom">											                                               FROM:  24 SEP 2019 23:34  TO:  PERM<br /></span><span class="notamText">REF AIP NZHT AD 2-52.1 HAAST OPERATIONAL DATA<br/>
+AMEND FACILITIES<br/>
+FUEL: R D PETROLEUM AVGAS 100 AND JET A1 FUEL<br /><br /></span><span class="notamLocation">NZAS (ASHBURTON)                            </span><br /><br /><span class="notamSeries">A3926/19</span><span class="notamToFrom">											                                               FROM:  16 DEC 2019 01:36  TO:  16 JAN 2020 01:30                                                 EST<br /></span><span class="notamText">GRASS TWY ADJ GRASS RWY 02/20 CLOSED.<br/>
+GRASS TWY BTN GRASS RUNWAYS 02/20 AND 16/34 REDUCED WIDTH.<br/>
+AREA MARKED BY CONES<br /><br /></span><span class="notamLocation">NZTL (TEKAPO)                            </span><br /><br /><span class="notamSeries">A3153/19</span><span class="notamToFrom">											                                               FROM:  28 OCT 2019 16:30  TO:  28 JAN 2020 09:14                                                 <br /></span><span class="notamText">MON-FRI SR MINUS30-SS PLUS30<br />REMOTELY PILOTED ACFT ACT WILL TAKE PLACE WI 2.2NM RADIUS AND UP <br/>
+TO 6NM S NZTL<br />                                                LOWER: SFC      UPPER: 3000FT AGL<br /><br /></span><span class="notamLocation">NZUK (PUKAKI)                            </span><br /><br /><span class="notamSeries">A3720/19</span><span class="notamToFrom">											                                               FROM:  04 DEC 2019 11:00  TO:  PERM<br /></span><span class="notamText">REFER SUP 80/19  PUKAKI - NZP910 ESTABLISHMENT<br/>
+EFFECTIVE 5 DEC 19. <br/>
+AMD LOCATION TO S 44 15 01.8 E 170 07 04.6<br /><br /></span><span class="notamLocation">NZTU (TIMARU)                            </span><br /><br /><span class="notamSeries">A3655/19</span><span class="notamToFrom">											                                               FROM:  27 NOV 2019 23:00  TO:  30 JAN 2020 23:00                                                 <br /></span><span class="notamText">GRASS RWY 11/29 RESTRICTED TO 30M WIDE MOWN STRIPS ON EITHER SIDE<br/>
+OF RWY DUE SFC COND OF CENTRE<br /><br /></span><span class="notamLocation">NZOA (OMARAMA)                            </span><br /><br /><span class="notamSeries">A2938/19</span><span class="notamToFrom">											                                               FROM:  06 OCT 2019 19:56  TO:  31 DEC 2019 19:00                                                 <br /></span><span class="notamText">NEW WINCH LAUNCH RWY DEVELOPMENTS WILL TAKE PLACE NE OF<br/>
+GRASS RWY 27R AND N OF GRASS RWY 09L. ROUGH GROUND, DO NOT LAND.<br /><br /></span><span class="notamLocation">NZMF (MILFORD SOUND)                            </span><br /><br /><span class="notamSeries">A3148/19</span><span class="notamToFrom">											                                               FROM:  22 OCT 2019 19:00  TO:  21 JAN 2020 03:30                                                 EST<br /></span><span class="notamText">AMEND AFIS HR SER:<br/>
+0800-1630 DAILY.<br/>
+HR IN NEW ZEALAND DAYLIGHT TIME (NZDT) NZDT IS 13 HR AHEAD OF UTC.<br/>
+REF AIP SUP 2/19<br /><br /></span><span class="notamLocation">NZWF (WANAKA)                            </span><br /><br /><span class="notamSeries">B6087/19</span><span class="notamToFrom">											                                               FROM:  17 OCT 2019 19:31  TO:  PERM<br /></span><span class="notamText">REF AIP NZWF AD 2-33.1 RNAV (GNSS) STAR RWY 29 EFFECTIVE 7 NOV 19<br/>
+QN ONE ECHO ARRIVAL. AMEND WPT OSLOT TO READ OLSOT<br /><br /></span><span class="notamLocation">NZQN (QUEENSTOWN)                            </span><br /><br /><span class="notamSeries">B5096/19</span><span class="notamToFrom">											                                               FROM:  28 AUG 2019 23:33  TO:  31 DEC 2019 00:00                                                 EST<br /></span><span class="notamText">TWY A3 LGT U/S<br /><br /></span><span class="notamSeries">B6409/19</span><span class="notamToFrom">											                                               FROM:  02 NOV 2019 22:01  TO:  31 JAN 2020 05:00                                                 <br /></span><span class="notamText">0700 TO 1800 MON-SAT NEW ZEALAND DAYLIGHT TIME. CRANES OPR 200M<br/>
+SE THR RWY 32. MAX HGT 123FT AGL. BOOMS WILL BE LOWERED AT NIGHT<br /><br /></span><span class="notamSeries">B7035/19</span><span class="notamToFrom">											                                               FROM:  18 DEC 2019 17:25  TO:  01 JAN 2020 08:20                                                 <br /></span><span class="notamText">AMEND TWR/FIS HR SER:<br/>
+0645-2120 DAILY<br/>
+HR IN NEW ZEALAND DAYLIGHT TIME (NZDT)<br/>
+NZDT IS 13 HR AHEAD OF UTC<br/>
+REF AIP SUP 2/19<br /><br /></span><span class="notamLocation">NZMO (TE ANAU / MANAPOURI)                            </span><br /><br /><span class="notamSeries">A3066/19</span><span class="notamToFrom">											                                               FROM:  16 OCT 2019 02:41  TO:  PERM<br /></span><span class="notamText">AD NOW CAA RULE PART 139 CERTIFICATED.<br /><br /></span><span class="notamSeries">A3067/19</span><span class="notamToFrom">											                                               FROM:  16 OCT 2019 02:45  TO:  PERM<br /></span><span class="notamText">REF AIP NZMO AD 2-52.1 OPR DATA EFFECTIVE 28 MAR 19.<br/>
+AMD RWY 08/26 STRENGTH FROM PCN 20 TO PCN 14.<br /><br /></span><span class="notamLocation">NZTI (TAIERI)                            </span><br /><br /><span class="notamSeries">A4052/19</span><span class="notamToFrom">											                                               FROM:  26 DEC 2019 02:36  TO:  27 FEB 2020 19:00                                                 <br /></span><span class="notamText">GRASS TWY NW OF GRASS RWY 05/23, ACFT TO AVOID RESURFACED AREAS<br /><br /></span><span class="notamLocation">NZDN (DUNEDIN)                            </span><br /><br /><span class="notamSeries">B6762/19</span><span class="notamToFrom">											                                               FROM:  19 NOV 2019 11:55  TO:  01 JAN 2020 11:00                                                 <br /></span><span class="notamText">REF AIP NZDN AD 2-52.1 NZDN OPERATIONAL DATA (1)<br/>
+AMEND LIGHTING SECTION TO READ:<br/>
+OUTSIDE OF DUNEDIN TOWER HOURS OF SERVICE, REMOTE CONTROL OF AD<br/>
+LIGHTING AVBL FROM CHRISTCHURCH CONTROL ON FREQ 129.3 MHZ OR<br/>
+TEL 0800 626 756 (LANDLINE) OR +64 3 358 1509 (CELLPHONE USERS)<br/>
+ADVISING RWY TO BE USED. BRILLIANCE ADJUSTMENTS MAY TAKE UP TO <br/>
+ONE MINUTE TO ACTION. ADVISE CHRISTCHURCH CONTROL WHEN <br/>
+REQUIREMENTS COMPLETE<br /><br /></span><span class="notamSeries">B7428/19</span><span class="notamToFrom">											                                               FROM:  22 DEC 2019 17:00  TO:  29 DEC 2019 11:55                                                 <br /></span><span class="notamText">AMEND APP/TWR/FIS HR SER:<br/>
+0600-2045 MON<br/>
+0600-0055 TUE<br/>
+0730-1750 WED<br/>
+0840-0055 THU<br/>
+0600-1930 FRI<br/>
+0810-0055 SAT<br/>
+0745-0055 SUN<br/>
+HR IN NEW ZEALAND DAYLIGHT TIME (NZDT)<br/>
+NZDT IS 13 HR AHEAD OF UTC<br/>
+REF AIP SUP 2/19<br /><br /></span><span class="notamLocation">NZBA (BALCLUTHA)                            </span><br /><br /><span class="notamSeries">A3999/19</span><span class="notamToFrom">											                                               FROM:  20 DEC 2019 01:09  TO:  27 DEC 2019 01:00                                                 EST<br /></span><span class="notamText">THR GRASS RWY 07 DISPLACED 150M, MARKED BY ORANGE CONES<br /><br /></span><span class="notamLocation">NZNV (INVERCARGILL)                            </span><br /><br /><span class="notamSeries">B6858/19</span><span class="notamToFrom">											                                               FROM:  22 NOV 2019 02:30  TO:  PERM<br /></span><span class="notamText">REF AIP NZNV AD 2-62.2 RNAV (GNSS) SID RWY 22 DATED 7 NOV 19.<br/>
+AMVIX2Q DEP AMEND SECOND BULLET POINT TO READ TURN LEFT, DIRECT TO<br/>
+AMVIX, MAX IAS 240 KT UNTIL TURN COMPLETE.<br /><br /></span><span class="notamSeries">B7500/19</span><span class="notamToFrom">											                                               FROM:  24 DEC 2019 16:50  TO:  12 JAN 2020 08:45                                                 <br /></span><span class="notamText">AMEND APP/TWR/FIS HR SER:<br/>
+DEC<br/>
+0750-2035 WED<br/>
+0610-2035 THU<br/>
+0610-2035 FRI<br/>
+0830-1840 SAT<br/>
+0830-2035 SUN<br/>
+0750-1825 MON<br/>
+0750-1825 TUE<br/>
+JAN<br/>
+0750-2035 WED<br/>
+0610-2035 THU<br/>
+0610-2035 FRI<br/>
+0830-1755 SAT<br/>
+0830-2035 SUN<br/>
+0610-2035 MON-FRI<br/>
+0830-1755 SAT<br/>
+0830-2145 SUN<br/>
+HR IN NEW ZEALAND DAYLIGHT TIME (NZDT)<br/>
+NZDT IS 13 HR AHEAD OF UTC<br/>
+REF AIP SUPPLEMENTS 2/19 AND 2/20<br /><br /></span><span class="notamNoInfoHeader">                    NO NOTAM MATCHING THE QUERY FOR THE FOLLOWING LOCATIONS:     
+            </span><br /><br /><span class="notamNoInfoList">NZKT 						</span><span class="notamNoInfoList">NZKK 						</span><span class="notamNoInfoList">NZKO 						</span><span class="notamNoInfoList">NZDA 						</span><span class="notamNoInfoList">NZRW 						</span><span class="notamNoInfoList">NZOX 						</span><span class="notamNoInfoList">NZKD 						</span><span class="notamNoInfoList">NZSL 						</span><span class="notamNoInfoList">NZOF 						</span><span class="notamNoInfoList">NZPI 						</span><span class="notamNoInfoList">NZCX 						</span><span class="notamNoInfoList">NZKE 						</span><span class="notamNoInfoList">NZAW 						</span><span class="notamNoInfoList">NZUN 						</span><span class="notamNoInfoList">NZME 						</span><span class="notamNoInfoList">NZWV 						</span><span class="notamNoInfoList">NZMA 						</span><span class="notamNoInfoList">NZTE 						</span><span class="notamNoInfoList">NZRA 						</span><span class="notamNoInfoList">NZOP 						</span><span class="notamNoInfoList">NZRL 						</span><span class="notamNoInfoList">NZES 						</span><span class="notamNoInfoList">NZTO 						</span><span class="notamNoInfoList">NZGA 						</span><span class="notamNoInfoList">NZGS 						</span><span class="notamNoInfoList">NZCG 						</span><span class="notamNoInfoList">NZLT 						</span><span class="notamNoInfoList">NZTM 						</span><span class="notamNoInfoList">NZRK 						</span><span class="notamNoInfoList">NZTN 						</span><span class="notamNoInfoList">NZWO 						</span><span class="notamNoInfoList">NZNP 						</span><span class="notamNoInfoList">NZNF 						</span><span class="notamNoInfoList">NZSD 						</span><span class="notamNoInfoList">NZHA 						</span><span class="notamNoInfoList">NZHS 						</span><span class="notamNoInfoList">NZVR 						</span><span class="notamNoInfoList">NZKY 						</span><span class="notamNoInfoList">NZFL 						</span><span class="notamNoInfoList">NZYP 						</span><span class="notamNoInfoList">NZDV 						</span><span class="notamNoInfoList">NZFP 						</span><span class="notamNoInfoList">NZKP 						</span><span class="notamNoInfoList">NZOT 						</span><span class="notamNoInfoList">NZTK 						</span><span class="notamNoInfoList">NZPW 						</span><span class="notamNoInfoList">NZMK 						</span><span class="notamNoInfoList">NZKM 						</span><span class="notamNoInfoList">NZFT 						</span><span class="notamNoInfoList">NZPN 						</span><span class="notamNoInfoList">NZCL 						</span><span class="notamNoInfoList">NZWB 						</span><span class="notamNoInfoList">NZOM 						</span><span class="notamNoInfoList">NZLE 						</span><span class="notamNoInfoList">NZMR 						</span><span class="notamNoInfoList">NZHP 						</span><span class="notamNoInfoList">NZHK 						</span><span class="notamNoInfoList">NZLA 						</span><span class="notamNoInfoList">NZRT 						</span><span class="notamNoInfoList">NZFE 						</span><span class="notamNoInfoList">NZML 						</span><span class="notamNoInfoList">NZFJ 						</span><span class="notamNoInfoList">NZWY 						</span><span class="notamNoInfoList">NZSF 						</span><span class="notamNoInfoList">NZFF 						</span><span class="notamNoInfoList">NZFO 						</span><span class="notamNoInfoList">NZPH 						</span><span class="notamNoInfoList">NZMC 						</span><span class="notamNoInfoList">NZGT 						</span><span class="notamNoInfoList">NZRI 						</span><span class="notamNoInfoList">NZMW 						</span><span class="notamNoInfoList">NZMJ 						</span><span class="notamNoInfoList">NZWM 						</span><span class="notamNoInfoList">NZGY 						</span><span class="notamNoInfoList">NZOU 						</span><span class="notamNoInfoList">NZCW 						</span><span class="notamNoInfoList">NZCS 						</span><span class="notamNoInfoList">NZLX 						</span><span class="notamNoInfoList">NZRX 						</span><span class="notamNoInfoList">NZVL 						</span><span class="notamNoInfoList">NZCB 						</span><span class="notamNoInfoList">NZGC 						</span><span class="notamNoInfoList">NZRC 						</span><br /><br /><br /><span class="enrouteLabel"><b>EN-ROUTE</b></span><br /><br /><span class="notamSeries">A3677/19</span><span class="notamToFrom">										                                               FROM:  28 NOV 2019 23:05  TO:  29 JAN 2020 11:59                                                 <br /></span><span class="notamText">REF AIP ENR 1.10-2 1.3.7 LOCAL FLIGHT PLANS IN CONTROL ZONES.<br/>
+LOCAL VFR FLIGHT NOTIFICATION VIA IFIS IS LIMITED TO NZAA, NZHN <br/>
+(APPROVED OPR ONLY), NZWN AND NZCH<br /><br /></span><span class="notamSeries">B7497/19</span><span class="notamToFrom">										                                               FROM:  23 DEC 2019 20:56  TO:  06 JAN 2020 00:00                                                 EST<br /></span><span class="notamText">REF AIP ENR 1.5-34<br/>
+4.17 INSTRUMENT APPROACH PROCEDURES - MISSED APPROACH PROCEDURES<br/>
+AFTER 4.17.3 ADD NEW PARAGRAPH AS FOLLOWS:<br/>
+DURING THE FINAL APPROACH A PUBLISHED MISSED APPROACH MAY BE<br/>
+REQUESTED FROM ATC OR, IN AN EMERGENCY, INITIATED AT ANY TIME<br /><br /></span><span class="notamSeries">A1397/19</span><span class="notamToFrom">										                                               FROM:  16 MAY 2019 22:30  TO:  PERM<br /></span><span class="notamText">REF VNC 1:250000 C1 WHANGAREI EFFECTIVE 8 NOV 18.<br/>
+ADD UNVERIFIED MAST AT 36 09 55.12 S 173 56 26.38 E APRX 680FT AMSL<br /><br /></span><span class="notamSeries">A3886/19</span><span class="notamToFrom">										                                               FROM:  12 DEC 2019 22:16  TO:  26 FEB 2020 11:00                                                 EST<br /></span><span class="notamText">ACFT OPR IN UNCONTROLLED AIRSPACE WITHIN AN AREA BOUNDED BY<br/>
+RIMUTAKA SADDLE, MOUNT CLIMIE VRP, LOWER HUTT, BELMONT HILL VRP AND<br/>
+AKATARAWA SADDLE ARE REQUESTED TO USE FREQ 120.75 MHZ.<br/>
+CFZ TO BE PROMULGATED.<br /><br /></span><span class="notamSeries">A3703/19</span><span class="notamToFrom">										                                               FROM:  01 DEC 2019 22:37  TO:  21 FEB 2020 00:00                                                 <br /></span><span class="notamText">REF VNC B2, B3, C2 AND C7. ADD TEMP 679FT AMSL LIT MAST AT<br/>
+41 05 40.20 S 174 50 59.52 E<br /><br /></span><span class="notamSeries">A2556/19</span><span class="notamToFrom">										                                               FROM:  28 SEP 2019 18:00  TO:  30 DEC 2019 04:00                                                 <br /></span><span class="notamText">DAILY 1800-0400<br />AERIAL CABLE OBST. LOGGING OPR WILL TAKE PLACE WITHIN<br/>
+0.5NM RADIUS 44 02 32 S 171 05 07 E APRX 14NM W OF NZRI. <br/>
+MAX HGT 330FT AGL<br /><br /></span><span class="notamSeries">A2611/19</span><span class="notamToFrom">										                                               FROM:  08 SEP 2019 22:56  TO:  PERM<br /></span><span class="notamText">REF VNC C10, AMEND NZCW (44 58 48 S 169 13 06 E) RWY LENGTH FROM<br/>
+1550M TO 800M. AMEND NZCW ELEV ON VNC C10, B4 AND B6 TO READ 1036<br /><br /></span><span class="navWarnings">NAVIGATIONAL WARNINGS</span><br /><br /><span class="notamSeries">A4031/19</span><span class="notamToFrom">									                                               FROM:  23 DEC 2019 11:00  TO:  23 MAR 2020 02:00                                                 EST<br /></span><span class="notamText">TEMPO RESTRICTED AREA NZR105 (WAIPU, WHANGAREI) IS PRESCRIBED AS <br/>
+FLW:<br/>
+ALL THAT AIRSPACE BOUNDED BY A LINE JOINING:<br/>
+36 01 20.3 S 174 30 31.5 E<br/>
+36 01 33.9 S 174 30 06.3 E<br/>
+36 01 23.6 S 174 29 59.0 E<br/>
+A LINE FOLLOWING MEAN HIGH WATER MARK<br/>
+FROM<br/>
+36 01 23.6 S 174 29 59.0 E<br/>
+TO<br/>
+35 59 40.4 S 174 28 44.6 E<br/>
+A LINE JOINING<br/>
+35 59 40.4 S 174 28 44.6 E<br/>
+35 59 08.9 S 174 28 23.2 E<br/>
+35 58 50.6 S 174 28 04.6 E<br/>
+35 58 23.1 S 174 28 45.3 E<br/>
+36 01 20.3 S 174 30 31.5 E<br/>
+ACTIVITY: CONSERVATION<br/>
+ADMINISTERING AUTHORITY: DEPARTMENT OF CONSERVATION TEL (09) 307 9279<br/>
+PRESCRIBED PURSUANT TO CIVIL AVIATION RULE PART 71 UNDER A DELEGATED<br/>
+AUTHORITY ISSUED BY THE DIRECTOR OF CIVIL AVIATION<br />                                                LOWER: SFC      UPPER: 1000FT AMSL<br /><br /></span><span class="notamSeries">A4032/19</span><span class="notamToFrom">									                                               FROM:  23 DEC 2019 11:00  TO:  23 MAR 2020 02:00                                                 EST<br /></span><span class="notamText">TEMPO RESTRICTED AREA NZR106 (MANGAWHAI, NORTH AUCKLAND) IS <br/>
+PRESCRIBED AS FLW:<br/>
+ALL THAT AIRSPACE BOUNDED BY A LINE JOINING:<br/>
+36 06 53.3 S 174 37 16.4 E<br/>
+36 07 09.4 S 174 36 34.1 E<br/>
+36 07 03.7 S 174 36 34.3 E<br/>
+36 06 40.6 S 174 36 07.6 E<br/>
+36 06 32.2 S 174 35 47.5 E <br/>
+A LINE FOLLOWING MEAN HIGH WATER MARK<br/>
+FROM<br/>
+36 06 32.2 S 174 35 47.5 E<br/>
+TO<br/>
+36 04 54.9 S 174 35 55.6 E<br/>
+A LINE JOINING<br/>
+36 04 54.9 S 174 35 55.6 E<br/>
+36 04 56.6 S 174 36 12.2 E<br/>
+36 06 53.3 S 174 37 16.4 E<br/>
+ACTIVITY: CONSERVATION<br/>
+ADMINISTERING AUTHORITY: DEPARTMENT OF CONSERVATION TEL (09) 307 9279<br/>
+PRESCRIBED PURSUANT TO CIVIL AVIATION RULE PART 71 UNDER A DELEGATED<br/>
+AUTHORITY ISSUED BY THE DIRECTOR OF CIVIL AVIATION<br />                                                LOWER: SFC      UPPER: 1000FT AMSL<br /><br /></span><span class="notamSeries">A4033/19</span><span class="notamToFrom">									                                               FROM:  23 DEC 2019 11:00  TO:  23 MAR 2020 02:00                                                 EST<br /></span><span class="notamText">TEMPO RESTRICTED AREA NZR107 (TE ARAI, NORTH AUCKLAND) IS <br/>
+PRESCRIBED AS FLW:<br/>
+ALL THAT AIRSPACE BOUNDED BY A LINE JOINING:<br/>
+36 09 25.4 S 174 39 09.7 E<br/>
+36 09 32.8 S 174 38 39.9 E<br/>
+36 09 17.7 S 174 38 25.3 E<br/>
+36 09 18.2 S 174 38 25.3 E<br/>
+36 09 06.8 S 174 37 49.5 E<br/>
+36 08 37.0 S 174 37 55.4 E<br/>
+36 08 07.0 S 174 37 34.8 E<br/>
+36 07 55.2 S 174 37 57.6 E<br/>
+36 09 25.4 S 174 39 09.7 E<br/>
+ACTIVITY: CONSERVATION<br/>
+ADMINISTERING AUTHORITY: DEPARTMENT OF CONSERVATION TEL (09) 307 9279<br/>
+PRESCRIBED PURSUANT TO CIVIL AVIATION RULE PART 71 UNDER A DELEGATED<br/>
+AUTHORITY ISSUED BY THE DIRECTOR OF CIVIL AVIATION<br />                                                LOWER: SFC      UPPER: 1000FT AMSL<br /><br /></span><span class="notamSeries">B7260/19</span><span class="notamToFrom">									                                               FROM:  11 DEC 2019 22:08  TO:  11 JAN 2020 22:00                                                 EST<br /></span><span class="notamText">VOLCANIC HAZARD ZONE NZV215 WHITE ISLAND IS REDEFINED AS FLW DUE <br/>
+TO DECREASED VOLCANIC ACT:<br/>
+ALL THAT AIRSPACE BOUNDED BY A CIRCLE RADIUS 8NM<br/>
+CENTRED ON 37 31 10.9 S 177 10 44.5 E WHITE ISLAND.<br/>
+PILOTS ARE REQ TO REP LOCATION OF VA AND ANY VOLCANIC ACT OBS.<br/>
+PRESCRIBED PURSUANT TO CIVIL AVIATION RULE PART 71 UNDER A DELEGATED <br/>
+AUTHORITY ISSUED BY THE DIRECTOR OF CIVIL AVIATION<br />                                                LOWER: SFC      UPPER: FL150<br /><br /></span><span class="notamSeries">B7455/19</span><span class="notamToFrom">									                                               FROM:  20 DEC 2019 04:20  TO:  07 JAN 2020 03:00                                                 EST<br /></span><span class="notamText">TEMPO RESTRICTED AREA NZR200 IS PRESCRIBED AS FLW:<br/>
+ALL THAT AIRSPACE BOUNDED BY A CIRCLE, RADIUS 3NM, <br/>
+CENTRED ON 37 31 42 S 177 10 23 E (WHITE ISLAND).<br/>
+ACTIVITY: AIRSPACE SAFETY<br/>
+ADMINISTERING AUTHORITY: CIVIL AVIATION AUTHORITY SEAN ROGERS<br/>
+TEL +64 27 807 4875<br/>
+PRESCRIBED PURSUANT TO CIVIL AVIATION RULE PART 71 UNDER A DELEGATED<br/>
+AUTHORITY ISSUED BY THE DIRECTOR OF CIVIL AVIATION<br />                                                LOWER: SFC      UPPER: 4500FT AMSL<br /><br /></span><span class="notamSeries">A2767/19</span><span class="notamToFrom">									                                               FROM:  04 OCT 2019 19:00  TO:  29 DEC 2019 07:00                                                 <br /></span><span class="notamText">EXTENSIVE REMOTELY PILOTED ACFT ACTIVITY WILL TAKE PLACE WI 0.5NM <br/>
+41 08 23.74 S 175 02 34.43E (TRENTHAM RACECOURSE) APRX 15.5NM NE NZWN<br/>
+SAT SUN 0800-2000 NEW ZEALAND DAYLIGHT TIME<br />                                                LOWER: SFC      UPPER: 1500FT AMSL<br /><br /></span><span class="notamSeries">A2774/19</span><span class="notamToFrom">									                                               FROM:  29 SEP 2019 01:00  TO:  27 DEC 2019 07:00                                                 <br /></span><span class="notamText">EXTENSIVE REMOTELY PILOTED ACFT ACTIVITY WILL TAKE PLACE WI 0.5NM <br/>
+41 08 23.74 S 175 02 34.43E (TRENTHAM RACECOURSE) APRX 15.5NM NE NZWN<br/>
+MON-FRI 1400-2000 NEW ZEALAND DAYLIGHT TIME<br />                                                LOWER: SFC      UPPER: 1500FT AMSL<br /><br /></span><span class="notamSeries">A4053/19</span><span class="notamToFrom">									                                               FROM:  27 DEC 2019 02:00  TO:  27 DEC 2019 04:30                                                 <br /></span><span class="notamText">REMOTELY PILOTED ACFT ACT WILL TAKE PLACE WI 1NM RADIUS<br/>
+41 13 17 S 173 55 52 E (VCY BROUGHTON BAY) APRX 7.4NM NNW NZPN.<br/>
+FREQ 123.0 MHZ MONITORED. CTC TEL 021 267 2966<br />                                                LOWER: SFC      UPPER: 550FT AMSL<br /><br /></span><span class="metSectionHeader">MET</span><br /><br /><span class="metLocation">NZKK (KERIKERI)                              </span><br /><br /><span class="metText">METAR NZKK 262030Z AUTO 19005KT 140V270 19KM SCT017/// 19/14 Q1020=</span><br /><br /><span class="metText">TAF NZKK 261014Z 2611/2705<br/>
+18005KT 20KM SCT030<br/>
+BECMG 2700/2702 02010KT<br/>
+PROB30 TEMPO 2702/2705 8000 SHRA<br/>
+2000FT WIND VRB05KT =</span><br /><br /><br /><span class="metLocation">NZWR (WHANGAREI)                              </span><br /><br /><span class="metText">METAR NZWR 262030Z AUTO 21005KT 140V260 20KM FEW018/// 19/14 Q1020=</span><br /><br /><span class="metText">TAF NZWR 261014Z 2611/2705<br/>
+23008KT 20KM SCT025<br/>
+2000FT WIND 23010KT =</span><br /><br /><br /><span class="metLocation">NZWP (WHENUAPAI)                              </span><br /><br /><span class="metText">ATIS NZWP B 2022<br/>
+APCH: ILS DME<br/>
+RWY: 21<br/>
+RWY COND: DRY<br/>
+OPR INFO: RWY AND GRASS 08/26 CLSD<br/>
+WIND: 200/10KT<br/>
+VIS: 20 KM<br/>
+CLD: SCT 2500 FT<br/>
+TEMPERATURE: 18 DEW POINT: 13<br/>
+QNH: 1020 HPA<br/>
+2000 FT WIND: FORECAST 200/15KT<br/>
+ON FIRST CTC WITH NZWP TWR NOTIFY RCPT OF B.</span><br /><br /><span class="metText">TAF NZWP 261605Z 2617/2717<br/>
+24010KT 20KM SCT030<br/>
+2000FT WIND 22015KT =</span><br /><br /><br /><span class="metLocation">NZAA (AUCKLAND)                              </span><br /><br /><span class="metText">ATIS NZAA H 1949<br/>
+APCH: ILS DME<br/>
+RWY: 23 LEFT<br/>
+RWY COND: DRY<br/>
+WIND: 190/10KT<br/>
+VIS: 30 KM<br/>
+CLD: SCT 2200 FT BKN 3000 FT<br/>
+TEMPERATURE: 19 DEW POINT: 14<br/>
+QNH: 1020 HPA<br/>
+2000 FT WIND: REP 190/11KT<br/>
+ON FIRST CTC WITH NZAA ATC NOTIFY RCPT OF H.</span><br /><br /><span class="metText">METAR NZAA 262030Z AUTO 22012KT 9999 FEW023/// BKN031/// 19/13 Q1020<br/>
+NOSIG=</span><br /><br /><span class="metText">TAF NZAA 261701Z 2618/2718<br/>
+23012KT 9999 SCT020<br/>
+PROB40 TEMPO 2708/2718 BKN014<br/>
+2000FT WIND 23015KT =</span><br /><br /><br /><span class="metLocation">NZTG (TAURANGA)                              </span><br /><br /><span class="metText">ATIS NZTG D 2003<br/>
+APCH: RNAV<br/>
+RWY: 25<br/>
+RWY COND: DRY<br/>
+WIND: 280/6KT 240V300<br/>
+VIS: 30 KM<br/>
+CLD: FEW 2000 FT<br/>
+TEMPERATURE: 20 DEW POINT: 15<br/>
+QNH: 1019 HPA<br/>
+SIGWX: COND SUITABLE FOR A VISUAL APCH.<br/>
+2000 FT WIND: FORECAST VRB/05KT<br/>
+ON FIRST CTC WITH NZTG TWR NOTIFY RCPT OF D.</span><br /><br /><span class="metText">METAR NZTG 262030Z AUTO 29006KT 250V340 26KM NCD 20/14 Q1018=</span><br /><br /><span class="metText">TAF NZTG 261014Z 2611/2705<br/>
+25005KT 20KM -SHRA BKN014<br/>
+BECMG 2616/2618 SCT025<br/>
+BECMG 2700/2702 26015KT<br/>
+2000FT WIND VRB05KT<br/>
+BECMG 2620/2622 25015KT =</span><br /><br /><br /><span class="metLocation">NZHN (HAMILTON)                              </span><br /><br /><span class="metText">ATIS NZHN G 1933<br/>
+APCH: RNAV Z<br/>
+RWY: 18 LEFT<br/>
+RWY COND: DRY<br/>
+WIND: VRB /4KT<br/>
+VIS: 15 KM<br/>
+CLD: SCT 1000 FT BKN 2000 FT<br/>
+TEMPERATURE: 16 DEW POINT: 16<br/>
+QNH: 1020 HPA<br/>
+2000 FT WIND: FORECAST 210/10KT<br/>
+ON FIRST CTC WITH NZHN ATC NOTIFY RCPT OF G.</span><br /><br /><span class="metText">METAR NZHN 262030Z AUTO 17003KT 33KM SCT015/// 18/15 Q1020=</span><br /><br /><span class="metText">TAF NZHN 261702Z 2618/2718<br/>
+VRB02KT 3000 MIFG BR FEW030<br/>
+BECMG 2618/2620 20KM NSW<br/>
+BECMG 2622/2700 26012KT<br/>
+PROB40 2712/2714 0500 FG<br/>
+BECMG 2714/2716 0500 FG<br/>
+2000FT WIND VRB05KT<br/>
+BECMG 2618/2620 23010KT<br/>
+BECMG 2706/2708 24020KT =</span><br /><br /><br /><span class="metLocation">NZWK (WHAKATANE)                              </span><br /><br /><span class="metText">METAR NZWK 262030Z AUTO 35010KT 19KM FEW012/// SCT021/// 20/19 Q1018=</span><br /><br /><span class="metText">TAF NZWK 261014Z 2611/2705<br/>
+02008KT 20KM -SHRA SCT010 BKN020<br/>
+TEMPO 2616/2700 7000 SHRA BKN008<br/>
+FM270100 32012KT 25KM SCT030<br/>
+2000FT WIND 36010KT =</span><br /><br /><br /><span class="metLocation">NZRO (ROTORUA)                              </span><br /><br /><span class="metText">ATIS NZRO C 1856<br/>
+APCH: RNAV Z<br/>
+RWY: 18<br/>
+RWY COND: DRY<br/>
+WIND: 270/5KT<br/>
+VIS: 40 KM<br/>
+CLD: FEW 1500 FT SCT 2500 FT<br/>
+TEMPERATURE: 16 DEW POINT: 14<br/>
+QNH: 1019 HPA<br/>
+2000 FT WIND: FORECAST VRB/05KT<br/>
+ON FIRST CTC WITH NZRO TWR NOTIFY RCPT OF C.</span><br /><br /><span class="metText">METAR NZRO 262030Z AUTO 32002KT 26KM FEW050/// 18/15 Q1019=</span><br /><br /><span class="metText">TAF NZRO 261014Z 2611/2705<br/>
+03005KT 20KM BKN014<br/>
+PROB30 TEMPO 2611/2615 7000 SHRA SCT030TCU<br/>
+BECMG 2617/2619 SCT025<br/>
+BECMG 2622/2700 27012KT<br/>
+2000FT WIND VRB05KT<br/>
+BECMG 2622/2700 27015KT =</span><br /><br /><br /><span class="metLocation">NZGS (GISBORNE)                              </span><br /><br /><span class="metText">ATIS NZGS D 2034<br/>
+APCH: RNAV<br/>
+RWY: 32<br/>
+RWY COND: DRY<br/>
+WIND: 330/10KT<br/>
+VIS: 20 KM<br/>
+CLD: FEW 1500 FT<br/>
+TEMPERATURE: 20 DEW POINT: 15<br/>
+QNH: 1017 HPA<br/>
+2000 FT WIND: FORECAST 320/15KT<br/>
+ON FIRST CTC WITH NZGS TWR NOTIFY RCPT OF D.</span><br /><br /><span class="metText">METAR NZGS 262030Z AUTO 32007KT 280V010 19KM SCT085/// 20/16 Q1017=</span><br /><br /><span class="metText">TAF NZGS 261014Z 2611/2705<br/>
+VRB02KT 20KM BKN020<br/>
+FM262200 14010KT 25KM SCT030<br/>
+2000FT WIND 04010KT<br/>
+BECMG 2618/2621 34015KT =</span><br /><br /><br /><span class="metLocation">NZAP (TAUPO)                              </span><br /><br /><span class="metText">METAR NZAP 262030Z AUTO 26004KT 220V290 20KM SCT020/// BKN044///<br/>
+17/13 Q1019=</span><br /><br /><span class="metText">TAF AMD NZAP 261716Z 2617/2705<br/>
+VRB02KT 20KM FEW030<br/>
+BECMG 2620/2622 26010KT<br/>
+2000FT WIND VRB05KT<br/>
+BECMG 2620/2622 27015KT =</span><br /><br /><br /><span class="metLocation">NZNP (NEW PLYMOUTH)                              </span><br /><br /><span class="metText">ATIS NZNP G 2035<br/>
+APCH: RNAV<br/>
+RWY: 23<br/>
+RWY COND: DRY<br/>
+WIND: 240/12KT<br/>
+VIS: 30 KM<br/>
+CLD: SCT 3500 FT<br/>
+TEMPERATURE: 18 DEW POINT: 12<br/>
+QNH: 1020 HPA<br/>
+2000 FT WIND: FORECAST 220/10KT<br/>
+ON FIRST CTC WITH NZNP TWR NOTIFY RCPT OF G.</span><br /><br /><span class="metText">METAR NZNP 262030Z AUTO 26012KT 20KM NCD 17/11 Q1020=</span><br /><br /><span class="metText">TAF NZNP 261014Z 2611/2705<br/>
+16005KT 30KM FEW030<br/>
+BECMG 2620/2622 26010KT<br/>
+BECMG 2701/2703 25015G25KT<br/>
+2000FT WIND 17010KT<br/>
+BECMG 2612/2614 24010KT<br/>
+BECMG 2701/2703 26015KT =</span><br /><br /><br /><span class="metLocation">NZNR (NAPIER)                              </span><br /><br /><span class="metText">ATIS NZNR C 1951<br/>
+APCH: RNAV<br/>
+RWY: 34<br/>
+RWY COND: DRY<br/>
+WIND: 050/4KT 010V090<br/>
+VIS: 20 KM<br/>
+CLD: NSC<br/>
+TEMPERATURE: 19 DEW POINT: 14<br/>
+QNH: 1017 HPA<br/>
+2000 FT WIND: FORECAST 020/10KT<br/>
+ON FIRST CTC WITH NZNR TWR NOTIFY RCPT OF C.</span><br /><br /><span class="metText">METAR NZNR 262030Z AUTO 05003KT 19KM NCD 19/14 Q1017=</span><br /><br /><span class="metText">TAF NZNR 261014Z 2611/2705<br/>
+VRB02KT 20KM BKN020<br/>
+PROB40 TEMPO 2611/2617 7000 SHRA BKN014<br/>
+FM262100 07010KT 25KM FEW040<br/>
+2000FT WIND 04010KT<br/>
+BECMG 2618/2620 VRB05KT =</span><br /><br /><br /><span class="metLocation">NZWU (WHANGANUI)                              </span><br /><br /><span class="metText">METAR NZWU 262030Z AUTO 30011KT 260V320 19KM FEW025/// 18/12 Q1018=</span><br /><br /><span class="metText">TAF NZWU 261014Z 2611/2705<br/>
+30008KT 20KM SCT014 BKN020<br/>
+FM262300 30015G25KT 25KM SCT030<br/>
+2000FT WIND 27015KT<br/>
+BECMG 2701/2703 27025KT =</span><br /><br /><br /><span class="metLocation">NZOH (OHAKEA)                              </span><br /><br /><span class="metText">METAR NZOH 262000Z 31009KT 20KM FEW020 SCT030 17/12 Q1018=</span><br /><br /><span class="metText">TAF NZOH 261702Z 2618/2718<br/>
+VRB02KT 30KM SCT030<br/>
+BECMG 2618/2620 33010KT<br/>
+BECMG 2621/2623 28015G25KT<br/>
+FM270900 28012KT 20KM BKN018<br/>
+TEMPO 2712/2716 5000 RA BKN012<br/>
+BECMG 2713/2715 28018G28KT<br/>
+BECMG 2716/2718 28015KT =</span><br /><br /><br /><span class="metLocation">NZPM (PALMERSTON NORTH)                              </span><br /><br /><span class="metText">ATIS NZPM C 2005<br/>
+APCH: RNAV<br/>
+RWY: 25<br/>
+OPR INFO: GND NOT OPR.<br/>
+WIND: 280/12KT 250V310<br/>
+VIS: 25 KM<br/>
+CLD: SCT 2000 FT BKN 2800 FT BKN 3800 FT<br/>
+TEMPERATURE: 17 DEW POINT: 13<br/>
+QNH: 1018 HPA<br/>
+2000 FT WIND: FORECAST 280/15KT<br/>
+ON FIRST CTC WITH NZPM TWR NOTIFY RCPT OF C.</span><br /><br /><span class="metText">METAR NZPM 262030Z AUTO 30011KT 34KM FEW020/// SCT028/// BKN038///<br/>
+17/12 Q1018=</span><br /><br /><span class="metText">TAF NZPM 261014Z 2611/2705<br/>
+VRB02KT 20KM SCT014 BKN020<br/>
+TEMPO 2613/2618 BKN014<br/>
+FM262000 32012KT 25KM SCT025<br/>
+BECMG 2622/2700 29015G25KT<br/>
+2000FT WIND VRB05KT<br/>
+BECMG 2614/2616 30015KT<br/>
+BECMG 2622/2700 29025KT =</span><br /><br /><br /><span class="metLocation">NZPP (PARAPARAUMU)                              </span><br /><br /><span class="metText">METAR NZPP 262030Z AUTO 35011KT 20KM SCT034/// BKN043/// 17/11 Q1017=</span><br /><br /><span class="metText">TAF NZPP 261014Z 2611/2705<br/>
+VRB02KT 30KM BKN020<br/>
+BECMG 2611/2613 01010KT<br/>
+BECMG 2620/2622 34015G25KT<br/>
+2000FT WIND 36015KT<br/>
+BECMG 2620/2622 33025KT =</span><br /><br /><br /><span class="metLocation">NZMS (MASTERTON)                              </span><br /><br /><span class="metText">METAR NZMS 262030Z AUTO 20004KT 160V240 20KM NCD 19/10 Q1014=</span><br /><br /><span class="metText">TAF NZMS 261014Z 2611/2705<br/>
+03005KT 20KM FEW025<br/>
+BECMG 2622/2700 30010KT<br/>
+PROB40 TEMPO 2700/2705 30015G25KT<br/>
+2000FT WIND 36015KT<br/>
+BECMG 2616/2618 31025KT =</span><br /><br /><br /><span class="metLocation">NZNS (NELSON)                              </span><br /><br /><span class="metText">ATIS NZNS C 1914<br/>
+APCH: RNAV B<br/>
+RWY: 20<br/>
+WIND: 210/17KT<br/>
+VIS: 40 KM<br/>
+CLD: FEW 6000 FT<br/>
+TEMPERATURE: 17 DEW POINT: 8<br/>
+QNH: 1016 HPA<br/>
+2000 FT WIND: FORECAST 250/15KT<br/>
+ON FIRST CTC WITH NZNS TWR NOTIFY RCPT OF C.</span><br /><br /><span class="metText">METAR NZNS 262030Z AUTO 23013KT 20KM NCD 19/09 Q1016=</span><br /><br /><span class="metText">TAF AMD NZNS 261946Z 2619/2705<br/>
+24015KT 30KM SCT040<br/>
+BECMG 2621/2623 01012KT<br/>
+2000FT WIND 27015KT =</span><br /><br /><br /><span class="metLocation">NZWN (WELLINGTON)                              </span><br /><br /><span class="metText">ATIS NZWN C 2016<br/>
+APCH: ILS DME<br/>
+RWY: 34<br/>
+RWY COND: DRY<br/>
+WIND: 340/20G30KT<br/>
+VIS: 30 KM<br/>
+CLD: FEW 2000 FT SCT 2500 FT<br/>
+TEMPERATURE: 18 DEW POINT: 12<br/>
+QNH: 1015 HPA<br/>
+2000 FT WIND: REP 310/32KT<br/>
+ON FIRST CTC WITH NZWN ATC NOTIFY RCPT OF C.</span><br /><br /><span class="metText">METAR NZWN 262030Z AUTO 36023KT 9999 SCT028/// BKN042/// 18/11 Q1015<br/>
+NOSIG RMK KAUKAU 34030KT=</span><br /><br /><span class="metText">TAF NZWN 261701Z 2618/2718<br/>
+36015G25KT 9999 SCT025<br/>
+BECMG 2700/2702 36030G40KT<br/>
+BECMG 2715/2717 19015KT<br/>
+2000FT WIND 34025KT<br/>
+BECMG 2700/2702 34035KT<br/>
+BECMG 2707/2709 33045KT =</span><br /><br /><br /><span class="metLocation">NZWB (WOODBOURNE)                              </span><br /><br /><span class="metText">ATIS NZWB C 1953<br/>
+APCH: RNAV<br/>
+RWY: 24<br/>
+RWY COND: DRY<br/>
+OPR INFO: CTN, INCREASED BIRD ACT.<br/>
+WIND: 280/16KT<br/>
+VIS: 30 KM<br/>
+CLD: NSC<br/>
+TEMPERATURE: 18 DEW POINT: 8<br/>
+QNH: 1014 HPA<br/>
+SIGWX: COND SUITABLE FOR A VISUAL APCH.<br/>
+2000 FT WIND: FORECAST 300/15KT<br/>
+ON FIRST CTC WITH NZWB TWR NOTIFY RCPT OF C.</span><br /><br /><span class="metText">METAR NZWB 262030Z AUTO 31009KT 240V350 20KM NCD 19/09 Q1013=</span><br /><br /><span class="metText">TAF AMD NZWB 261946Z 2619/2705<br/>
+32012KT 30KM FEW040<br/>
+BECMG 2622/2700 32018G30KT<br/>
+2000FT WIND 32015KT<br/>
+BECMG 2622/2700 30025KT =</span><br /><br /><br /><span class="metLocation">NZWS (WESTPORT)                              </span><br /><br /><span class="metText">METAR NZWS 262030Z AUTO 23009KT 190V250 20KM FEW027/// SCT040///<br/>
+BKN055/// 16/10 Q1018=</span><br /><br /><span class="metText">TAF NZWS 261039Z 2611/2705<br/>
+16005KT 20KM -SHRA FEW020 BKN030<br/>
+BECMG 2700/2702 36015KT<br/>
+TEMPO 2703/2705 6000 RA BKN012<br/>
+2000FT WIND 26015KT<br/>
+BECMG 2700/2702 32015KT<br/>
+BECMG 2702/2704 34025KT =</span><br /><br /><br /><span class="metLocation">NZHK (HOKITIKA)                              </span><br /><br /><span class="metText">METAR NZHK 262030Z AUTO 22006KT 180V250 20KM BKN038/// 14/12 Q1018=</span><br /><br /><span class="metText">TAF AMD NZHK 261946Z 2619/2705<br/>
+24012KT 20KM -SHRA FEW015 BKN020<br/>
+TEMPO 2619/2700 6000 RA BKN012<br/>
+BECMG 2622/2700 36015KT<br/>
+TEMPO 2700/2703 4000 +RA BKN006<br/>
+2000FT WIND 26015KT<br/>
+BECMG 2622/2700 32015KT<br/>
+BECMG 2702/2704 34025KT =</span><br /><br /><br /><span class="metLocation">NZCH (CHRISTCHURCH)                              </span><br /><br /><span class="metText">ATIS NZCH M 2020<br/>
+APCH: ILS DME<br/>
+RWY: 02<br/>
+RWY COND: DRY<br/>
+WIND: 010/6KT 350V050. N END 040/6KT 360V060<br/>
+VIS: 40 KM<br/>
+CLD: NSC<br/>
+TEMPERATURE: 17 DEW POINT: 11<br/>
+QNH: 1011 HPA<br/>
+SIGWX: COND SUITABLE FOR A VISUAL APCH.<br/>
+2000 FT WIND: REP 300/10KT<br/>
+ON FIRST CTC WITH NZCH ATC NOTIFY RCPT OF M.</span><br /><br /><span class="metText">METAR NZCH 262030Z AUTO 05006KT 9999 NCD 17/10 Q1011 NOSIG RMK<br/>
+SUGARLOAF 34006KT=</span><br /><br /><span class="metText">TAF NZCH 261701Z 2618/2718<br/>
+32008KT 6000 HZ FEW014<br/>
+BECMG 2618/2620 9999 NSW<br/>
+BECMG 2700/2702 32015G30KT<br/>
+BECMG 2709/2711 20018G30KT<br/>
+TEMPO 2709/2715 4000 +SHRA FEW020TCU<br/>
+BECMG 2715/2717 20015KT<br/>
+2000FT WIND 27020KT<br/>
+BECMG 2622/2700 33020KT<br/>
+BECMG 2700/2702 33030KT<br/>
+BECMG 2709/2711 18035KT =</span><br /><br /><br /><span class="metLocation">NZTU (TIMARU)                              </span><br /><br /><span class="metText">METAR NZTU 262030Z AUTO 32003KT 19KM BKN200/// 14/14 Q1009=</span><br /><br /><span class="metText">TAF NZTU 261039Z 2611/2705<br/>
+35008KT 20KM FEW040 BKN060<br/>
+PROB30 2611/2618 0500 FG<br/>
+BECMG 2700/2702 32015G25KT<br/>
+2000FT WIND 30015KT<br/>
+BECMG 2700/2702 33030KT =</span><br /><br /><br /><span class="metLocation">NZMF (MILFORD SOUND)                              </span><br /><br /><span class="metText">METAR NZMF 262000Z 11001KT 15KM -RA FEW030 SCT040 OVC050 11/10 Q1013<br/>
+RMK ALL PASSES APP CLSD=</span><br /><br /><span class="metText">TAF NZMF 261039Z 2611/2705<br/>
+VRB02KT 20KM -SHRA FEW015 BKN020<br/>
+TEMPO 2614/2620 6000 RA<br/>
+BECMG 2618/2620 34015G30KT<br/>
+TEMPO 2620/2700 4000 +RA FEW030CB<br/>
+PROB40 TEMPO 2620/2700 2000 TSRA BKN014 SCT030CB<br/>
+BECMG 2700/2702 32008KT<br/>
+TEMPO 2700/2705 5000 SHRA FEW040TCU<br/>
+2000FT WIND 34020KT<br/>
+BECMG 2618/2620 32030KT<br/>
+BECMG 2700/2702 26030KT =</span><br /><br /><br /><span class="metLocation">NZWF (WANAKA)                              </span><br /><br /><span class="metText">METAR NZWF 262030Z AUTO 34016KT 20KM BKN070/// 15/04 Q1010=</span><br /><br /><span class="metText">TAF AMD NZWF 261946Z 2619/2705<br/>
+34018G30KT 20KM FEW015 BKN030<br/>
+TEMPO 2700/2705 7000 RA<br/>
+BECMG 2703/2705 26012KT<br/>
+2000FT WIND 32025KT<br/>
+BECMG 2620/2622 32035KT<br/>
+BECMG 2703/2705 26030KT =</span><br /><br /><br /><span class="metLocation">NZOU (OAMARU)                              </span><br /><br /><span class="metText">METAR NZOU 262030Z AUTO 36009KT 20KM SCT210/// 14/13 Q1009=</span><br /><br /><span class="metText">TAF NZOU 261039Z 2611/2705<br/>
+35008KT 20KM FEW040 BKN060<br/>
+PROB30 2611/2618 0500 FG<br/>
+BECMG 2700/2702 32015G25KT<br/>
+2000FT WIND 30015KT<br/>
+BECMG 2700/2702 33030KT =</span><br /><br /><br /><span class="metLocation">NZQN (QUEENSTOWN)                              </span><br /><br /><span class="metText">ATIS NZQN C 1935<br/>
+APCH: RNAV<br/>
+RWY: 23<br/>
+RWY COND: DRY<br/>
+WIND: 220/12KT<br/>
+VIS: 50 KM<br/>
+CLD: FEW 6500 FT SCT 9500 FT<br/>
+TEMPERATURE: 13 DEW POINT: 6<br/>
+QNH: 1009 HPA<br/>
+2000 FT WIND: FORECAST 300/25KT<br/>
+ON FIRST CTC WITH NZQN ATC NOTIFY RCPT OF C.</span><br /><br /><span class="metText">METAR NZQN 262030Z AUTO 24010KT 47KM SCT070/// 14/06 Q1009=</span><br /><br /><span class="metText">TAF NZQN 261605Z 2617/2711<br/>
+VRB02KT 20KM FEW030 BKN040<br/>
+TEMPO 2618/2703 6000 RA<br/>
+BECMG 2620/2622 26015G25KT<br/>
+PROB40 TEMPO 2704/2711 7000 SHRA<br/>
+BECMG 2709/2711 18005KT<br/>
+2000FT WIND 32025KT<br/>
+BECMG 2620/2622 32035KT<br/>
+BECMG 2703/2705 26030KT =</span><br /><br /><br /><span class="metLocation">NZMO (TE ANAU/MANAPOURI)                              </span><br /><br /><span class="metText">METAR NZMO 262030Z AUTO 02015KT 20KM -RA FEW037/// BKN060/// 13/07<br/>
+Q1007=</span><br /><br /><span class="metText">TAF AMD NZMO 261640Z 2616/2705<br/>
+36012KT 20KM -RA FEW015 BKN030<br/>
+TEMPO 2618/2702 4000 RA BKN014<br/>
+BECMG 2700/2702 28015G30KT<br/>
+2000FT WIND 32025KT<br/>
+BECMG 2620/2622 32035KT<br/>
+BECMG 2700/2702 26030KT =</span><br /><br /><br /><span class="metLocation">NZDN (DUNEDIN)                              </span><br /><br /><span class="metText">ATIS NZDN G 2037<br/>
+APCH: ILS DME<br/>
+RWY: 03<br/>
+RWY COND: DRY<br/>
+OPR INFO: MODEL ACFT AREA ACT.<br/>
+WIND: 340/8KT 310V010<br/>
+VIS: 40 KM<br/>
+CLD: NSC<br/>
+TEMPERATURE: 17 DEW POINT: 9<br/>
+QNH: 1007 HPA<br/>
+2000 FT WIND: REP 330/16KT<br/>
+ON FIRST CTC WITH NZDN TWR NOTIFY RCPT OF G.</span><br /><br /><span class="metText">METAR NZDN 262030Z AUTO 36006KT 230V120 42KM BKN140/// 17/09 Q1007<br/>
+RMK SWAMPY 35016KT=</span><br /><br /><span class="metText">TAF AMD NZDN 261650Z 2616/2705<br/>
+05008KT 0800 FG SCT030<br/>
+BECMG 2617/2619 20KM NSW<br/>
+BECMG 2622/2700 32015G25KT<br/>
+FM270200 22035G45KT 20KM -SHRA FEW016 BKN020<br/>
+TEMPO 2702/2705 4000 +SHRAGS FEW020CB<br/>
+PROB40 TEMPO 2702/2705 3000 TSRAGS BKN012 SCT020CB<br/>
+BECMG 2703/2705 22025G35KT<br/>
+2000FT WIND 30015KT<br/>
+BECMG 2622/2700 33030KT<br/>
+BECMG 2701/2703 20035KT =</span><br /><br /><br /><span class="metLocation">NZNV (INVERCARGILL)                              </span><br /><br /><span class="metText">ATIS NZNV D 1946<br/>
+APCH: RNAV<br/>
+RWY: 04<br/>
+RWY COND: DRY<br/>
+WIND: 330/12KT 300V360<br/>
+VIS: 60 KM<br/>
+CLD: BKN 8500 FT<br/>
+TEMPERATURE: 14 DEW POINT: 8<br/>
+QNH: 1005 HPA<br/>
+2000 FT WIND: FORECAST 320/30KT<br/>
+ON FIRST CTC WITH NZNV TWR NOTIFY RCPT OF D.</span><br /><br /><span class="metText">METAR NZNV 262030Z AUTO 36015KT 330V030 46KM BKN090/// BKN240///<br/>
+15/07 Q1005=</span><br /><br /><span class="metText">TAF NZNV 261039Z 2611/2705<br/>
+04008KT 20KM -RA SCT020 BKN030<br/>
+BECMG 2619/2621 34012KT<br/>
+BECMG 2623/2701 27025G35KT<br/>
+TEMPO 2623/2702 5000 RA BKN012<br/>
+TEMPO 2702/2705 4000 +SHRAGS FEW020CB<br/>
+PROB30 TEMPO 2702/2705 2000 TSRAGS SCT020CB<br/>
+2000FT WIND 34020KT<br/>
+BECMG 2614/2616 34030KT<br/>
+BECMG 2623/2701 27035KT =</span><br /><br /><br /><br /><span class="metLocation">NZZC (NEW ZEALAND FIR)                              </span><br /><br /><span class="metText">NZZC SIGMET 2 VALID 261811/262211 NZKL-<br/>
+NZZC NEW ZEALAND FIR SEV ICE FCST WI S4400 E17100 - S4730 E16830 -<br/>
+S4740 E16900 - S4450 E17240 - S4400 E17100 9000FT/FL210 MOV E 20KT<br/>
+NC=</span><br /><br /><br /><span class="metSectionHeader">AAW REPORTS</span><br /><br /><span class="metNoInfoHeader">NO MET REPORTS FOR THE FOLLOWING LOCATIONS : </span><br /><br /><span class="metNoInfoList">ATIS : NZKK NZWR NZWK NZAP NZWU NZOH NZPP NZMS NZWS NZHK NZTU NZMF NZWF NZOU NZMO <br /></span><span class="metNoInfoList">METAR : NZWP <br /></span><span class="metNoInfoList">CYCLONE SIGMET : NZZC <br /></span><span class="metNoInfoList">VOLCANIC SIGMET : NZZC <br />AAW : FN TA TK ED CP MH SA DV ST TN WW KA AL PL CY GE FD<br /></span><br /><br />END.
+      </div>
+   
+<hr /></div>
+
+  <center>
+    <h1>Charts</h1>
+
+    <a href="#" onclick="ShowHideCharts(document.getElementsByClassName('metimage'), null); return false;">
+      Display/hide all charts
+    </a>
+    <br /><br />
+
+    <a href="/graphicalmet/SIGMET-NZZC-20191226181200000_683425.png" onclick="ShowHideCharts(document.getElementsByClassName('metimage'), 0); return false;">
+      SIGMET NZZC
+      (issued 2019-12-26 18:12)
+    </a>
+
+    <br />
+
+    <img class="metimage"
+        src="/images/common/1_spacer.gif"
+        alt="NZZC SIGMET Chart"
+        data-url="/graphicalmet/SIGMET-NZZC-20191226181200000_683425.png"
+        style="width: 630px; height: 0px"
+        onclick="this.style.width = this.style.width == '630px' ? '' : '630px'" />
+    <br />
+
+    <a href="/graphicalmet/GRAFOR-18-20191226175000000_672260.png" onclick="ShowHideCharts(document.getElementsByClassName('metimage'), 1); return false;">
+      GRAFOR 18
+      (issued 2019-12-26 17:50, valid 2019-12-26 15:00 to 2019-12-26 21:00 UTC)
+    </a>
+
+    <br />
+
+    <img class="metimage"
+        src="/images/common/1_spacer.gif"
+        alt="18 GRAFOR Chart"
+        data-url="/graphicalmet/GRAFOR-18-20191226175000000_672260.png"
+        style="width: 630px; height: 0px"
+        onclick="this.style.width = this.style.width == '630px' ? '' : '630px'" />
+    <br />
+
+    <a href="/graphicalmet/GRAFOR-00-20191226200200000_925047.png" onclick="ShowHideCharts(document.getElementsByClassName('metimage'), 2); return false;">
+      GRAFOR 00
+      (issued 2019-12-26 20:02, valid 2019-12-26 21:00 to 2019-12-27 03:00 UTC)
+    </a>
+
+    <br />
+
+    <img class="metimage"
+        src="/images/common/1_spacer.gif"
+        alt="00 GRAFOR Chart"
+        data-url="/graphicalmet/GRAFOR-00-20191226200200000_925047.png"
+        style="width: 630px; height: 0px"
+        onclick="this.style.width = this.style.width == '630px' ? '' : '630px'" />
+    <br />
+
+    <a href="/graphicalmet/GRAFOR-06-20191226200700000_287685.png" onclick="ShowHideCharts(document.getElementsByClassName('metimage'), 3); return false;">
+      GRAFOR 06
+      (issued 2019-12-26 20:07, valid 2019-12-27 03:00 to 2019-12-27 09:00 UTC)
+    </a>
+
+    <br />
+
+    <img class="metimage"
+        src="/images/common/1_spacer.gif"
+        alt="06 GRAFOR Chart"
+        data-url="/graphicalmet/GRAFOR-06-20191226200700000_287685.png"
+        style="width: 630px; height: 0px"
+        onclick="this.style.width = this.style.width == '630px' ? '' : '630px'" />
+    <br />
+
+    <a href="/graphicalmet/GRAFOR-12-20191226201000000_971408.png" onclick="ShowHideCharts(document.getElementsByClassName('metimage'), 4); return false;">
+      GRAFOR 12
+      (issued 2019-12-26 20:10, valid 2019-12-27 09:00 to 2019-12-27 15:00 UTC)
+    </a>
+
+    <br />
+
+    <img class="metimage"
+        src="/images/common/1_spacer.gif"
+        alt="12 GRAFOR Chart"
+        data-url="/graphicalmet/GRAFOR-12-20191226201000000_971408.png"
+        style="width: 630px; height: 0px"
+        onclick="this.style.width = this.style.width == '630px' ? '' : '630px'" />
+    <br />
+
+    <a href="/graphicalmet/SIGWX-fl100-20191226194200000_032821.png" onclick="ShowHideCharts(document.getElementsByClassName('metimage'), 5); return false;">
+      SIGWX FL100
+      (issued 2019-12-26 19:42, valid 2019-12-26 21:00 to 2019-12-27 12:00 UTC)
+    </a>
+
+    <br />
+
+    <img class="metimage"
+        src="/images/common/1_spacer.gif"
+        alt="FL100 SIGWX Chart"
+        data-url="/graphicalmet/SIGWX-fl100-20191226194200000_032821.png"
+        style="width: 630px; height: 0px"
+        onclick="this.style.width = this.style.width == '630px' ? '' : '630px'" />
+    <br />
+
+  </center>
+
+  <!-- Note CDATA to prevent speecial characters being interpreted -->
+  <script type="text/javascript">
+  //<![CDATA[
+    function ShowHideCharts(elements, index)
+    {
+      var showing = 0;
+
+      for (var i = 0; i < elements.length; i++)
+      {
+        if ((index == null || i == index) && elements[i].src.indexOf('1_spacer.gif') == -1)
+        {
+          showing++;
+        }
+      }
+
+      var show = index == null ? showing != elements.length : showing != 1;
+
+      for (var i = 0; i < elements.length; i++)
+      {
+        if (index == null || i == index)
+        {
+          var img = elements[i];
+          var url = img.getAttribute('data-url');
+          img.src = show ? url : '/images/common/1_spacer.gif';
+          img.style.height = show ? '' : '0px';
+          img.style.padding = show ? '5px 0 20px 0' : '';
+        }
+      }
+    }
+  //]]>
+  </script>
+<div id="contentContainer" class="">
+</div>
+<div id="footer-container">
+  <div id="footer">
+    <a href="/script/misc/contact_details.asp">Contact Us</a>
+    <a href="http://www.airways.co.nz/" target="_new">Airways</a>
+    <a href="/script/site/terms_and_conditions.asp">Terms &amp; Conditions</a>
+    <a href="/script/user_reg/default.asp">User Account</a>
+    <a href="http://metflight.metra.co.nz/" target="_new">MetFlight</a>
+  </div>
+</div>
+
+
+</body>
+
+</html>
