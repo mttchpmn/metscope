@@ -3,7 +3,6 @@
 const allSettled = require("promise.allsettled");
 
 const winston = require("../../config/winston");
-// const scrapeStatic = require("./scrapers/_static");
 const scrapeStatic = require("../../services/processWebcam");
 const allWebcams = require("../../config/webcams").all;
 
@@ -12,16 +11,12 @@ module.exports = (req, res) => {
 
   const promises = allWebcams.map(cam => {
     if (cam.static) return scrapeStatic(cam.code, cam.originUrl);
-    // return; // Added this to skip the dynamic scrapers temporarily
     try {
-      let dynamicScraper = require(`./scrapers/${cam.code}`);
-      return dynamicScraper(cam.code, cam.originUrl);
+      let scrapeDynamic = require(`./scrapers/${cam.code}`);
+      return scrapeDynamic(cam.code, cam.originUrl);
     } catch (error) {
       winston.error(error);
       winston.error(error.message);
-      // winston.warn(
-      //   `[${cam.code}]: Cannot load scraper function from './scrapers' does the file exist?`
-      // );
     }
   });
 
