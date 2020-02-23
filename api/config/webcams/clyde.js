@@ -101,6 +101,72 @@ module.exports = [
     zone: "queenstownLakes"
   },
   {
+    title: "Wanaka Township",
+    code: "cy_wanakaTownship",
+    desc: "Situated at Wanaka Lakefront looking NW",
+    originUrl: "https://www.lakewanaka.co.nz/revealing-wanaka/wanaka-webcam/",
+    static: false,
+    area: "clyde",
+    areaCode: "cy",
+    region: "otago",
+    zone: "queenstownLakes"
+  },
+  {
+    title: "Roys Peak - Wanaka Township",
+    code: "cy_roysPeakSE",
+    desc: "Situated on Roy's Peak looking SE towards Wanaka",
+    originUrl: "https://www.lakewanaka.co.nz/revealing-wanaka/wanaka-webcam/",
+    static: false,
+    area: "clyde",
+    areaCode: "cy",
+    region: "otago",
+    zone: "queenstownLakes"
+  },
+  {
+    title: "Roys Peak - Hawea Township",
+    code: "cy_roysPeakE",
+    desc: "Situated on Roy's Peak looking E towards Hawea",
+    originUrl: "https://www.lakewanaka.co.nz/revealing-wanaka/wanaka-webcam/",
+    static: false,
+    area: "clyde",
+    areaCode: "cy",
+    region: "otago",
+    zone: "queenstownLakes"
+  },
+  {
+    title: "Roys Peak - Lake Wanaka",
+    code: "cy_roysPeakNE",
+    desc: "Situated on Roy's Peak looking NE towards Stevenson's Arm",
+    originUrl: "https://www.lakewanaka.co.nz/revealing-wanaka/wanaka-webcam/",
+    static: false,
+    area: "clyde",
+    areaCode: "cy",
+    region: "otago",
+    zone: "queenstownLakes"
+  },
+  {
+    title: "Roys Peak - Mt Aspiring",
+    code: "cy_roysPeakNW",
+    desc: "Situated on Roy's Peak looking NW towards Mt Aspiring",
+    originUrl: "https://www.lakewanaka.co.nz/revealing-wanaka/wanaka-webcam/",
+    static: false,
+    area: "clyde",
+    areaCode: "cy",
+    region: "otago",
+    zone: "queenstownLakes"
+  },
+  {
+    title: "Roys Peak - North",
+    code: "cy_roysPeakN",
+    desc: "Situated on Roy's Peak looking N up Lake Wanaka",
+    originUrl: "https://www.lakewanaka.co.nz/revealing-wanaka/wanaka-webcam/",
+    static: false,
+    area: "clyde",
+    areaCode: "cy",
+    region: "otago",
+    zone: "queenstownLakes"
+  },
+  {
     title: "Fernhill",
     code: "cy_fernhill",
     desc:
