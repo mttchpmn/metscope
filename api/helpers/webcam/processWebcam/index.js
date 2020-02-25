@@ -10,10 +10,10 @@ const saveWebcamToDatabase = require("./saveWebcamToDatabase");
 // and save to db
 module.exports = async (webcamCode, imageUrl) => {
   try {
-    const proceedWithSave = await evaluateWebcamForSave(webcamCode);
+    const webCamIsNew = await evaluateWebcamForSave(webcamCode);
 
     // Webcam is not new.  Do not continue.
-    if (!proceedWithSave) return;
+    if (!webCamIsNew) return;
 
     // Webcam is new. Save to file and DB.
     const fileName = await saveImageToFile(webcamCode, imageUrl);
