@@ -9,7 +9,7 @@ const Webcam = require("../../../../database/models").Webcam;
 // Given webcam code, and filename on disk, save webcam details to DB
 module.exports = async (webcamCode, fileName) => {
   const date = moment.utc().format();
-  const url = `${config.domain.basUrl}/images/${webcamCode}/${fileName}`;
+  const url = `${config.domain.baseUrl}/images/${webcamCode}/${fileName}`;
   const location = `${appPath}/images/${webcamCode}/${fileName}`;
 
   try {
