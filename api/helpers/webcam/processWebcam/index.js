@@ -13,11 +13,15 @@ module.exports = async (webcamCode, imageUrl) => {
     const webCamIsNew = await evaluateWebcamForSave(webcamCode);
 
     // Webcam is not new.  Do not continue.
-    if (!webCamIsNew) return;
+    if (!webCamIsNew) {
+      winston.info(`[${webcamCode}]: Skipped old webcam`);
+      return;
+    }
 
     // Webcam is new. Save to file and DB.
     const fileName = await saveImageToFile(webcamCode, imageUrl);
     await saveWebcamToDatabase(webcamCode, fileName);
+    winston.info(`[${webcamCode}]: Saved new webcam`);
   } catch (error) {
     winston.error(`[${webcamCode}]: Error processing webcam: ${error.message}`);
   }
