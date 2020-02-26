@@ -13,7 +13,7 @@ module.exports = async (webcamCode, fileName) => {
   const location = `${appPath}/images/${webcamCode}/${fileName}`;
 
   try {
-    await Webcam.create({ name, date, url, location });
+    await Webcam.create({ name: webcamCode, date, url, location });
   } catch (error) {
     throw error;
   }

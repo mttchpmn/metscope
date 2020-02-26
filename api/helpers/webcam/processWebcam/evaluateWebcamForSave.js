@@ -1,5 +1,7 @@
 "use strict";
 
+const axios = require("axios");
+
 const fs = require("fs");
 const util = require("util");
 const readFile = util.promisify(fs.readFile);
@@ -17,8 +19,7 @@ module.exports = async (webcamCode, imageUrl) => {
     if (!existingWebcam) return true;
 
     // Download image to check against local copy
-    const { data } = await axios.get({
-      imageUrl,
+    const { data } = await axios.get(imageUrl, {
       responseType: "arraybuffer",
       timeout: 4000
     });
