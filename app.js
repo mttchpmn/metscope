@@ -9,12 +9,6 @@ const morgan = require("morgan");
 const bodyParser = require("body-parser");
 const swaggerUi = require("swagger-ui-express");
 
-// Session Setup
-const session = require("express-session");
-const redis = require("redis");
-const RedisStore = require("connect-redis")(session);
-const redisClient = redis.createClient(process.env.REDIS_URL);
-
 // Internal imports
 require("dotenv").config();
 const swaggerSpec = require("./api/config/swaggerSpec");
@@ -32,21 +26,6 @@ const userRouter = require("./api/routes/userRouter");
 winston.info(`API starting...`);
 const app = express();
 const port = config.app.port;
-
-// Setup session
-app.use(
-  session({
-    store: new RedisStore({ client: redisClient }),
-    secret: config.session.secret,
-    saveUninitialized: false,
-    resave: false,
-    cookie: {
-      sameSite: true,
-      secure: false,
-      maxAge: parseInt(config.session.lifetime)
-    }
-  })
-);
 
 // Setup Middlewares
 app.use(morgan("combined", { stream: winston.stream }));
