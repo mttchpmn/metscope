@@ -5,6 +5,8 @@ const { combine, printf } = format;
 const { Loggly } = require("winston-loggly-bulk");
 const appRoot = require("app-root-path");
 
+const config = require("../../../config");
+
 const consoleFormat = printf(
   ({ level, message, label, timestamp }) =>
     `${timestamp} [${level.toUpperCase()}]: ${message}`
@@ -30,7 +32,7 @@ const options = {
   },
   console: {
     silent: process.env.NODE_ENV === "test" ? true : false,
-    level: "debug",
+    level: config.app.loggingLevel,
     format: combine(
       format.timestamp({
         format: "YYYY-MM-DD HH:mm:ss"

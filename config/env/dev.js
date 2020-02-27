@@ -6,16 +6,8 @@ module.exports = {
     port: process.env.PORT || 3000,
     timePeriod: 6,
     staleThreshold: 3,
-    purgeThreshold: 12
-  },
-  token: {
-    secret: "ivegotalovelybunchofcoconuts",
-    expiry: "7 days"
-  },
-  session: {
-    name: "sid",
-    secret: "sessionsarethebusinessyo",
-    lifetime: 1000 * 60 * 60 * 7
+    purgeThreshold: 12,
+    loggingLevel: "debug"
   },
   db: {
     username: "metscope",
