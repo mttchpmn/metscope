@@ -9,7 +9,23 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      name: {
+      code: {
+        type: Sequelize.STRING,
+        allowNull: false
+      },
+      area: {
+        type: Sequelize.STRING,
+        allowNull: false
+      },
+      areaCode: {
+        type: Sequelize.STRING,
+        allowNull: false
+      },
+      region: {
+        type: Sequelize.STRING,
+        allowNull: false
+      },
+      zone: {
         type: Sequelize.STRING,
         allowNull: false
       },
