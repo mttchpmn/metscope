@@ -2,7 +2,6 @@
 
 const winston = require("../../config/winston");
 const webcams = require("../../config/webcams");
-const staticScraper = require("../../services/processWebcam");
 
 const processWebcam = require("../../helpers/webcam/processWebcam");
 

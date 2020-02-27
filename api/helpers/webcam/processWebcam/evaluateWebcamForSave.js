@@ -7,8 +7,10 @@ const util = require("util");
 const readFile = util.promisify(fs.readFile);
 
 const Webcam = require("../../../../database/models").Webcam;
+const winston = require("../../../services/winston");
 
 module.exports = async (webcamCode, imageUrl) => {
+  winston.debug(`[${webcamCode}]: Evaluating webcam for save...`);
   try {
     const existingWebcam = await Webcam.findOne({
       where: { name: webcamCode },
@@ -31,6 +33,7 @@ module.exports = async (webcamCode, imageUrl) => {
     if (newImageBuffer.equals(existingImageBuffer)) return false;
 
     // Image is new.  Proceed with save
+    winston.debug(`[${webcamCode}]: Webcam is new. Proceeding with save.`);
     return true;
   } catch (error) {
     throw error;
