@@ -6,6 +6,7 @@ module.exports = {
     port: process.env.PORT || 3000,
     timePeriod: 6,
     staleThreshold: 3,
+    viewThreshold: 6,
     purgeThreshold: 12,
     loggingLevel: "info"
   },
