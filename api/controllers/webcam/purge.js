@@ -8,47 +8,25 @@ const Op = Sequelize.Op;
 
 const winston = require("../../services/winston");
 const Webcam = require("../../../database/models").Webcam;
+const purgeWebcams = require("../../helpers/webcam/purgeWebcams");
 
 const deleteFile = util.promisify(fs.unlink);
 
-module.exports = (req, response) => {
-  winston.info("Purging webcams");
+module.exports = async (req, res) => {
+  winston.info("Purging webcams...");
+  try {
+    const purgeObject = await purgeWebcams();
+    winston.info(
+      `Purged ${purgeObject.oldWebcams} webcams.\n\tDeleted ${purgeObject.fileDeletions} webcams from file.\n\tDeleted ${purgeObject.dbDeletions} webcams from database.`
+    );
 
-  let twentyFourHoursAgo = moment
-    .utc()
-    .subtract(24, "hours")
-    .format();
-
-  Webcam.findAll({ where: { date: { [Op.gt]: twentyFourHoursAgo } } })
-    .then(webcams => {
-      winston.info(
-        `Found ${webcams.length} rows in the database that will be deleted`
-      );
-      return webcams.map(item => item.location).filter(item => item !== null);
-    })
-    .then(filesToDelete => {
-      winston.info("The following files will be deleted:");
-      winston.info(filesToDelete);
-      return Promise.all(filesToDelete.map(filePath => deleteFile(filePath)));
-    })
-    .then(() => {
-      winston.info("Files deleted successfully");
-      return Webcam.findAll({
-        where: { date: { [Op.lt]: twentyFourHoursAgo } },
-        attributes: ["id"]
-      });
-    })
-    .then(idList => {
-      winston.info(`Will delete ${idList.length} rows from the database`);
-      return Webcam.destroy({ where: { id: idList } });
-    })
-    .then(() => {
-      return response.status(200).json({
-        message: "Webcams purged successfully"
-      });
-    })
-    .catch(err => {
-      winston.error(err.message);
-      return response.status(500).json({ error: "Internal error" });
+    return res.status(200).json({
+      message: `Purged webcams successfully.`,
+      data: purgeObject
     });
+  } catch (error) {
+    winston.error(error);
+
+    return res.status(500).json({ error: "Internal error", data: error });
+  }
 };
