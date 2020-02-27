@@ -13,7 +13,7 @@ module.exports = async (webcamCode, imageUrl) => {
   winston.debug(`[${webcamCode}]: Evaluating webcam for save...`);
   try {
     const existingWebcam = await Webcam.findOne({
-      where: { name: webcamCode },
+      where: { code: webcamCode },
       order: [["id", "DESC"]]
     });
 

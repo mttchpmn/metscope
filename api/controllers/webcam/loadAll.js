@@ -39,7 +39,7 @@ const loadAllWebcams = (req, res) => {
       Object.keys(data.webcams).forEach(area => {
         // Iterate over webcams in area
         data.webcams[area].forEach(webcam => {
-          let images = webcams.filter(i => i.name === webcam.code);
+          let images = webcams.filter(i => i.code === webcam.code);
           images.sort((a, b) => (a.id > b.id ? 1 : -1));
 
           const latestImage = images[images.length - 1];

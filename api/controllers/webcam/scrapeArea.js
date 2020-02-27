@@ -18,7 +18,7 @@ module.exports = async (req, res) => {
         }
 
         // Static cam
-        return processWebcam(cam.code, cam.originUrl);
+        return processWebcam(cam.code, cam.originUrl, cam);
       })
     );
     winston.info(`Successfully scraped webcams for ${req.params.area}`);
