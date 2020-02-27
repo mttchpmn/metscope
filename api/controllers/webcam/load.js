@@ -2,8 +2,8 @@
 
 const moment = require("moment");
 
-const winston = require("../../config/winston");
-const webcamList = require("../../config/webcams").all;
+const winston = require("../../services/winston");
+const webcamList = require("../../../config/webcams").all;
 const Webcam = require("../../../database/models").Webcam;
 const Sequelize = require("sequelize");
 const Op = Sequelize.Op;

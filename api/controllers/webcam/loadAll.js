@@ -7,9 +7,9 @@ const Op = Sequelize.Op;
 const _ = require("lodash");
 
 // Internal Imports
-const winston = require("../../config/winston");
-const webcamIndex = require("../../config/webcams");
-const config = require("../../config/config");
+const winston = require("../../services/winston");
+const webcamIndex = require("../../../config/webcams");
+const config = require("../../../config");
 const Webcam = require("../../../database/models").Webcam;
 
 const loadAllWebcams = (req, res) => {

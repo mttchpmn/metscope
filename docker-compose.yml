@@ -2,11 +2,6 @@ version: "3"
 services:
   # To run API standalone:
   # docker-compose run --name METSCOPE-PROD -d --service-ports web
-  redis:
-    image: redis
-    container_name: cache
-    expose:
-      - 6379
   web:
     container_name: WEB_API
     build: .
@@ -15,10 +10,6 @@ services:
       - "${PORT}:${PORT}"
     volumes:
       - .:/home/node/app
-    links:
-      - redis
-    environment:
-      - REDIS_URL=redis://cache
   db:
     container_name: DATABASE
     image: postgres

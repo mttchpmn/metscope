@@ -2,15 +2,15 @@
 
 const allSettled = require("promise.allsettled");
 
-const winston = require("../../config/winston");
-const scrapeStatic = require("../../services/processWebcam");
-const allWebcams = require("../../config/webcams").all;
+const winston = require("../../services/winston");
+const processWebcam = require("../../helpers/webcam/processWebcam");
+const allWebcams = require("../../../config/webcams").all;
 
 module.exports = (req, res) => {
   winston.info("Scraping all webcams");
 
   const promises = allWebcams.map(cam => {
-    if (cam.static) return scrapeStatic(cam.code, cam.originUrl);
+    if (cam.static) return processWebcam(cam.code, cam.originUrl);
     try {
       let scrapeDynamic = require(`./scrapers/${cam.code}`);
       return scrapeDynamic(cam.code, cam.originUrl);

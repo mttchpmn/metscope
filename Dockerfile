@@ -1,4 +1,4 @@
-FROM node:10-slim
+FROM node:13
 RUN mkdir -p /home/node/app/node_modules && chown -R node:node /home/node/app
 # Install latest chrome dev package and fonts to support major charsets (Chinese, Japanese, Arabic, Hebrew, Thai and a few others)
 # Note: this installs the necessary libs to make the bundled version of Chromium that Puppeteer

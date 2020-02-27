@@ -2,8 +2,8 @@
 
 const moment = require("moment");
 
-const winston = require("../../config/winston");
-const retrieveBrief = require("../../services/retrieveBrief");
+const winston = require("../../services/winston");
+const retrieveBrief = require("../../helpers/weather/retrieveBrief");
 const Brief = require("../../../database/models").Brief;
 
 module.exports = async (req, response) => {
@@ -21,7 +21,7 @@ module.exports = async (req, response) => {
     charts: brief.charts
   });
   winston.info(
-    `IFIS brief added to database successfully with identifier: ${brief.identifier}`
+    `IFIS brief added to database successfully with identifier: ${brief.info.identifier}`
   );
 
   return response
