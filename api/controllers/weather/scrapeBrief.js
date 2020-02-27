@@ -21,7 +21,7 @@ module.exports = async (req, response) => {
     charts: brief.charts
   });
   winston.info(
-    `IFIS brief added to database successfully with identifier: ${brief.identifier}`
+    `IFIS brief added to database successfully with identifier: ${brief.info.identifier}`
   );
 
   return response
