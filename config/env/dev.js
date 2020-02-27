@@ -7,7 +7,7 @@ module.exports = {
     timePeriod: 6,
     staleThreshold: 3,
     purgeThreshold: 12,
-    loggingLevel: "debug"
+    loggingLevel: "info"
   },
   db: {
     username: "metscope",
