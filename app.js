@@ -11,16 +11,12 @@ const swaggerUi = require("swagger-ui-express");
 
 // Internal imports
 require("dotenv").config();
-const swaggerSpec = require("./api/config/swaggerSpec");
-const config = require("./api/config/config");
-const winston = require("./api/config/winston");
-const withAuth = require("./api/middleware/withAuth");
+const config = require("./config/");
+const winston = require("./api/services/winston");
 
 // Routers and Routes
-const authRouter = require("./api/routes/authRouter");
 const dataRouter = require("./api/routes/dataRouter");
 const utilRouter = require("./api/routes/utilRouter");
-const userRouter = require("./api/routes/userRouter");
 
 // Instantiate app
 winston.info(`API starting...`);
@@ -32,17 +28,12 @@ app.use(morgan("combined", { stream: winston.stream }));
 app.use(cors()); // This enables CORS for ALL routes
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use("/docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
 // Configure Routers
-app.use("/auth", authRouter);
-app.use("/user", userRouter);
-
-// CHANGE COMMENTS TO REENABLE AUTH
-// app.use("/data", withAuth, dataRouter);
+app.use("/util", utilRouter);
 app.use("/data", dataRouter);
 
-app.use("/util", utilRouter);
+// Serve images as webpage
 app.use(
   "/images",
   express.static("images"),
@@ -53,11 +44,6 @@ app.use(
 app.get("/", (req, res) => {
   console.log("req.session :", req.session);
   res.status(200).json({ message: `API online at port ${port}` });
-});
-
-app.get("/docs.json", (req, res) => {
-  res.setHeader("Content-Type", "application/json");
-  res.send(swaggerSpec);
 });
 
 // Launch app

@@ -2,7 +2,7 @@
 
 const cheerio = require("cheerio");
 
-const winston = require("../../config/winston");
+const winston = require("../../services/winston");
 const getPage = require("../../services/retrieveWebPageContent");
 
 const urlLookup = {

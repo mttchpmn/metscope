@@ -4,7 +4,7 @@ const puppeteer = require("puppeteer");
 const cheerio = require("cheerio");
 let tidy = require("htmltidy2").tidy;
 
-const winston = require("../../config/winston");
+const winston = require("../../../services/winston");
 const fs = require("fs");
 const util = require("util");
 tidy = util.promisify(tidy);

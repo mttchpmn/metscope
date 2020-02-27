@@ -6,7 +6,7 @@ const util = require("util");
 const Sequelize = require("sequelize");
 const Op = Sequelize.Op;
 
-const winston = require("../../config/winston");
+const winston = require("../../services/winston");
 const Webcam = require("../../../database/models").Webcam;
 
 const deleteFile = util.promisify(fs.unlink);

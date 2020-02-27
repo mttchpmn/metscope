@@ -1,7 +1,7 @@
 "use strict";
 
-const winston = require("../../config/winston");
-const webcams = require("../../config/webcams");
+const winston = require("../../services/winston");
+const webcams = require("../../../config/webcams");
 
 const processWebcam = require("../../helpers/webcam/processWebcam");
 

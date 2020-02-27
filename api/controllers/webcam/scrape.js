@@ -1,7 +1,7 @@
 "use strict";
 
-const winston = require("../../config/winston");
-const webcamList = require("../../config/webcams").all;
+const winston = require("../../services/winston");
+const webcamList = require("../../../config/webcams").all;
 const scrapeStatic = require("./scrapers/_static");
 
 module.exports = (req, res) => {

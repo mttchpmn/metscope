@@ -3,7 +3,7 @@
 const axios = require("axios");
 const axiosRetry = require("axios-retry");
 
-const winston = require("../config/winston");
+const winston = require("../services/winston");
 
 module.exports = (url, retryCount) => {
   winston.info(`Retrieving web page at ${url}`);
