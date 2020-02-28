@@ -3,6 +3,7 @@
 const winston = require("../../services/winston");
 const loadWebcams = require("../../helpers/webcam/loadWebcams");
 
+// TODO - Handle multiple areas in one request
 const loadWebcam = async (req, res) => {
   const area = req.params.area;
   winston.info(`Loading webcams for ${area}...`);
