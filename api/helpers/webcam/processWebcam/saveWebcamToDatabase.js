@@ -7,20 +7,17 @@ const config = require(`../../../../config`);
 const Webcam = require("../../../../database/models").Webcam;
 const winston = require("../../../services/winston");
 
-// Given webcam code, and filename on disk, save webcam details to DB
-module.exports = async (
-  webcamCode,
-  fileName,
-  { area, areaCode, region, zone }
-) => {
-  winston.debug(`[${webcamCode}]: Saving webcam to database...`);
+module.exports = async (webcam, fileName) => {
+  const { code, area, areaCode, region, zone } = webcam;
+  winston.debug(`[${code}]: Saving webcam to database...`);
+
   const date = moment.utc().format();
-  const url = `${config.domain.baseUrl}/images/${webcamCode}/${fileName}`;
-  const location = `${appPath}/images/${webcamCode}/${fileName}`;
+  const url = `${config.domain.baseUrl}/images/${code}/${fileName}`;
+  const location = `${appPath}/images/${code}/${fileName}`;
 
   try {
     await Webcam.create({
-      code: webcamCode,
+      code,
       area,
       areaCode,
       region,
@@ -29,7 +26,7 @@ module.exports = async (
       url,
       location
     });
-    winston.debug(`[${webcamCode}]: Webcam saved to database.`);
+    winston.debug(`[${code}]: Webcam saved to database.`);
     return;
   } catch (error) {
     throw error;

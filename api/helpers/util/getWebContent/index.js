@@ -5,7 +5,7 @@ const getDynamicContent = require("./getDynamicContent");
 const getStaticContent = require("./getStaticContent");
 
 module.exports = async (url, dynamic) => {
-  winston.debug(`Retrieving ${contentType} web content from ${url}...`);
+  winston.debug(`Retrieving web content from ${url}...`);
 
   try {
     if (dynamic) return getDynamicContent(url);
