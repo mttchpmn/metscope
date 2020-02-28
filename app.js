@@ -15,8 +15,8 @@ const config = require("./config/");
 const winston = require("./api/services/winston");
 
 // Routers and Routes
-const dataRouter = require("./api/routes/dataRouter");
-const utilRouter = require("./api/routes/utilRouter");
+const dataRouter = require("./api/routes/data");
+const utilRouter = require("./api/routes/util");
 
 // Instantiate app
 winston.info(`API starting...`);

@@ -3,14 +3,11 @@
 const express = require("express");
 const router = express.Router();
 
-const scrapeArea = require("../controllers/webcam/scrapeArea.js");
-const scrapeAllWebcams = require("../controllers/webcam/scrapeAll.js");
+const scrapeWebcams = require("../controllers/webcam/scrape.js");
 const purgeWebcams = require("../controllers/webcam/purge");
 const scrapeBrief = require("../controllers/weather/scrapeBrief");
 
-router.get("/webcam/scrape/all", scrapeAllWebcams);
-
-router.get("/webcam/scrape/:area", scrapeArea);
+router.get("/webcam/scrape/:area", scrapeWebcams);
 
 router.get("/webcam/purge", purgeWebcams);
 
