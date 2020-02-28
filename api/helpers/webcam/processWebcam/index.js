@@ -32,13 +32,9 @@ module.exports = async webcam => {
 
     return;
   } catch (error) {
-    if (error.code === "MODULE_NOT_FOUND") {
-      winston.error(`[${code}]: No scraper module.`);
-
-      return;
-    }
     winston.error(`[${code}]: ${error}`);
 
+    // Don't throw error here as that will cause controller to return 500 status
     return;
   }
 };
