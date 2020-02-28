@@ -3,7 +3,7 @@
 const cheerio = require("cheerio");
 
 const winston = require("../../services/winston");
-const getPage = require("../../services/retrieveWebPageContent");
+const getWebContent = require("../../helpers/util/getWebContent");
 
 const urlLookup = {
   nz: "http://metvuw.com/forecast/forecast.php?type=rain&region=nz&noofdays=10",
@@ -17,7 +17,7 @@ module.exports = (req, response) => {
   winston.info(`Scraping MetVUW charts for ${req.params.area}`);
   const url = urlLookup[req.params.area];
 
-  getPage(url).then(res => {
+  getWebContent(url).then(res => {
     const $ = cheerio.load(res.content);
     let links = [];
 
