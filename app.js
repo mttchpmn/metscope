@@ -45,14 +45,23 @@ app.get("/", (req, res) => {
   res.status(200).json({ message: `API online at port ${port}` });
 });
 
-app.get("/test/:code", async (req, res) => {
-  const webcams = require("./config/webcams").clyde;
+app.get("/test/:area/:code", async (req, res) => {
+  const { area, code } = req.params;
+
+  const webcams = require("./config/webcams")[area];
   const processWebcam = require("./api/helpers/webcam/processWebcam");
+
+  winston.info(`[${code}]: Testing webcam...`);
+
   const cam = webcams.filter(cam => cam.code === req.params.code)[0];
 
-  await processWebcam(cam);
+  try {
+    await processWebcam(cam);
 
-  return res.status(200).json({ message: "Test complete" });
+    return res.status(200).json({ message: "Test complete" });
+  } catch (error) {
+    res.status(500).json({ error: "Test failed" });
+  }
 });
 
 // Launch app

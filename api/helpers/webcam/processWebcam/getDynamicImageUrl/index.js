@@ -22,8 +22,6 @@ module.exports = async webcam => {
     const scrapeUrl = require(scraperPath);
     const imageUrl = await scrapeUrl(webcam.originUrl);
 
-    console.log("imageUrl CHARLIE:", imageUrl); // undefined
-
     return imageUrl;
   } catch (error) {
     throw error;
