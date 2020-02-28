@@ -7,7 +7,6 @@ const cors = require("cors");
 const serveIndex = require("serve-index");
 const morgan = require("morgan");
 const bodyParser = require("body-parser");
-const swaggerUi = require("swagger-ui-express");
 
 // Internal imports
 require("dotenv").config();
