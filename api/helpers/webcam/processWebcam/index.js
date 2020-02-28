@@ -12,6 +12,7 @@ module.exports = async webcam => {
 
   try {
     if (!webcam.static) {
+      // return;
       imageUrl = await getDynamicImageUrl(webcam);
     } else {
       imageUrl = originUrl;

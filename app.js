@@ -46,6 +46,19 @@ app.get("/", (req, res) => {
   res.status(200).json({ message: `API online at port ${port}` });
 });
 
+app.get("/test/:code", async (req, res) => {
+  const webcams = require("./config/webcams").clyde;
+  const processWebcam = require("./api/helpers/webcam/processWebcam");
+  const cam = webcams.filter(cam => cam.code === req.params.code)[0];
+
+  console.log("cam :", cam);
+  // console.log("webcams :", webcams);
+  console.log("req.params.code :", req.params.code);
+  await processWebcam(cam);
+
+  return res.status(200).json({ message: "Test complete" });
+});
+
 // Launch app
 app.listen(port, () => winston.info(`API online at port ${port}`));
 
