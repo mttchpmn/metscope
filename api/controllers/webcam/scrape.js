@@ -1,26 +1,15 @@
 "use strict";
 
 const winston = require("../../services/winston");
-const webcams = require("../../../config/webcams");
-
+const webcamList = require("../../../config/webcams");
 const processWebcam = require("../../helpers/webcam/processWebcam");
 
 module.exports = async (req, res) => {
   winston.info(`Scraping webcams for ${req.params.area}`);
-  const areaWebcams = webcams[req.params.area];
+  const webcams = webcamList[req.params.area];
 
   try {
-    await Promise.all(
-      areaWebcams.map(cam => {
-        // Dynamic cam
-        if (!cam.static) {
-          return;
-        }
-
-        // Static cam
-        return processWebcam(cam.code, cam.originUrl, cam);
-      })
-    );
+    await Promise.all(webcams.map(webcam => processWebcam(webcam)));
     winston.info(`Successfully scraped webcams for ${req.params.area}`);
 
     return res.status(200).json({ message: "Scrape successful" });
