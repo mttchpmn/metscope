@@ -50,9 +50,6 @@ app.get("/test/:code", async (req, res) => {
   const processWebcam = require("./api/helpers/webcam/processWebcam");
   const cam = webcams.filter(cam => cam.code === req.params.code)[0];
 
-  console.log("cam :", cam);
-  // console.log("webcams :", webcams);
-  console.log("req.params.code :", req.params.code);
   await processWebcam(cam);
 
   return res.status(200).json({ message: "Test complete" });
