@@ -3,16 +3,13 @@
 const express = require("express");
 const router = express.Router();
 
-const loadAllWebcams = require("../controllers/webcam/loadAll");
-const loadWebcam = require("../controllers/webcam/load");
+const loadWebcams = require("../controllers/webcam/load");
 const loadBrief = require("../controllers/weather/loadBrief");
-const scrapeMetvuw = require("../controllers/weather/scrapeMetvuw");
+const loadMetvuw = require("../controllers/weather/scrapeMetvuw");
 
-router.get("/webcam/load/all", loadAllWebcams);
+router.get("/webcam/load/:area", loadWebcams);
 
-router.get("/webcam/load/:area", loadWebcam);
-
-router.get("/weather/load/metvuw/:area", scrapeMetvuw);
+router.get("/weather/load/metvuw/:area", loadMetvuw);
 
 router.get("/weather/load/brief", loadBrief);
 
