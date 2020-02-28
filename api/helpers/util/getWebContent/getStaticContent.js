@@ -12,9 +12,9 @@ module.exports = async (url, retryCount) => {
   }
 
   try {
-    const result = await axios.get(url, { timeout: 5000 });
+    const { data } = await axios.get(url, { timeout: 5000 });
 
-    return { status: res.status, content: res.data };
+    return data;
   } catch (error) {
     throw error;
   }
