@@ -10,7 +10,7 @@ const scrapeMetvuw = require("../controllers/weather/scrapeMetvuw");
 
 router.get("/webcam/load/all", loadAllWebcams);
 
-router.get("/webcam/load/:name", loadWebcam);
+router.get("/webcam/load/:area", loadWebcam);
 
 router.get("/weather/load/metvuw/:area", scrapeMetvuw);
 

@@ -22,9 +22,11 @@ module.exports = async (req, res) => {
       })
     );
     winston.info(`Successfully scraped webcams for ${req.params.area}`);
+
     return res.status(200).json({ message: "Scrape successful" });
   } catch (error) {
     winston.error(`Error: ${error}`);
+
     return res.status(500).json({ error: "Internal error", data: error });
   }
 };
