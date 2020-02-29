@@ -6,12 +6,14 @@ const loadWebcams = require("../../helpers/webcam/loadWebcams");
 // TODO - Handle multiple areas in one request
 const loadWebcam = async (req, res) => {
   const area = req.params.area;
-  winston.info(`Loading webcams for ${area}...`);
+  area === "all"
+    ? winston.info(`Loading all webcams...`)
+    : winston.info(`Loading webcams for ${area}...`);
 
   try {
-    const data = await loadWebcams(area);
+    const webcams = await loadWebcams(area);
 
-    return res.status(200).json({ data });
+    return res.status(200).json({ data: { webcams } });
   } catch (error) {
     winston.error(`Error: ${error}`);
     return res.status(500).json({ error: "Internal error", data: error });
