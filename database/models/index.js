@@ -21,6 +21,7 @@ if (config.use_env_variable) {
   );
 }
 
+// Import models from folder
 fs.readdirSync(__dirname)
   .filter(file => {
     return (
