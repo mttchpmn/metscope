@@ -9,10 +9,22 @@ module.exports = async (req, res) => {
   const webcams = webcamList[req.params.area];
 
   try {
-    await Promise.all(webcams.map(webcam => processWebcam(webcam)));
+    const values = await Promise.all(
+      webcams.map(webcam => processWebcam(webcam))
+    );
+    const successes = values
+      .filter(([code, successful]) => successful)
+      .map(([code, successful]) => code);
+
+    const failures = values
+      .filter(([code, successful]) => !successful)
+      .map(([code, successful]) => code);
+
     winston.info(`Successfully scraped webcams for ${req.params.area}`);
 
-    return res.status(200).json({ message: "Scrape successful" });
+    return res
+      .status(200)
+      .json({ message: "Scrape successful", data: { successes, failures } });
   } catch (error) {
     winston.error(`Error: ${error}`);
 
