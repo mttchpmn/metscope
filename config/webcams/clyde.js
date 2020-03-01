@@ -228,7 +228,7 @@ module.exports = [
     title: "Mt Nicholas Station",
     code: "cy_mtNicholas",
     desc: "Situated at Mt Nicholas Station looking NW towards Glenorchy",
-    originUrl: "http://58.84.48.53:1080/172.23.16.201/cover/1.jpg",
+    originUrl: "http://upload.aopa.nz/mtnic.jpg",
     static: true,
     area: "clyde",
     areaCode: "cy",
