@@ -5,12 +5,11 @@
   "main": "app.js",
   "scripts": {
     "test": "NODE_ENV=test mocha --timeout 10000",
-    "dev": "docker stop WEB_API DB; docker rm WEB_API DB; docker-compose up --build",
-    "prod": "docker stop METSCOPE-PROD; docker rm METSCOPE-PROD; docker build -t metscope-api .; docker-compose run --name METSCOPE-PROD --service-ports web",
+    "start:dev": "docker-compose down; docker-compose up -d; npm run db:migrate",
+    "start:prod": "docker stop METSCOPE-PROD; docker rm METSCOPE-PROD; docker build -t metscope-api .; docker-compose run --name METSCOPE-PROD --service-ports web",
     "shell": "docker exec -it WEB_API /bin/sh",
-    "db": "psql postgres://metscope:password@localhost:5433/metscope",
-    "migrate": "docker exec WEB_API ./node_modules/.bin/sequelize db:migrate",
-    "view-logs": "docker logs -f METSCOPE-PROD",
+    "db:console": "psql postgres://metscope:password@localhost:5433/metscope",
+    "db:migrate": "docker exec WEB_API ./node_modules/.bin/sequelize db:migrate",
     "purge-logs": "sudo sh -c 'truncate -s 0 /var/lib/docker/containers/*/*-json.log'"
   },
   "author": "Matt Chapman",

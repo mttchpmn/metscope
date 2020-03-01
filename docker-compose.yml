@@ -2,8 +2,8 @@ version: "3"
 services:
   # To run API standalone:
   # docker-compose run --name METSCOPE-PROD -d --service-ports web
-  web:
-    container_name: WEB_API
+  api:
+    container_name: METSCOPE_DEV_API
     build: .
     restart: always
     ports:
@@ -11,7 +11,7 @@ services:
     volumes:
       - .:/home/node/app
   db:
-    container_name: DATABASE
+    container_name: METSCOPE_LOCAL_DATABASE
     image: postgres
     restart: always
     volumes:
