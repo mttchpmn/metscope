@@ -65,6 +65,28 @@ module.exports = [
     zone: "queenstownLakes"
   },
   {
+    title: "Queenstown Hill",
+    code: "cy_queenstownHill",
+    desc: "Situated on Queenstown Hill looking SE towards the Remarkables",
+    originUrl: "https://www.queenstown.com/webcams",
+    static: false,
+    area: "clyde",
+    areaCode: "cy",
+    region: "otago",
+    zone: "queenstownLakes"
+  },
+  {
+    title: "Queenstown Waterfront",
+    code: "cy_queenstownWaterfront",
+    desc: "Situated on Beach St looking SW towards Cecil Peak",
+    originUrl: "https://www.queenstown.com/webcams",
+    static: false,
+    area: "clyde",
+    areaCode: "cy",
+    region: "otago",
+    zone: "queenstownLakes"
+  },
+  {
     title: "Whare Kea Chalet Southwest",
     code: "cy_whareKeaSW",
     desc: "Situated at Whare Kea Chalet looking South-West",
