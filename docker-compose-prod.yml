@@ -1,0 +1,14 @@
+version: "3"
+services:
+  api:
+    container_name: METSCOPE_PROD_API
+    build: "./Dockerfile_prod"
+    restart: always
+    ports:
+      - "${PORT}:${PORT}"
+    volumes:
+      - .:/home/node/app
+  db:
+    entrypoint: ["echo", "Local DB service disabled in prod mode"]
+volumes:
+  db_data:
