@@ -1,7 +1,7 @@
 version: "3.3"
 services:
   api:
-    container_name: METSCOPE_DEV_API
+    container_name: METSCOPE-DEV-API
     build: .
     restart: always
     ports:
@@ -9,7 +9,7 @@ services:
     volumes:
       - .:/home/node/app
   db:
-    container_name: METSCOPE_LOCAL_DATABASE
+    container_name: DEV-DB
     image: postgres
     restart: always
     ports:
