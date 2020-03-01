@@ -18,7 +18,7 @@ jobs:
           name: Deploy staging branch to DigitalOcean Droplet
           command: |
             echo 'Deploying to staging environment'
-            ssh -o "StrictHostKeyChecking no" ${DROPLET_USER}@${DROPLET_ADDRESS} 'cd /home/metscope/staging/metscope; git stash; git pull; npm install;'
+            ssh -o "StrictHostKeyChecking no" ${DROPLET_USER}@${DROPLET_ADDRESS} 'cd /home/metscope/staging/metscope; git stash; git pull; npm install; npm run start:dev'
 
   deploy-to-production-env:
     docker:
@@ -30,11 +30,9 @@ jobs:
             echo 'Deploying 'master' branch to production environment'
             ssh -o "StrictHostKeyChecking no" ${DROPLET_USER}@${DROPLET_ADDRESS} '\
             cd /home/metscope/prod/metscope; \
+            git stash;
             git pull; \
-            docker stop METSCOPE-PROD; \
-            docker rm METSCOPE-PROD; \
-            docker-compose run --name METSCOPE-PROD --service-ports -d web; \
-            echo "Deploy completed"'
+            npm run start:prod'
 
 workflows:
   version: 2
