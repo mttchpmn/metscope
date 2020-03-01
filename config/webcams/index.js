@@ -9,11 +9,5 @@ module.exports = {
   clyde,
   fiords,
   gore,
-  windward,
-  all: []
-    .concat(alps)
-    .concat(clyde)
-    .concat(fiords)
-    .concat(gore)
-    .concat(windward)
+  windward
 };

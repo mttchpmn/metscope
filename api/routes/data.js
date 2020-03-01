@@ -7,7 +7,7 @@ const loadWebcams = require("../controllers/webcam/load");
 const loadBrief = require("../controllers/weather/loadBrief");
 const loadMetvuw = require("../controllers/weather/scrapeMetvuw");
 
-router.get("/webcam/load/:area", loadWebcams);
+router.get("/webcam/load/:areas", loadWebcams);
 
 router.get("/weather/load/metvuw/:area", loadMetvuw);
 
