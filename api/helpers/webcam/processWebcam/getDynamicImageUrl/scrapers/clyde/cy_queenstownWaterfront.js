@@ -7,7 +7,7 @@ const getWebContent = require("../../../../../util/getWebContent");
 module.exports = async originUrl => {
   let imageUrl;
 
-  const html = await getWebContent(originUrl, true);
+  const html = await getWebContent(originUrl);
   const $ = cheerio.load(html);
   $("img").map((i, elem) => {
     if (elem.attribs.src.includes("beachst")) {
