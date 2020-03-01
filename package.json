@@ -7,9 +7,9 @@
     "test": "NODE_ENV=test mocha --timeout 10000",
     "start:dev": "docker-compose down; docker-compose up -d; npm run db:migrate",
     "start:prod": "docker stop METSCOPE-PROD; docker rm METSCOPE-PROD; docker build -t metscope-api .; docker-compose run --name METSCOPE-PROD --service-ports web",
-    "shell": "docker exec -it WEB_API /bin/sh",
+    "shell": "docker exec -it METSCOPE_DEV_API /bin/sh",
     "db:console": "psql postgres://metscope:password@localhost:5433/metscope",
-    "db:migrate": "docker exec WEB_API ./node_modules/.bin/sequelize db:migrate",
+    "db:migrate": "docker exec METSCOPE_DEV_API ./node_modules/.bin/sequelize db:migrate",
     "purge-logs": "sudo sh -c 'truncate -s 0 /var/lib/docker/containers/*/*-json.log'"
   },
   "author": "Matt Chapman",
