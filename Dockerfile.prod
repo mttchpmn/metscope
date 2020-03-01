@@ -17,10 +17,3 @@ USER node
 COPY --chown=node:node . .
 EXPOSE 3000
 CMD ["node", "app.js"]
-
-# To run container in PRODUCTION:
-# docker build -t metscope-api .
-# docker run --name METSCOPE-PROD --restart always -p 3000:3000 -d metscope-api
-
-# To get inside container
-# docker exec -it api /bin/sh
