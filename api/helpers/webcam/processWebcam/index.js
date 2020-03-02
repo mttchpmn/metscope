@@ -12,7 +12,7 @@ module.exports = async webcam => {
 
   try {
     if (!webcam.static) {
-      return; // DISABLE DYNAMIC WEBCAMS
+      // return; // DISABLE DYNAMIC WEBCAMS
       imageUrl = await getDynamicImageUrl(webcam);
     } else {
       imageUrl = originUrl;
