@@ -1,54 +1,62 @@
 "use strict";
 
 const { createLogger, format, transports } = require("winston");
-const { combine, printf } = format;
+const { combine, printf, colorize } = format;
 const { Loggly } = require("winston-loggly-bulk");
 const appRoot = require("app-root-path");
 
 const config = require("../../../config");
 
-const consoleFormat = printf(
-  ({ level, message, label, timestamp }) =>
-    `${timestamp} [${level.toUpperCase()}]: ${message}`
+const consoleFormat = format.combine(
+  colorize({ all: true }),
+  format.timestamp({
+    format: "YYYY-MM-DD HH:mm:ss"
+  }),
+  format.align(),
+  format.printf(info => `${info.timestamp} ${info.level}: ${info.message}`)
 );
 
 const options = {
-  file: {
+  console: {
     silent: process.env.NODE_ENV === "test" ? true : false,
+    level: config.app.loggingLevel,
+    format: consoleFormat,
+    handleExceptions: true,
+    json: false
+  },
+  infoFile: {
     level: "info",
     format: format.combine(
       format.timestamp({
         format: "YYYY-MM-DD HH:mm:ss"
       }),
       format.errors({ stack: true }),
-      format.splat(),
-      format.json()
+      format.splat()
     ),
     filename: `${appRoot}/logs/app.log`,
-    handleExceptions: true,
-    json: true,
-    maxFiles: 5,
-    colorize: false
+    handleExceptions: true
   },
-  console: {
-    silent: process.env.NODE_ENV === "test" ? true : false,
-    level: config.app.loggingLevel,
-    format: combine(
+  errorFile: {
+    level: "error",
+    format: format.combine(
       format.timestamp({
         format: "YYYY-MM-DD HH:mm:ss"
       }),
-      consoleFormat
+      format.errors({ stack: true }),
+      format.splat()
     ),
-    handleExceptions: true,
-    json: false,
-    colorize: true
+    filename: `${appRoot}/logs/error.log`,
+    handleExceptions: true
   }
 };
 
 const logger = createLogger({
   transports: [
-    new transports.File(options.file),
-    new transports.Console(options.console)
+    new transports.Console({
+      format: consoleFormat
+    }),
+    new transports.File(options.infoFile),
+    new transports.File(options.errorFile)
   ],
   exitOnError: false
 });
