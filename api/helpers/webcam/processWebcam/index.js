@@ -22,18 +22,18 @@ module.exports = async webcam => {
 
     // Webcam is not new.  Do not continue.
     if (!webCamIsNew) {
-      winston.info(`[${code}]: Skipped old webcam`);
+      winston.info(`\u2298 [${code}]: Skipped old webcam`);
       return [code, true];
     }
 
     // Webcam is new. Save to file and DB.
     const fileName = await saveImageToFile(code, imageUrl);
     await saveWebcamToDatabase(webcam, fileName);
-    winston.info(`[${code}]: Saved new webcam`);
+    winston.info(`\u2713 [${code}]: Saved new webcam`);
 
     return [code, true];
   } catch (error) {
-    winston.error(`[${code}]: ${error}`);
+    winston.error(`\u2717 [${code}]: ${error}`);
 
     // Don't throw error here as that will cause controller to return 500 status
     return [code, false];
