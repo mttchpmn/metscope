@@ -8,7 +8,7 @@ const winston = require("../winston");
 const factory = {
   create: async function() {
     try {
-      winston.debug("Launching browser instance");
+      winston.info("Launching browser instance");
       const browser = await puppeteer.launch({
         args: [
           "--no-sandbox",
@@ -25,13 +25,14 @@ const factory = {
     }
   },
   destroy: function(browser) {
+    winston.info("Destroying browser instance");
     return browser.close();
   }
 };
 
 const options = {
-  max: 5,
-  min: 2
+  max: 3,
+  min: 1
 };
 
 const browserPool = genericPool.createPool(factory, options);
