@@ -11,7 +11,7 @@ module.exports = async url => {
     const browser = await browserPool.acquire();
 
     const page = await browser.newPage();
-    await page.goto(url, { waitUntil: "networkidle2" });
+    await page.goto(url, { waitUntil: "networkidle2", timeout: 5000 });
     const rawHtml = await page.content();
     const cleanHtml = await tidy(rawHtml);
     await browserPool.release(browser);
