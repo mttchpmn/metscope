@@ -259,6 +259,61 @@ module.exports = [
     zone: "queenstownLakes"
   },
   {
+    title: "Wanaka Airport N",
+    code: "cy_wanakaAirportN",
+    desc: "Situated at Wanaka Airport, looking N towards 29 threshold",
+    originUrl: "https://www.wanakaairport.com/airport-guide/airport-webcams",
+    static: false,
+    area: "clyde",
+    areaCode: "cy",
+    region: "otago",
+    zone: "queenstownLakes"
+  },
+  {
+    title: "Wanaka Airport NW",
+    code: "cy_wanakaAirportNW",
+    desc: "Situated at Wanaka Airport, looking NW",
+    originUrl: "https://www.wanakaairport.com/airport-guide/airport-webcams",
+    static: false,
+    area: "clyde",
+    areaCode: "cy",
+    region: "otago",
+    zone: "queenstownLakes"
+  },
+  {
+    title: "Wanaka Airport SW",
+    code: "cy_wanakaAirportSW",
+    desc: "Situated at Wanaka Airport, looking SW",
+    originUrl: "https://www.wanakaairport.com/airport-guide/airport-webcams",
+    static: false,
+    area: "clyde",
+    areaCode: "cy",
+    region: "otago",
+    zone: "queenstownLakes"
+  },
+  {
+    title: "Wanaka Airport SE",
+    code: "cy_wanakaAirportSE",
+    desc: "Situated at Wanaka Airport, looking SE",
+    originUrl: "https://www.wanakaairport.com/airport-guide/airport-webcams",
+    static: false,
+    area: "clyde",
+    areaCode: "cy",
+    region: "otago",
+    zone: "queenstownLakes"
+  },
+  {
+    title: "Wanaka Airport E",
+    code: "cy_wanakaAirportE",
+    desc: "Situated at Wanaka Airport, looking E towards Eastern hills",
+    originUrl: "https://www.wanakaairport.com/airport-guide/airport-webcams",
+    static: false,
+    area: "clyde",
+    areaCode: "cy",
+    region: "otago",
+    zone: "queenstownLakes"
+  },
+  {
     title: "Cromwell Township",
     code: "cy_cromwellTownship",
     desc: "Situated in the Cromwell CBD looking West towards the Pisa Range",
