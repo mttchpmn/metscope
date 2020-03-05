@@ -4,16 +4,16 @@ const fs = require("fs");
 const path = require("path");
 const Sequelize = require("sequelize");
 const basename = path.basename(__filename);
-const config = require("../../config");
+const config = require("../config")[process.env.NODE_ENV || "development"];
 
 const db = {};
 
 let sequelize;
 sequelize = new Sequelize(
-  config.db.database,
-  config.db.username,
-  config.db.password,
-  config.db
+  config.database,
+  config.username,
+  config.password,
+  config
 );
 
 // Import models from folder

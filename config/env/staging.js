@@ -10,15 +10,6 @@ module.exports = {
     purgeThreshold: 12,
     loggingLevel: "info"
   },
-  db: {
-    username: process.env.DB_USER,
-    password: process.env.DB_PASSWORD,
-    database: "metscope",
-    dialect: "postgres",
-    host: "db", // 'db' refers to the database host on the Docker Containers internal network
-    port: 5432,
-    logging: false
-  },
   domain: {
     baseUrl: `https://api-int.metscope.com`
   },
