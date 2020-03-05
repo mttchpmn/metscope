@@ -12,9 +12,10 @@ module.exports = {
   },
   db: {
     user: process.env.DB_USER || "metscope",
-    host: process.env.DB_HOST || "localhost",
+    password: process.env.DB_PASSWORD || "password",
     database: process.env.DB_DATABASE || "metscope",
-    password: process.env.DB_PASSWORD,
+    dialect: "postgres",
+    host: process.env.DB_HOST || "db",
     port: process.env.DB_PORT || 5432,
     maxConnections: 5,
     logging: false
