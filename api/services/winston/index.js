@@ -61,17 +61,6 @@ const logger = createLogger({
   exitOnError: false
 });
 
-if (process.env.NODE_ENV === "production") {
-  logger.add(
-    new Loggly({
-      token: process.env.LOGGLY_TOKEN,
-      subdomain: "metscope",
-      tags: ["METSCOPE"],
-      json: true
-    })
-  );
-}
-
 logger.stream = {
   write: function(message, encoding) {
     logger.info(message);
