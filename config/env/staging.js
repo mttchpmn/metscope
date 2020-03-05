@@ -16,7 +16,8 @@ module.exports = {
     database: "metscope",
     dialect: "postgres",
     host: "db", // 'db' refers to the database host on the Docker Containers internal network
-    port: 5432
+    port: 5432,
+    logging: false
   },
   domain: {
     baseUrl: `https://api-int.metscope.com`

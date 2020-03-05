@@ -16,7 +16,8 @@ module.exports = {
     database: process.env.DB_DATABASE || "metscope",
     password: process.env.DB_PASSWORD,
     port: process.env.DB_PORT || 5432,
-    maxConnections: 5
+    maxConnections: 5,
+    logging: false
   },
   domain: {
     baseUrl: `https://api.metscope.com`

@@ -19,6 +19,7 @@ const utilRouter = require("./api/routes/util");
 
 // Instantiate app
 winston.info(`API starting...`);
+
 const app = express();
 const port = config.app.port;
 
@@ -65,7 +66,9 @@ app.get("/test/:area/:code", async (req, res) => {
 });
 
 // Launch app
-app.listen(port, () => winston.info(`API online at port ${port}`));
+app.listen(port, () =>
+  winston.info(`[${process.env.NODE_ENV}] API online at port ${port}`)
+);
 
 // Export app for test suite
 module.exports = app;
