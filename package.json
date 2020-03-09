@@ -5,7 +5,7 @@
   "main": "app.js",
   "scripts": {
     "test": "NODE_ENV=test mocha --timeout 10000",
-    "start:dev": "docker-compose down; docker-compose -f docker-compose.yml up --detach; npm run db:migrate",
+    "start:dev": "bash start-dev.sh",
     "start:prod": "docker stop METSCOPE-PROD-API && docker rm METSCOPE-PROD-API; docker build -t prod-api -f Dockerfile.prod .; docker-compose run --detach --service-ports --name METSCOPE-PROD-API api",
     "shell": "docker exec -it METSCOPE-DEV-API /bin/sh",
     "db:console": "psql postgres://metscope:password@localhost:5433/metscope",
