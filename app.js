@@ -24,7 +24,7 @@ const app = express();
 const port = config.app.port;
 
 // Setup Middlewares
-app.use(morgan("combined", { stream: winston.stream }));
+app.use(morgan("common", { stream: winston.stream }));
 app.use(cors()); // This enables CORS for ALL routes
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -42,7 +42,6 @@ app.use(
 
 // Test endpoint
 app.get("/", (req, res) => {
-  console.log("req.session :", req.session);
   res.status(200).json({ message: `API online at port ${port}` });
 });
 
